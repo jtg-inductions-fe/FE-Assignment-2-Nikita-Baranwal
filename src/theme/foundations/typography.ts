@@ -1,10 +1,14 @@
+// import { palette } from 'theme/foundations/palette';
+
 import type { Theme } from '@mui/material/styles';
 import type {
     TypographyOptions,
     TypographyUtils,
 } from '@mui/material/styles/createTypography';
 
-import { HTML_FONT_SIZE } from '@constant';
+import { COLORS, HTML_FONT_SIZE } from '@constant';
+
+// import { palette } from './palette';
 
 /* Custom px to rem function */
 const typographyUtil: TypographyUtils = {
@@ -25,20 +29,81 @@ const typographyUtil: TypographyUtils = {
 const typographyStyle = (theme: Theme): TypographyOptions => ({
     fontFamily: 'Inter',
     htmlFontSize: HTML_FONT_SIZE,
-
     fontWeightLight: 400,
     fontWeightRegular: 500,
     fontWeightMedium: 600,
 
     h1: {
+        //text 7xl
         fontSize: typographyUtil.pxToRem(30),
         fontWeight: 700,
-        lineHeight: typographyUtil.pxToRem(45),
+        lineHeight: 1.5,
 
         [theme.breakpoints.up('md')]: {
             fontSize: typographyUtil.pxToRem(48),
-            lineHeight: typographyUtil.pxToRem(62.5),
+            lineHeight: 1.5,
         },
+    },
+
+    h2: {
+        //text 3xl
+        fontSize: typographyUtil.pxToRem(20),
+        fontWeight: 600,
+        lineHeight: 1.5,
+    },
+
+    h3: {
+        fontSize: typographyUtil.pxToRem(16),
+        fontWeight: 600,
+        lineHeight: 1.5,
+    },
+
+    h4: {
+        fontSize: typographyUtil.pxToRem(16),
+        fontWeight: 500,
+        lineHeight: 1.5,
+    },
+
+    body1: {
+        //text-base
+        fontSize: typographyUtil.pxToRem(16),
+        fontWeight: 400,
+        lineHeight: 1.5,
+    },
+
+    body2: {
+        //text-sm
+        fontSize: typographyUtil.pxToRem(14),
+        fontWeight: 400,
+        lineHeight: 1.5,
+    },
+
+    subtitle1: {
+        fontSize: typographyUtil.pxToRem(12),
+        fontWeight: 600,
+        lineHeight: 1.5,
+    },
+
+    subtitle2: {
+        fontSize: typographyUtil.pxToRem(12),
+        fontWeight: 600,
+        lineHeight: 1.5,
+    },
+
+    caption: {
+        //text-xs
+        fontSize: typographyUtil.pxToRem(12),
+        fontWeight: 400,
+        lineHeight: 1.5,
+    },
+
+    button: {
+        fontSize: typographyUtil.pxToRem(14),
+        fontWeight: 600,
+        lineHeight: 1.5,
+        color: COLORS.SECONDARY[0],
+        padding: `${typographyUtil.pxToRem(9)} ${typographyUtil.pxToRem(17)}`,
+        borderRadius: theme.typography.pxToRem(12),
     },
 });
 

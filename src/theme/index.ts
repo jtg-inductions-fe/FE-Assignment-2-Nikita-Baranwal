@@ -2,19 +2,14 @@ import { createTheme } from '@mui/material/styles';
 
 import { SCALING_FACTOR } from '@constant';
 
-/* Customized MUI components themes */
 import { components } from './components';
-/* Customized foundation themes */
 import { breakpoints, mixins, palette, typography } from './foundations';
 
-/* 
-Initialize the theme with base theme elements (excluding typography styles and spacing to ensure the theme has correct breakpoints and pxToRem function set.)
-*/
+/* Step 1: Create base theme with just enough for pxToRem */
 let theme = createTheme({
     palette,
     breakpoints,
     mixins,
-    components,
     typography: {
         fontFamily: 'Inter',
         ...typography.typographyUtil,
@@ -23,10 +18,21 @@ let theme = createTheme({
         theme.typography.pxToRem(factor * SCALING_FACTOR),
 });
 
-/* Extend the base theme with additional configurations */
+/* Step 2: Extend theme with full typography + component overrides */
 theme = createTheme(theme, {
     typography: {
         ...typography.typographyStyle(theme),
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    ...typography.typographyStyle(theme).button,
+                    textTransform: 'none',
+                },
+            },
+        },
+        ...components, // optional: merge your other custom components
     },
 });
 
