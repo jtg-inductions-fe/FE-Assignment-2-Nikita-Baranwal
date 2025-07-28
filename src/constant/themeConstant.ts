@@ -7,7 +7,7 @@ export const COLORS = {
         //green scale
         MAIN: '#0E9F6E',
     },
-    SECONDARY: {
+    GREY: {
         //grey scale
         0: '#FFFFFF',
         50: '#F9FAFB',
