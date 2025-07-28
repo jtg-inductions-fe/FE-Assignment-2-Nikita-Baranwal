@@ -38,6 +38,7 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(30),
         fontWeight: 700,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[900],
 
         [theme.breakpoints.up('md')]: {
             fontSize: typographyUtil.pxToRem(48),
@@ -50,18 +51,21 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(20),
         fontWeight: 600,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[900],
     },
 
     h3: {
         fontSize: typographyUtil.pxToRem(16),
         fontWeight: 600,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[900],
     },
 
     h4: {
         fontSize: typographyUtil.pxToRem(16),
         fontWeight: 500,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[900],
     },
 
     body1: {
@@ -69,6 +73,7 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(16),
         fontWeight: 400,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[500],
     },
 
     body2: {
@@ -76,18 +81,21 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(14),
         fontWeight: 400,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[500],
     },
 
     subtitle1: {
         fontSize: typographyUtil.pxToRem(12),
         fontWeight: 600,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[500],
     },
 
     subtitle2: {
-        fontSize: typographyUtil.pxToRem(12),
+        fontSize: typographyUtil.pxToRem(14),
         fontWeight: 600,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[500],
     },
 
     caption: {
@@ -95,6 +103,7 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
         fontSize: typographyUtil.pxToRem(12),
         fontWeight: 400,
         lineHeight: 1.5,
+        color: COLORS.SECONDARY[500],
     },
 
     button: {
