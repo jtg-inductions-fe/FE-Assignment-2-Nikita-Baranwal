@@ -1,4 +1,3 @@
-import { NotFound } from 'pages/Errors/NotFound';
 import { RouteObject } from 'react-router-dom';
 
 import { Layout } from '@layouts/Layout';
@@ -19,6 +18,6 @@ export const routes: RouteObject[] = [
     },
     {
         path: '*',
-        element: <NotFound />,
+        element: <NotFoundError />,
     },
 ];
