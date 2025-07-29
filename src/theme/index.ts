@@ -5,7 +5,7 @@ import { SCALING_FACTOR } from '@constant';
 import { components } from './components';
 import { breakpoints, mixins, palette, typography } from './foundations';
 
-/* Step 1: Create base theme with just enough for pxToRem */
+/* Create base theme with just enough for pxToRem */
 let theme = createTheme({
     palette,
     breakpoints,
@@ -18,7 +18,7 @@ let theme = createTheme({
         theme.typography.pxToRem(factor * SCALING_FACTOR),
 });
 
-/* Step 2: Extend theme with full typography + component overrides */
+/* Extend theme with full typography + component overrides */
 theme = createTheme(theme, {
     typography: {
         ...typography.typographyStyle(theme),

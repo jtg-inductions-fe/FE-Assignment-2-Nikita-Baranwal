@@ -7,7 +7,7 @@ export const palette: PaletteOptions = {
     primary: {
         main: COLORS.PRIMARY.MAIN,
     },
-    secondary: {
+    grey: {
         main: COLORS.GREY[500],
         light: COLORS.GREY[100],
         dark: COLORS.GREY[700],

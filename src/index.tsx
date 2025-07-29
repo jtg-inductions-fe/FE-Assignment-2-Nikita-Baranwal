@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 
 import { routes } from './routes/router';
-import { theme } from './theme'; // Make sure this exists
+import { theme } from './theme';
 
 const router = createBrowserRouter(routes);
 

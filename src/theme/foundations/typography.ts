@@ -1,5 +1,3 @@
-// import { palette } from 'theme/foundations/palette';
-
 import type { Theme } from '@mui/material/styles';
 import type {
     TypographyOptions,
@@ -7,8 +5,6 @@ import type {
 } from '@mui/material/styles/createTypography';
 
 import { COLORS, HTML_FONT_SIZE } from '@constant';
-
-// import { palette } from './palette';
 
 /* Custom px to rem function */
 const typographyUtil: TypographyUtils = {
@@ -34,7 +30,6 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     fontWeightMedium: 600,
 
     h1: {
-        //text 7xl
         fontSize: typographyUtil.pxToRem(30),
         fontWeight: 700,
         lineHeight: 1.5,
@@ -47,7 +42,6 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     },
 
     h2: {
-        //text 3xl
         fontSize: typographyUtil.pxToRem(20),
         fontWeight: 600,
         lineHeight: 1.5,
@@ -69,7 +63,6 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     },
 
     body1: {
-        //text-base
         fontSize: typographyUtil.pxToRem(16),
         fontWeight: 400,
         lineHeight: 1.5,
@@ -77,7 +70,6 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     },
 
     body2: {
-        //text-sm
         fontSize: typographyUtil.pxToRem(14),
         fontWeight: 400,
         lineHeight: 1.5,
@@ -99,7 +91,6 @@ const typographyStyle = (theme: Theme): TypographyOptions => ({
     },
 
     caption: {
-        //text-xs
         fontSize: typographyUtil.pxToRem(12),
         fontWeight: 400,
         lineHeight: 1.5,

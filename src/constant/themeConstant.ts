@@ -4,11 +4,9 @@
  */
 export const COLORS = {
     PRIMARY: {
-        //green scale
         MAIN: '#0E9F6E',
     },
     GREY: {
-        //grey scale
         0: '#FFFFFF',
         50: '#F9FAFB',
         100: '#F3F4F6',
@@ -22,15 +20,12 @@ export const COLORS = {
         900: '#111827',
     },
     SUCCESS: {
-        //green scale
         MAIN: '#DEF7EC',
     },
     WARNING: {
-        //red scale
         MAIN: '#FBD5D5',
     },
     INFO: {
-        //blue scale
         MAIN: '#E1EFFE',
     },
 };
