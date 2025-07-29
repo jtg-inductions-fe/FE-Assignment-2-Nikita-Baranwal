@@ -1,13 +1,21 @@
+import { NotFound } from 'pages/Errors/NotFound';
 import { RouteObject } from 'react-router-dom';
 
+import Layout from '../components/Layout/Layout';
 import { Dashboard } from '../pages/Dashboard';
 import { ErrorFallback } from '../pages/Errors/ErrorFallback';
-import { NotFound } from '../pages/Errors/NotFound';
 
 export const routes: RouteObject[] = [
     {
         path: '/',
-        element: <Dashboard />,
+        element: <Layout />,
+        children: [
+            {
+                index: true,
+                element: <Dashboard />,
+            },
+            // more nested routes here
+        ],
         errorElement: <ErrorFallback />,
     },
     {
