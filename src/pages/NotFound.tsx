@@ -1,6 +1,6 @@
-import NotFoundImage from '@assets/images/404.png';
+import { ErrorTemplate } from 'components/Error';
 
-import { ErrorTemplate } from '../container/ErrorPageTemplate';
+import NotFoundImage from '@assets/images/404.png';
 
 const info = {
     src: NotFoundImage,

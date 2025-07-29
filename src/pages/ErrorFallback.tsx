@@ -1,6 +1,6 @@
-import FallbackImage from '@assets/images/error.png';
+import { ErrorTemplate } from 'components/Error';
 
-import { ErrorTemplate } from '../container/ErrorPageTemplate';
+import FallbackImage from '@assets/images/error.png';
 
 const info = {
     src: FallbackImage,

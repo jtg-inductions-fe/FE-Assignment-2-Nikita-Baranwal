@@ -8,16 +8,17 @@ export const routes: RouteObject[] = [
     {
         path: '/',
         element: <Layout />,
+        errorElement: <ErrorFallback />,
         children: [
             {
                 index: true,
                 element: <Dashboard />,
             },
+            {
+                path: '*',
+                element: <NotFoundError />,
+                handle: { hideSidebar: true },
+            },
         ],
-        errorElement: <ErrorFallback />,
-    },
-    {
-        path: '*',
-        element: <NotFoundError />,
     },
 ];

@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const ErrorContainer = styled(Box)(({ theme }) => ({
-    minHeight: '100vh',
+    minHeight: '507px',
     margin: 'auto',
     ...theme.mixins.flex('center', 'center', 'column'),
     backgroundColor: theme.palette.background.default,
@@ -16,6 +16,7 @@ export const ErrorContainer = styled(Box)(({ theme }) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
+        minHeight: '681px',
         padding: theme.typography.pxToRem(48),
         maxWidth: theme.typography.pxToRem(1440),
     },

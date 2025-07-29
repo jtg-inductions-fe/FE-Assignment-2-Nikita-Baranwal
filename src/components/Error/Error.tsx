@@ -1,20 +1,14 @@
 import { Typography } from '@mui/material';
 
-import { HomeButton } from '@components';
+import { NavigateButton } from '@components';
+
 import {
     ErrorContainer,
     ErrorContainerOverview,
     ErrorContainerOverviewTitle,
     ErrorImage,
-} from '@container';
-
-interface ErrorTemplateProps {
-    info: {
-        src: string;
-        title: string;
-        description: string;
-    };
-}
+} from './Error.styles';
+import { ErrorTemplateProps } from './Error.types';
 
 export const ErrorTemplate = ({ info }: ErrorTemplateProps) => (
     <ErrorContainer>
@@ -24,7 +18,7 @@ export const ErrorTemplate = ({ info }: ErrorTemplateProps) => (
                 <Typography variant="h1">{info.title}</Typography>
                 <Typography variant="body1">{info.description}</Typography>
             </ErrorContainerOverviewTitle>
-            <HomeButton />
+            <NavigateButton to="/" label="Go back home" />
         </ErrorContainerOverview>
     </ErrorContainer>
 );
