@@ -12,12 +12,7 @@ const Layout: React.FC<LayoutProps> = () => (
     <Box sx={{ display: 'flex' }}>
         <Navbar />
         <Sidebar />
-        <MainContent
-            sx={{
-                flexGrow: 1,
-                marginTop: '64px',
-            }}
-        >
+        <MainContent>
             <Outlet />
         </MainContent>
     </Box>

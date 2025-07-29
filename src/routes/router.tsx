@@ -14,7 +14,6 @@ export const routes: RouteObject[] = [
                 index: true,
                 element: <Dashboard />,
             },
-            // more nested routes here
         ],
         errorElement: <ErrorFallback />,
     },

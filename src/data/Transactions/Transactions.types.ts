@@ -1,10 +1,10 @@
 export type TransactionStatus = 'Completed' | 'Cancelled' | 'In progress';
 
-export interface Transaction {
+export type Transaction = {
     id: string;
     name: string;
     type: 'Payment' | 'Refund' | 'Failed';
-    date: string; // ISO format or readable date
+    date: string;
     amount: number;
     status: TransactionStatus;
-}
+};
