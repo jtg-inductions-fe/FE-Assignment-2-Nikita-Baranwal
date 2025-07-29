@@ -1,9 +1,23 @@
-import { AppBar } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { SxProps, Theme } from '@mui/material';
 
-/**
- * Styled AppBar with light grey background
- */
-export const StyledAppBar = styled(AppBar)(({ theme: { palette } }) => ({
-    backgroundColor: palette.grey[300],
-}));
+export const appBarSx: SxProps<Theme> = {
+    zIndex: (theme) => theme.zIndex.drawer + 1,
+    height: '64px',
+    backgroundColor: 'white',
+};
+
+export const logoSx: SxProps<Theme> = {
+    flexGrow: 1,
+};
+
+export const avatarSx: SxProps<Theme> = {
+    marginLeft: 2,
+};
+
+export const searchBoxSx: SxProps<Theme> = {
+    paddingLeft: 2,
+};
+
+export const menuIconSx: SxProps<Theme> = {
+    marginRight: 2,
+};
