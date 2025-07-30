@@ -6,10 +6,8 @@ import { routes } from './routes/router';
 
 const router = createBrowserRouter(routes);
 
-const App = () => (
+export const App = () => (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
         <RouterProvider router={router} />
     </ErrorBoundary>
 );
-
-export default App;

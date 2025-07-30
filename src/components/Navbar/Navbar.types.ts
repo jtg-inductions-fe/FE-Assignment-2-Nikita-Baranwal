@@ -1,3 +1,3 @@
-export type NavbarProps = {
-    title?: string;
-};
+// export type NavbarProps = {
+//     title?: string;
+// };

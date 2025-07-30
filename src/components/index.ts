@@ -1,4 +1,4 @@
-export { Navbar } from './Navbar/Navbar';
-export { Sidebar } from './Sidebar/Sidebar';
-export { Layout } from '../layouts/Layout/Layout';
-export { RedirectBUtton } from './RedirectButton/RedirectButton';
+export { Navbar } from '@components/Navbar';
+export { Sidebar } from '@components/Sidebar';
+export { Layout } from '@layouts/Layout';
+export { RedirectButton } from '@components/RedirectButton';

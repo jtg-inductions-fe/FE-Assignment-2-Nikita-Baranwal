@@ -3,12 +3,15 @@
         "baseUrl": "./src",
         "paths": {
             "@assets/*": ["assets/*"],
-            "@constant": ["constant/index"],
-            "@theme": ["theme/index"],
-            "@components": ["components/index"],
-            "@foundations": ["foundations/index"],
-            "@container": ["container/index"],
-            "@layouts": ["layouts/index"]
+            "@constant/*": ["constant/*"],
+            "@theme/*": ["theme/*"],
+            "@components/*": ["components/*"],
+            "@foundations/*": ["foundations/*"],
+            "@container/*": ["container/*"],
+            "@layouts/*": ["layouts/*"],
+            "@navbar/*": ["Navbar/*"],
+            "@errors/*": ["Errors/*"],
+            "@pages/*": ["pages/*"]
         }
     }
 }

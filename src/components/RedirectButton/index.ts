@@ -1,1 +1,1 @@
-export { RedirectBUtton } from './RedirectButton';
+export { RedirectButton } from './RedirectButton';

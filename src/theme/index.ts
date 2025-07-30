@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-import { SCALING_FACTOR } from '@constant';
+import { SCALING_FACTOR } from '@constant/index';
 
 import { components } from './components';
 import { breakpoints, mixins, palette, typography } from './foundations';

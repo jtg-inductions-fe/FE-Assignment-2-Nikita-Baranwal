@@ -1,13 +1,9 @@
-// Bold
 import InterBoldTTF from './inter-bold.ttf';
 import InterBoldWOFF2 from './inter-bold.woff2';
-// Medium
 import InterMediumTTF from './inter-medium.ttf';
 import InterMediumWOFF2 from './inter-medium.woff2';
-//Regular
 import InterRegularTTF from './inter-regular.ttf';
 import InterRegularWOFF2 from './inter-regular.woff2';
-// Semibold
 import InterSemiBoldTTF from './inter-semibold.ttf';
 import InterSemiBoldWOFF2 from './inter-semibold.woff2';
 

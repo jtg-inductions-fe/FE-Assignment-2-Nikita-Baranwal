@@ -1,5 +1,12 @@
 import { Transaction } from './Transactions.types';
 
+/**
+ * List of recent financial transactions, including payments, refunds, and failed attempts.
+ * Each transaction includes user details, type, date, amount, and status.
+ *
+ * @type {Transaction[]}
+ */
+
 export const transactionsData: Transaction[] = [
     {
         id: '1',
@@ -48,5 +55,21 @@ export const transactionsData: Transaction[] = [
         date: '2021-04-11',
         amount: 280,
         status: 'Completed',
+    },
+    {
+        id: '7',
+        name: 'Tese Leos',
+        type: 'Failed',
+        date: '2021-04-18',
+        amount: 239,
+        status: 'Cancelled',
+    },
+    {
+        id: '8',
+        name: 'Jeso Leos',
+        type: 'Failed',
+        date: '2021-04-18',
+        amount: 344,
+        status: 'Cancelled',
     },
 ];
