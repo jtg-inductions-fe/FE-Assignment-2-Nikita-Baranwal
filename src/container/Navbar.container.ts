@@ -1,16 +1,6 @@
-// import { NavbarProps } from '../components/Navbar/Navbar.types';
-
-// export const useTopNav = (props: NavbarProps) => {
-//     const { title = 'Navbar' } = props;
-
-//     return {
-//         title,
-//     };
-// };
-
-// components/Navbar/Navbar.container.ts
-
 import { useState } from 'react';
+
+import { UserData } from 'data/UserData/UserData';
 
 export const useNavbar = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -23,5 +13,10 @@ export const useNavbar = () => {
         setAnchorEl(null);
     };
 
-    return { anchorEl, handleAvatarClick, handleMenuClose };
+    return {
+        anchorEl,
+        handleAvatarClick,
+        handleMenuClose,
+        user: UserData[0],
+    };
 };
