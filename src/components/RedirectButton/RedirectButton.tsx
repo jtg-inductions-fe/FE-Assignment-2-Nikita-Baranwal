@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@mui/material';
 
-import type { NavigateButtonProps } from './NavigateButton.types';
+import type { RedirectButtonProps } from './RedirectButton.types';
 
-const NavigateButton = ({ to, label }: NavigateButtonProps) => {
+export const RedirectBUtton = ({ to, label }: RedirectButtonProps) => {
     const navigate = useNavigate();
 
     return (
@@ -18,5 +18,3 @@ const NavigateButton = ({ to, label }: NavigateButtonProps) => {
         </Button>
     );
 };
-
-export default NavigateButton;

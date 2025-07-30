@@ -1,20 +1,21 @@
 import { Drawer, Typography } from '@mui/material';
 
-const Sidebar: React.FC = () => (
+import { theme } from '@theme';
+
+export const Sidebar = () => (
     <Drawer
         variant="permanent"
         sx={{
+            display: { xs: 'none', md: 'block' },
             width: 280,
             flexShrink: 0,
             '& .MuiDrawer-paper': {
                 width: 280,
                 boxSizing: 'border-box',
-                top: '64px',
+                top: theme.typography.pxToRem(64),
             },
         }}
     >
         <Typography variant="h6">Sidebar</Typography>
     </Drawer>
 );
-
-export default Sidebar;

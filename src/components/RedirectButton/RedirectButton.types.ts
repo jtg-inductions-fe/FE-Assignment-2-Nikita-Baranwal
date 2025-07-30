@@ -1,4 +1,4 @@
-export type NavigateButtonProps = {
+export type RedirectButtonProps = {
     to: string;
     label: string;
 };

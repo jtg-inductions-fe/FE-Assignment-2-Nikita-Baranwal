@@ -1,4 +1,4 @@
-export { default as Navbar } from './Navbar/Navbar';
-export { default as Sidebar } from './Sidebar/Sidebar';
-export { default as Layout } from './Layout/Layout';
-export { default as NavigateButton } from './NavigateButton/NavigateButton';
+export { Navbar } from './Navbar/Navbar';
+export { Sidebar } from './Sidebar/Sidebar';
+export { Layout } from '../layouts/Layout/Layout';
+export { RedirectBUtton } from './RedirectButton/RedirectButton';

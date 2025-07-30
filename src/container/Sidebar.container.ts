@@ -1,3 +1,3 @@
-export const useSidebar = () => ({
+export const UseSidebar = () => ({
     title: 'Sidebar',
 });

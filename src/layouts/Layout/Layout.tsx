@@ -6,9 +6,8 @@ import { Sidebar } from '@components';
 import { Navbar } from '@components';
 
 import { MainContent } from './Layout.styles';
-import { LayoutProps } from './Layout.types';
 
-const Layout: React.FC<LayoutProps> = () => (
+export const Layout = () => (
     <Box sx={{ display: 'flex' }}>
         <Navbar />
         <Sidebar />
@@ -17,4 +16,3 @@ const Layout: React.FC<LayoutProps> = () => (
         </MainContent>
     </Box>
 );
-export default Layout;

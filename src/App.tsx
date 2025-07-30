@@ -6,7 +6,7 @@ import { routes } from './routes/router';
 
 const router = createBrowserRouter(routes);
 
-const App: React.FC = () => (
+const App = () => (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
         <RouterProvider router={router} />
     </ErrorBoundary>

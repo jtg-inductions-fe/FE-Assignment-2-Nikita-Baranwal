@@ -4,7 +4,7 @@ import { StyledAppBar } from './Navbar.styles';
 import { NavbarProps } from './Navbar.types';
 import { useTopNav } from '../../container/Navbar.container';
 
-const Navbar: React.FC<NavbarProps> = (props) => {
+export const Navbar = (props: NavbarProps) => {
     const { title } = useTopNav(props);
 
     return (
@@ -17,5 +17,3 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         </StyledAppBar>
     );
 };
-
-export default Navbar;
