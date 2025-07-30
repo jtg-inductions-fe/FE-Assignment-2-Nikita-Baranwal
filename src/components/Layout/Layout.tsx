@@ -1,11 +1,9 @@
 import { Outlet, useMatches } from 'react-router-dom';
 
-import { Box } from '@mui/material';
-
 import { Sidebar } from '@components';
 import { Navbar } from '@components';
 
-import { MainContent } from './Layout.styles';
+import { AppContainer, ContentWrapper, MainContent } from './Layout.styles';
 import { NotFoundError } from '../../pages/NotFound';
 
 const Layout: React.FC = () => {
@@ -13,13 +11,15 @@ const Layout: React.FC = () => {
     const isErrorPage = matches.some((match) => match.handle?.hideSidebar);
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <AppContainer>
             <Navbar />
-            {!isErrorPage && <Sidebar />}
-            <MainContent>
-                {isErrorPage ? <NotFoundError /> : <Outlet />}
-            </MainContent>
-        </Box>
+            <ContentWrapper>
+                {!isErrorPage && <Sidebar />}
+                <MainContent>
+                    {isErrorPage ? <NotFoundError /> : <Outlet />}
+                </MainContent>
+            </ContentWrapper>
+        </AppContainer>
     );
 };
 

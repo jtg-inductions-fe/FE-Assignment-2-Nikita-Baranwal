@@ -9,6 +9,7 @@ export const ErrorContainer = styled(Box)(({ theme }) => ({
     textAlign: 'center',
     gap: theme.typography.pxToRem(16),
     maxWidth: theme.typography.pxToRem(360),
+    marginTop: '64px',
 
     [theme.breakpoints.up('sm')]: {
         padding: theme.typography.pxToRem(48),

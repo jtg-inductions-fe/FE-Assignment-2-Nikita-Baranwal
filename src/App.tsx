@@ -1,4 +1,3 @@
-// import { ErrorFallback } from 'pages/Errors/ErrorFallback';
 import { ErrorFallback } from 'pages/ErrorFallback';
 import { ErrorBoundary } from 'react-error-boundary';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
