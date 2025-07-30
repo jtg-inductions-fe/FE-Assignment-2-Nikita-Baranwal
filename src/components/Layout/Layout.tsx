@@ -1,22 +1,25 @@
+import { JSX } from 'react';
+
 import { Outlet, useMatches } from 'react-router-dom';
 
+import { Box } from '@mui/material';
+
 import { Sidebar } from '@components';
-import { Navbar } from '@components';
 
 import { AppContainer, ContentWrapper, MainContent } from './Layout.styles';
 import { NotFoundError } from '../../pages/NotFound';
 
-const Layout: React.FC = () => {
+export const Layout = ({ navBar }: { navBar: JSX.Element }) => {
     const matches = useMatches();
     const isErrorPage = matches.some((match) => match.handle?.hideSidebar);
 
     return (
-<<<<<<< HEAD
         <AppContainer>
-=======
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
->>>>>>> 45e4d73 (NB-A2-02: Basic layout implemented)
-            <Navbar />
+            <Box
+                sx={{ width: '100%', height: '100px', backgroundColor: 'red' }}
+            >
+                {navBar}
+            </Box>
             <ContentWrapper>
                 {!isErrorPage && <Sidebar />}
                 <MainContent>
@@ -26,5 +29,3 @@ const Layout: React.FC = () => {
         </AppContainer>
     );
 };
-
-export default Layout;

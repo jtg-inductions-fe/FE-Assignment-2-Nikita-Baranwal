@@ -24,7 +24,7 @@ import {
     searchBoxSx,
 } from './Navbar.styles';
 
-const Navbar: React.FC = () => {
+export const Navbar = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const { anchorEl, handleAvatarClick, handleMenuClose } = useNavbar();

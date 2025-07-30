@@ -7,7 +7,7 @@ import { ErrorFallback, NotFound } from '@pages/Errors';
 export const routes: RouteObject[] = [
     {
         path: '/',
-        element: <Layout />,
+        element: <Layout navBar={<Navbar />} />,
         errorElement: <ErrorFallback />,
         children: [
             {
