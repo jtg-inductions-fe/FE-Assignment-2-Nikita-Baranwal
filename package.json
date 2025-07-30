@@ -23,6 +23,7 @@
         "react-dom": "19.0.0",
         "react-error-boundary": "^6.0.0",
         "react-router-dom": "^7.7.1",
+        "tss-react": "^4.9.19",
         "yarn": "^1.22.22"
     },
     "devDependencies": {

@@ -2,14 +2,14 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const ErrorContainer = styled(Box)(({ theme }) => ({
-    minHeight: '507px',
+    minHeight: theme.typography.pxToRem(507),
     margin: 'auto',
     ...theme.mixins.flex('center', 'center', 'column'),
     backgroundColor: theme.palette.background.default,
     textAlign: 'center',
     gap: theme.typography.pxToRem(16),
     maxWidth: theme.typography.pxToRem(360),
-    marginTop: '64px',
+    marginTop: theme.typography.pxToRem(64),
 
     [theme.breakpoints.up('sm')]: {
         padding: theme.typography.pxToRem(48),
@@ -17,7 +17,7 @@ export const ErrorContainer = styled(Box)(({ theme }) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-        minHeight: '681px',
+        minHeight: theme.typography.pxToRem(681),
         padding: theme.typography.pxToRem(48),
         maxWidth: theme.typography.pxToRem(1440),
     },

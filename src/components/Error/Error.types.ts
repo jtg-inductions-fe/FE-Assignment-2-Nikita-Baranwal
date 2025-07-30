@@ -1,7 +1,5 @@
+import { ERROR_TYPES } from './Error.constants';
+
 export type ErrorTemplateProps = {
-    info: {
-        src: string;
-        title: string;
-        description: string;
-    };
+    variant: (typeof ERROR_TYPES)[keyof typeof ERROR_TYPES];
 };

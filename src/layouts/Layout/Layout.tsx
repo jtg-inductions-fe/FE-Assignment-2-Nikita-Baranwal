@@ -1,17 +1,31 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useMatches } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { Navbar, Sidebar } from '@components/index';
+import { Navbar, Sidebar } from '@components';
 
-import { MainContent } from './Layout.styles';
+import { AppContainer, ContentWrapper, MainContent } from './Layout.styles';
+import { RouteHandle } from './Layout.types';
+import { NotFoundError } from '../../pages/NotFound';
 
-export const Layout = () => (
-    <Box display="flex">
-        <Navbar />
-        <Sidebar />
-        <MainContent>
-            <Outlet />
-        </MainContent>
-    </Box>
-);
+export const Layout = () => {
+    const matches = useMatches() as RouteHandle[];
+
+    const isErrorPage = matches.some((match) => match.handle?.hideSidebar);
+
+    return (
+        <AppContainer>
+            <Box sx={{ height: '64px', width: '100%' }}>
+                <Navbar />
+            </Box>
+            <ContentWrapper>
+                <Box>{!isErrorPage && <Sidebar />}</Box>
+                <Box>
+                    <MainContent>
+                        {isErrorPage ? <NotFoundError /> : <Outlet />}
+                    </MainContent>
+                </Box>
+            </ContentWrapper>
+        </AppContainer>
+    );
+};
