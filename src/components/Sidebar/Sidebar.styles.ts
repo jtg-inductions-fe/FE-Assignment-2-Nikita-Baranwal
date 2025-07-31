@@ -1,7 +1,4 @@
-import { Drawer, drawerClasses } from '@mui/material';
-import { styled } from '@mui/material/styles';
-
-import { NAVBAR_HEIGHT, SIDEBAR_WIDTH } from '@constant/common.constant';
+import { SxProps, Theme } from '@mui/material';
 
 export const StyledDrawer = styled(Drawer)(
     ({
@@ -22,7 +19,7 @@ export const StyledDrawer = styled(Drawer)(
         [`& .${drawerClasses.paper}`]: {
             width: pxToRem(280),
             boxSizing: 'border-box',
-            top: pxToRem(NAVBAR_HEIGHT),
+            top: pxToRem(64),
         },
     }),
 );

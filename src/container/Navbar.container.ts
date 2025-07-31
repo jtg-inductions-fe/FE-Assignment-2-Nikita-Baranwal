@@ -1,22 +1,14 @@
 import { useState } from 'react';
 
-import { UserData } from 'data/UserData/UserData';
-
 export const useNavbar = () => {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const handleAvatarClick = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
+    const toggleDrawer = () => {
+        setDrawerOpen((prev) => !prev);
     };
 
     return {
-        anchorEl,
-        handleAvatarClick,
-        handleMenuClose,
-        user: UserData[0],
+        drawerOpen,
+        toggleDrawer,
     };
 };

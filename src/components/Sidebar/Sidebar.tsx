@@ -6,6 +6,7 @@ import {
     useTheme,
 } from '@mui/material';
 
+import { drawerStyles, sidebarContentStyles } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
 
 export const Sidebar = ({ open, onClose }: SidebarProps) => {
@@ -19,17 +20,9 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
             onClose={onClose}
             anchor="left"
             ModalProps={{ keepMounted: true }}
-            sx={{
-                display: 'block',
-                '& .MuiDrawer-paper': {
-                    backgroundColor: 'pink',
-                    width: 280,
-                    boxSizing: 'border-box',
-                    top: '64px',
-                },
-            }}
+            sx={drawerStyles}
         >
-            <Box sx={{ p: 2 }}>
+            <Box sx={sidebarContentStyles}>
                 <Typography variant="h6">Sidebar</Typography>
             </Box>
         </Drawer>

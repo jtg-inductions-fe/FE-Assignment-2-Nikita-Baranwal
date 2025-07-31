@@ -1,1 +1,2 @@
-export { Layout } from './Layout';
+export { MainLayout } from './PageLayout/MainLayout';
+export { ErrorLayout } from './PageLayout/ErrorLayout';

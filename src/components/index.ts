@@ -1,3 +1,4 @@
-export { Navbar } from './Navbar';
-export { Sidebar } from './Sidebar';
-export { Button } from './Button';
+export { Navbar } from './Navbar/Navbar';
+export { Sidebar } from './Sidebar/Sidebar';
+export { UserAvatarMenu } from './UserAvatarMenu/UserAvatarMenu';
+export { RedirectButton } from './RedirectButton/RedirectButton';

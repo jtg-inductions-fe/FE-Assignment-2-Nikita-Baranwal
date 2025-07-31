@@ -1,41 +1,112 @@
-import { SxProps, Theme } from '@mui/material';
+import { AppBar, Box, IconButton, TextField, Toolbar } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-export const appBarSx: SxProps<Theme> = (theme) => {
-    const { zIndex, typography } = theme;
-    const { pxToRem } = typography;
-
+export const StyledAppBar = styled(AppBar)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        zIndex,
+        palette,
+    } = theme;
     return {
+        backgroundColor: palette.common.white,
         zIndex: zIndex.drawer + 1,
         height: pxToRem(64),
-        backgroundColor: 'grey',
     };
-};
+});
 
-export const logoSx: SxProps<Theme> = {
-    height: 35,
-    width: 'auto',
-};
-
-export const avatarSx: SxProps<Theme> = (theme) => {
-    const { pxToRem } = theme.typography;
-
+export const StyledTextField = styled(TextField)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        palette,
+    } = theme;
     return {
-        height: pxToRem(35),
-        width: 'auto',
-        marginLeft: 0,
+        backgroundColor: palette.background.default,
+        borderRadius: pxToRem(16),
+        border: `1px solid ${palette.grey[50]}`,
+        '& .MuiOutlinedInput-root': {
+            borderRadius: pxToRem(16),
+            '& fieldset': {
+                borderColor: palette.divider,
+            },
+            '&:hover fieldset': {
+                borderColor: palette.grey[500],
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: palette.grey[500],
+                borderWidth: 2,
+            },
+        },
+    };
+});
+
+export const StyledToolbar = styled(Toolbar)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        mixins,
+    } = theme;
+    return {
+        ...mixins.flex('space-between', 'center'),
+        height: pxToRem(64),
+    };
+});
+
+export const LeftBox = styled(Box)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        mixins,
+    } = theme;
+    return {
+        ...mixins.flex('flex-start', 'center'),
+        gap: pxToRem(32),
+    };
+});
+
+export const StyledMenuIconButton = styled(IconButton)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        palette,
+        spacing,
+    } = theme;
+    return {
+        marginRight: spacing(2),
+        color: palette.grey[900],
+        margin: 0,
         padding: 0,
+        fontSize: pxToRem(30),
     };
-};
+});
 
-export const searchBoxSx: SxProps<Theme> = (theme) => {
-    const { spacing } = theme;
-
+export const StyledLogo = styled('img')(({ theme }) => {
+    const {
+        typography: { pxToRem },
+    } = theme;
     return {
-        paddingLeft: spacing(1),
+        height: pxToRem(40),
+        width: 'auto',
+        cursor: 'pointer',
     };
-};
+});
 
-export const menuIconSx: SxProps<Theme> = {
-    marginRight: 0,
-    marginLeft: 0,
-};
+export const RightBox = styled(Box)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        mixins,
+    } = theme;
+    return {
+        ...mixins.flex('flex-start', 'center'),
+        gap: pxToRem(8),
+    };
+});
+
+export const StyledNotificationButton = styled(IconButton)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        palette,
+        spacing,
+    } = theme;
+    return {
+        marginRight: spacing(1),
+        color: palette.grey[900],
+        fontSize: pxToRem(24),
+    };
+});

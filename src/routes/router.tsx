@@ -1,23 +1,30 @@
 import { RouteObject } from 'react-router-dom';
 
-import { Layout } from '@layouts/index';
+import { ErrorLayout } from '@layouts/PageLayout/ErrorLayout';
+import { MainLayout } from '@layouts/PageLayout/MainLayout';
 import { Dashboard } from '@pages/Dashboard';
-import { ErrorFallback, NotFound } from '@pages/Errors';
+import { ErrorFallback } from '@pages/ErrorFallback';
+import { NotFoundError } from '@pages/NotFound';
 
 export const routes: RouteObject[] = [
     {
         path: '/',
-        element: <Layout />,
+        element: <MainLayout />,
         errorElement: <ErrorFallback />,
         children: [
             {
                 index: true,
                 element: <Dashboard />,
             },
+        ],
+    },
+    {
+        path: '*',
+        element: <ErrorLayout />,
+        children: [
             {
                 path: '*',
-                element: <NotFound />,
-                handle: { hideSidebar: true },
+                element: <NotFoundError />,
             },
         ],
     },
