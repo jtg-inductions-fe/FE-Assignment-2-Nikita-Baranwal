@@ -1,7 +1,15 @@
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+    Box,
+    Divider,
+    Drawer,
+    List,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material';
 
-import { StyledDrawer } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
+import { SidebarItem } from './SidebarItem';
+import { sidebarFooterItems, sidebarItems } from './SidebarMenu';
 
 export const Sidebar = ({ open, onClose }: SidebarProps) => {
     const theme = useTheme();
@@ -13,10 +21,42 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
             anchor="left"
             onClose={onClose}
             ModalProps={{ keepMounted: true }}
-            variant={isMobile ? 'temporary' : 'permanent'}
+            sx={{
+                '& .MuiDrawer-paper': {
+                    width: 280,
+                    height: '93vh',
+                    boxSizing: 'border-box',
+                    marginTop: '64px',
+                },
+            }}
         >
-            <Box padding={2}>
-                <Typography variant="h6">Sidebar</Typography>
+            <Box
+                sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                }}
+            >
+                <List component="nav" sx={{ flexGrow: 1 }}>
+                    {sidebarItems.map((item) => (
+                        <SidebarItem key={item.title} item={item} />
+                    ))}
+                </List>
+
+                <Divider />
+
+                <List sx={{ display: 'flex', justifyContent: 'center', p: 3 }}>
+                    {sidebarFooterItems.map((item, index) => {
+                        const Icon = item.icon;
+                        return (
+                            <Icon
+                                key={index}
+                                sx={{ mx: 1, cursor: 'pointer' }}
+                            />
+                        );
+                    })}
+                </List>
             </Box>
         </StyledDrawer>
     );
