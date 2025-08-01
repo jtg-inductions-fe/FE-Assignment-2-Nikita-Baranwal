@@ -19,6 +19,10 @@ export const routes: RouteObject[] = [
         ],
     },
     {
+        path: '/server-error',
+        element: <ErrorFallback />,
+    },
+    {
         path: '*',
         element: <ErrorLayout />,
         children: [
