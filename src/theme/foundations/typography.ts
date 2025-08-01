@@ -4,41 +4,102 @@ import type {
     TypographyUtils,
 } from '@mui/material/styles/createTypography';
 
-import { HTML_FONT_SIZE } from '@constant';
+import { HTML_FONT_SIZE } from '@constant/index';
 
 /* Custom px to rem function */
 const typographyUtil: TypographyUtils = {
-    /**
-     * Converts a pixel value to rem units.
-     * @param px - The pixel value to convert.
-     * @returns The equivalent value in rem units as a string.
-     */
-    pxToRem: (px: number) => `${px / HTML_FONT_SIZE}` + 'rem',
+    pxToRem: (px: number) => `${px / HTML_FONT_SIZE}rem`,
 };
 
-// TODO: Add the necessary typographies here.
+const { pxToRem } = typographyUtil;
+
 /**
- * Creates a typography block with various styles
- * @param theme - Theme object to access the breakpoints.
- * @returns The function returns a TypographyOptions object, which includes various typography settings,
+ * Creates a typography block with various styles using MUI grey shades
  */
-const typographyStyle = (theme: Theme): TypographyOptions => ({
+const typographyStyle = ({
+    breakpoints,
+    palette,
+}: Theme): TypographyOptions => ({
     fontFamily: 'Inter',
     htmlFontSize: HTML_FONT_SIZE,
-
     fontWeightLight: 400,
     fontWeightRegular: 500,
     fontWeightMedium: 600,
 
     h1: {
-        fontSize: typographyUtil.pxToRem(30),
+        fontSize: pxToRem(30),
         fontWeight: 700,
-        lineHeight: typographyUtil.pxToRem(45),
-
-        [theme.breakpoints.up('md')]: {
-            fontSize: typographyUtil.pxToRem(48),
-            lineHeight: typographyUtil.pxToRem(62.5),
+        lineHeight: 1.5,
+        color: palette.grey[900],
+        [breakpoints.up('md')]: {
+            fontSize: pxToRem(48),
+            lineHeight: 1.5,
         },
+    },
+
+    h2: {
+        fontSize: pxToRem(20),
+        fontWeight: 600,
+        lineHeight: 1.5,
+        color: palette.grey[900],
+    },
+
+    h3: {
+        fontSize: pxToRem(16),
+        fontWeight: 600,
+        lineHeight: 1.5,
+        color: palette.grey[900],
+    },
+
+    h4: {
+        fontSize: pxToRem(16),
+        fontWeight: 500,
+        lineHeight: 1.5,
+        color: palette.grey[900],
+    },
+
+    body1: {
+        fontSize: pxToRem(16),
+        fontWeight: 400,
+        lineHeight: 1.5,
+        color: palette.grey[500],
+    },
+
+    body2: {
+        fontSize: pxToRem(14),
+        fontWeight: 400,
+        lineHeight: 1.5,
+        color: palette.grey[500],
+    },
+
+    subtitle1: {
+        fontSize: pxToRem(12),
+        fontWeight: 600,
+        lineHeight: 1.5,
+        color: palette.grey[500],
+    },
+
+    subtitle2: {
+        fontSize: pxToRem(14),
+        fontWeight: 600,
+        lineHeight: 1.5,
+        color: palette.grey[500],
+    },
+
+    caption: {
+        fontSize: pxToRem(12),
+        fontWeight: 400,
+        lineHeight: 1.5,
+        color: palette.grey[500],
+    },
+
+    button: {
+        fontSize: pxToRem(14),
+        fontWeight: 600,
+        lineHeight: 1.5,
+        color: palette.common.white,
+        padding: `${pxToRem(9)} ${pxToRem(17)}`,
+        borderRadius: pxToRem(12),
     },
 });
 

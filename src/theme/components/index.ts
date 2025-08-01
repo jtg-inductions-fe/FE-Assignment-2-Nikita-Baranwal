@@ -1,28 +1,43 @@
 import type { Components } from '@mui/material/styles';
 
-// Local Font files
-import InterRegularTTF from '@assets/fonts/inter/inter-regular.ttf';
-import InterRegularWOFF2 from '@assets/fonts/inter/inter-regular.woff2';
+import { interFonts } from '@assets/fonts/inter';
 
-// TODO: Add necessary font face declarations here
-const fontFaceDeclarations = `
-       @font-face {
-        font-display: swap; 
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        src: url(${InterRegularWOFF2}) format('woff2'), 
-        url(${InterRegularTTF}) format('truetype');
-      };
-    `;
+// Create an array of Inter font variations with corresponding font weights
+const interFontFaces = [
+    { weight: 400, font: interFonts.regular },
+    { weight: 500, font: interFonts.medium },
+    { weight: 600, font: interFonts.semibold },
+    { weight: 700, font: interFonts.bold },
+];
 
+// Define global component overrides
 export const components: Components = {
     MuiCssBaseline: {
-        styleOverrides: {
-            html: {
-                fontSize: '62.5%',
-            },
-            fontFaceDeclarations,
-        },
+        // Apply global styles using MUI's CssBaseline
+        styleOverrides: `
+      ${interFontFaces
+          // Dynamically generate @font-face rules for each Inter font weight
+          .map(
+              ({ weight, font }) => `
+        @font-face {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: ${weight};              
+          font-display: swap;                 // Ensures fallback font is shown while custom font loads
+          src: url(${font.woff2}) format('woff2'), 
+               url(${font.ttf}) format('truetype'); 
+        }
+      `,
+          )
+          .join('\n')}
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: 'Inter';
+      }
+    `,
     },
 };
