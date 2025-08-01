@@ -2,8 +2,7 @@ import type { TopProduct } from './TopProducts.types';
 
 /**
  * List of top-selling products with their associated technology stacks and sales numbers.
- **/
-
+ */
 export const topProductsData: TopProduct[] = [
     {
         name: 'Restaurant Booking App',

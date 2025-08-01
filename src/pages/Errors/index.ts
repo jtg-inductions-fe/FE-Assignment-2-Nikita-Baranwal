@@ -1,3 +1,3 @@
-export { ErrorFallback } from '@errors/ErrorFallback';
-export { NotAuthorized } from '@errors/NotAuthorized';
-export { NotFound } from '@errors/NotFound';
+export { ErrorFallback } from './ErrorFallback';
+export { NotAuthorized } from './NotAuthorized';
+export { NotFound } from './NotFound';

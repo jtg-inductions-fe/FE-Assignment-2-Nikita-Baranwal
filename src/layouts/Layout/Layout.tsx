@@ -2,13 +2,12 @@ import { Outlet } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { Sidebar } from '@components/index';
-import { Navbar } from '@components/index';
+import { Navbar, Sidebar } from '@components/index';
 
 import { MainContent } from './Layout.styles';
 
 export const Layout = () => (
-    <Box display={'flex'}>
+    <Box display="flex">
         <Navbar />
         <Sidebar />
         <MainContent>

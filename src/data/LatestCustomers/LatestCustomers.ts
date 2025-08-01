@@ -10,8 +10,7 @@ import type { LatestCustomer } from './LatestCustomers.types';
 /**
  * Array of latest customer data entries to be displayed in the dashboard.
  * Each customer object includes name, email, purchase amount, and avatar image.
- **/
-
+ */
 export const latestCustomersData: LatestCustomer[] = [
     {
         name: 'Neil Sims',

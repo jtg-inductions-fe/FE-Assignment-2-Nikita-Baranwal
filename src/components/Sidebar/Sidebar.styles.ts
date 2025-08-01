@@ -1,6 +1,8 @@
 import { Drawer, drawerClasses } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+import { NAVBAR_HEIGHT, SIDEBAR_WIDTH } from '@constant/common.constant';
+
 export const StyledDrawer = styled(Drawer)(({ theme }) => {
     const { typography } = theme;
     const { pxToRem } = typography;
@@ -12,13 +14,13 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
             display: 'block',
         },
 
-        width: pxToRem(280),
+        width: pxToRem(SIDEBAR_WIDTH),
         flexShrink: 0,
 
         [`& .${drawerClasses.paper}`]: {
             width: pxToRem(280),
             boxSizing: 'border-box',
-            top: pxToRem(64),
+            top: pxToRem(NAVBAR_HEIGHT),
         },
     };
 });
