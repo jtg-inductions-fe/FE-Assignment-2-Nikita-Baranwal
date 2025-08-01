@@ -7,7 +7,7 @@ import { routes } from './routes/router';
 const router = createBrowserRouter(routes);
 
 export const App = () => (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
+    <ErrorBoundary fallbackRender={ErrorFallback}>
         <RouterProvider router={router} />
     </ErrorBoundary>
 );

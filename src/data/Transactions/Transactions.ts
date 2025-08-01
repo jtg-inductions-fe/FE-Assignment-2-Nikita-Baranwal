@@ -3,9 +3,7 @@ import { Transaction } from './Transactions.types';
 /**
  * List of recent financial transactions, including payments, refunds, and failed attempts.
  * Each transaction includes user details, type, date, amount, and status.
- *
- * @type {Transaction[]}
- */
+ **/
 
 export const transactionsData: Transaction[] = [
     {

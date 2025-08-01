@@ -8,7 +8,7 @@ import { Navbar } from '@components/index';
 import { MainContent } from './Layout.styles';
 
 export const Layout = () => (
-    <Box sx={{ display: 'flex' }}>
+    <Box display={'flex'}>
         <Navbar />
         <Sidebar />
         <MainContent>

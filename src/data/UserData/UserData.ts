@@ -2,9 +2,7 @@ import type { User } from './UserData.types';
 
 /**
  * A list of user information including name and email.
- *
- * @type {User[]}
- */
+ **/
 
 export const UserData: User[] = [
     {

@@ -1,4 +1,3 @@
-import { grey } from '@mui/material/colors';
 import type { Theme } from '@mui/material/styles';
 import type {
     TypographyOptions,
@@ -31,7 +30,7 @@ const typographyStyle = ({
         fontSize: pxToRem(30),
         fontWeight: 700,
         lineHeight: 1.5,
-        color: grey[900],
+        color: palette.grey[900],
         [breakpoints.up('md')]: {
             fontSize: pxToRem(48),
             lineHeight: 1.5,
@@ -42,56 +41,56 @@ const typographyStyle = ({
         fontSize: pxToRem(20),
         fontWeight: 600,
         lineHeight: 1.5,
-        color: grey[900],
+        color: palette.grey[900],
     },
 
     h3: {
         fontSize: pxToRem(16),
         fontWeight: 600,
         lineHeight: 1.5,
-        color: grey[900],
+        color: palette.grey[900],
     },
 
     h4: {
         fontSize: pxToRem(16),
         fontWeight: 500,
         lineHeight: 1.5,
-        color: grey[900],
+        color: palette.grey[900],
     },
 
     body1: {
         fontSize: pxToRem(16),
         fontWeight: 400,
         lineHeight: 1.5,
-        color: grey[500],
+        color: palette.grey[500],
     },
 
     body2: {
         fontSize: pxToRem(14),
         fontWeight: 400,
         lineHeight: 1.5,
-        color: grey[500],
+        color: palette.grey[500],
     },
 
     subtitle1: {
         fontSize: pxToRem(12),
         fontWeight: 600,
         lineHeight: 1.5,
-        color: grey[500],
+        color: palette.grey[500],
     },
 
     subtitle2: {
         fontSize: pxToRem(14),
         fontWeight: 600,
         lineHeight: 1.5,
-        color: grey[500],
+        color: palette.grey[500],
     },
 
     caption: {
         fontSize: pxToRem(12),
         fontWeight: 400,
         lineHeight: 1.5,
-        color: grey[500],
+        color: palette.grey[500],
     },
 
     button: {
