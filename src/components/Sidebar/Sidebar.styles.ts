@@ -15,6 +15,10 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
             backgroundColor: palette.background.default,
             width: pxToRem(SIDEBAR_WIDTH),
             top: pxToRem(NAVBAR_HEIGHT),
+            width: pxToRem(260),
+            boxSizing: 'border-box',
+            position: 'static',
+            height: '100vh',
         },
     };
 });
