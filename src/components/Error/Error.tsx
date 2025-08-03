@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-import { RedirectButton } from '@components';
+import { Button } from '@components/Button';
 
 import { ERROR_CONFIG, ERROR_TYPES } from './Error.constants';
 import {
@@ -29,7 +29,7 @@ export const ErrorTemplate = ({ variant }: ErrorTemplateProps) => {
                         {config.description}
                     </Typography>
                 </ErrorContainerOverviewTitle>
-                <RedirectButton to="/" label="Go back home" />
+                <Button to="/" text="Go back home" />
             </ErrorContainerOverview>
         </ErrorContainer>
     );

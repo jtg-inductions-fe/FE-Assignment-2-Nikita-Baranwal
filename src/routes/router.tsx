@@ -1,9 +1,9 @@
 import { RouteObject } from 'react-router-dom';
 
-import { Layout } from '../layouts/Layout/Layout';
+import { ErrorFallback, NotFound } from '@pages/Errors';
+
+import { Layout } from '../layouts/MainLayout/Layout';
 import { Dashboard } from '../pages/Dashboard';
-import { ErrorFallback } from '../pages/ErrorFallback';
-import { NotFoundError } from '../pages/NotFound';
 
 export const routes: RouteObject[] = [
     {
@@ -17,7 +17,7 @@ export const routes: RouteObject[] = [
             },
             {
                 path: '*',
-                element: <NotFoundError />,
+                element: <NotFound />,
                 handle: { hideSidebar: true },
             },
         ],

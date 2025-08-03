@@ -1,10 +1,9 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-export const AppContainer = styled(Box)({
-    display: 'flex',
-    flexDirection: 'column',
-});
+export const AppContainer = styled(Box)(({ theme }) => ({
+    ...theme.mixins.flex('center', 'center', 'column'),
+}));
 
 export const MainContent = styled(Box)(({ theme }) => ({
     ...theme.mixins.flex('center', 'center', 'column'),

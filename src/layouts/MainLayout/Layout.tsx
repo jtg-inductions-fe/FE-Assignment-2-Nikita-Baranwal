@@ -2,11 +2,11 @@ import { Outlet, useMatches } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { Navbar, Sidebar } from '@components';
+import { Navbar, Sidebar } from '@components/index';
+import { NotFound } from '@pages/Errors';
 
 import { AppContainer, ContentWrapper, MainContent } from './Layout.styles';
 import { RouteHandle } from './Layout.types';
-import { NotFoundError } from '../../pages/NotFound';
 
 export const Layout = () => {
     const matches = useMatches() as RouteHandle[];
@@ -22,7 +22,7 @@ export const Layout = () => {
                 <Box>{!isErrorPage && <Sidebar />}</Box>
                 <Box>
                     <MainContent>
-                        {isErrorPage ? <NotFoundError /> : <Outlet />}
+                        {isErrorPage ? <NotFound /> : <Outlet />}
                     </MainContent>
                 </Box>
             </ContentWrapper>
