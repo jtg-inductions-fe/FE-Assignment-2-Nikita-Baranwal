@@ -1,49 +1,57 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-export const ErrorContainer = styled(Box)(({ theme }) => ({
-    minHeight: theme.typography.pxToRem(507),
-    margin: 'auto',
-    ...theme.mixins.flex('center', 'center', 'column'),
-    backgroundColor: theme.palette.background.default,
-    textAlign: 'center',
-    gap: theme.typography.pxToRem(16),
-    maxWidth: theme.typography.pxToRem(360),
-    marginTop: theme.typography.pxToRem(64),
+export const ErrorContainer = styled(Box)(
+    ({ theme: { typography, mixins, palette, breakpoints } }) => ({
+        minHeight: typography.pxToRem(507),
+        margin: 'auto',
+        ...mixins.flex('center', 'center', 'column'),
+        backgroundColor: palette.background.default,
+        textAlign: 'center',
+        gap: typography.pxToRem(16),
+        maxWidth: typography.pxToRem(360),
+        marginTop: typography.pxToRem(64),
 
-    [theme.breakpoints.up('sm')]: {
-        padding: theme.typography.pxToRem(48),
-        maxWidth: theme.typography.pxToRem(728),
-    },
+        [breakpoints.up('sm')]: {
+            padding: typography.pxToRem(48),
+            maxWidth: typography.pxToRem(728),
+        },
 
-    [theme.breakpoints.up('lg')]: {
-        minHeight: theme.typography.pxToRem(681),
-        padding: theme.typography.pxToRem(48),
-        maxWidth: theme.typography.pxToRem(1440),
-    },
-}));
+        [breakpoints.up('lg')]: {
+            minHeight: typography.pxToRem(681),
+            padding: typography.pxToRem(48),
+            maxWidth: typography.pxToRem(1440),
+        },
+    }),
+);
 
-export const ErrorContainerOverview = styled(Box)(({ theme }) => ({
-    ...theme.mixins.flex('center', 'center', 'column'),
-    backgroundColor: theme.palette.background.default,
-    textAlign: 'center',
-    gap: theme.typography.pxToRem(22),
-    padding: theme.typography.pxToRem(16),
-}));
+export const ErrorContainerOverview = styled(Box)(
+    ({ theme: { mixins, palette, typography } }) => ({
+        ...mixins.flex('center', 'center', 'column'),
+        backgroundColor: palette.background.default,
+        textAlign: 'center',
+        gap: typography.pxToRem(22),
+        padding: typography.pxToRem(16),
+    }),
+);
 
-export const ErrorContainerOverviewTitle = styled(Box)(({ theme }) => ({
-    ...theme.mixins.flex('center', 'center', 'column'),
-    backgroundColor: theme.palette.background.default,
-    textAlign: 'center',
-    gap: theme.typography.pxToRem(10),
-}));
+export const ErrorContainerOverviewTitle = styled(Box)(
+    ({ theme: { mixins, palette, typography } }) => ({
+        ...mixins.flex('center', 'center', 'column'),
+        backgroundColor: palette.background.default,
+        textAlign: 'center',
+        gap: typography.pxToRem(10),
+    }),
+);
 
-export const ErrorImage = styled('img')(({ theme }) => ({
-    maxWidth: theme.typography.pxToRem(360),
-    height: 'auto',
-    width: '100%',
+export const ErrorImage = styled('img')(
+    ({ theme: { typography, breakpoints } }) => ({
+        maxWidth: typography.pxToRem(360),
+        height: 'auto',
+        width: '100%',
 
-    [theme.breakpoints.up('lg')]: {
-        maxWidth: theme.typography.pxToRem(500),
-    },
-}));
+        [breakpoints.up('lg')]: {
+            maxWidth: typography.pxToRem(500),
+        },
+    }),
+);

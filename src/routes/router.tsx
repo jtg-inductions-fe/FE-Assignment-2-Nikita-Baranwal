@@ -1,9 +1,8 @@
 import { RouteObject } from 'react-router-dom';
 
+import { Layout } from '@layouts/index';
+import { Dashboard } from '@pages/Dashboard';
 import { ErrorFallback, NotFound } from '@pages/Errors';
-
-import { Layout } from '../layouts/MainLayout/Layout';
-import { Dashboard } from '../pages/Dashboard';
 
 export const routes: RouteObject[] = [
     {
