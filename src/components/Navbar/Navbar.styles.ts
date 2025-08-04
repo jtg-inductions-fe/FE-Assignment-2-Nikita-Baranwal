@@ -1,6 +1,8 @@
 import { AppBar, Box, IconButton, TextField, Toolbar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+import { NAVBAR_HEIGHT } from '@constant/common.constant';
+
 export const StyledAppBar = styled(AppBar)(({ theme }) => {
     const {
         typography: { pxToRem },
@@ -10,7 +12,7 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => {
     return {
         backgroundColor: palette.common.white,
         zIndex: zIndex.drawer + 1,
-        height: pxToRem(64),
+        height: pxToRem(NAVBAR_HEIGHT),
     };
 });
 
@@ -46,7 +48,7 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => {
     } = theme;
     return {
         ...mixins.flex('space-between', 'center'),
-        height: pxToRem(64),
+        height: pxToRem(NAVBAR_HEIGHT),
     };
 });
 

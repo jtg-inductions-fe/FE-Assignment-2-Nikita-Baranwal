@@ -19,7 +19,7 @@ export const StyledDrawer = styled(Drawer)(
         [`& .${drawerClasses.paper}`]: {
             width: pxToRem(280),
             boxSizing: 'border-box',
-            top: pxToRem(64),
+            top: pxToRem(NAVBAR_HEIGHT),
         },
     }),
 );
