@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { topProductsData } from 'data/TopProducts/TopProducts';
 import { UserData } from 'data/UserData/UserData';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -32,6 +32,12 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
     const navigate = useNavigate();
 
     const [user] = useState(UserData[0]);
+    const location = useLocation();
+    const [inputValue, setInputValue] = useState('');
+
+    useEffect(() => {
+        setInputValue('');
+    }, [location]);
 
     const goToNotFound = () => {
         void navigate('/404');
@@ -55,6 +61,10 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                     {!isMobile && (
                         <Autocomplete
                             freeSolo
+                            inputValue={inputValue}
+                            onInputChange={(_, newInputValue) => {
+                                setInputValue(newInputValue);
+                            }}
                             options={topProductsData}
                             getOptionLabel={(option) =>
                                 typeof option === 'string'
@@ -63,10 +73,10 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                             }
                             onChange={(_, value) => {
                                 if (value && typeof value !== 'string') {
-                                    const route = `/product/${value.name
-                                        .toLowerCase()
-                                        .replace(/\s+/g, '-')}`;
+                                    const route = `/product/${value.name.toLowerCase().replace(/\s+/g, '-')}`;
                                     void navigate(route);
+                                } else {
+                                    void navigate('/404');
                                 }
                             }}
                             sx={{ width: 400 }}
