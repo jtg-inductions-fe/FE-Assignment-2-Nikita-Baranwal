@@ -1,4 +1,4 @@
-import { ErrorTemplate } from '@components/Error';
-import { ERROR_TYPES } from '@components/Error/Error.constants';
+import { ERROR_TYPES, ErrorTemplate } from '@components/Error';
 
+export const NotFound = () => <ErrorTemplate variant={ERROR_TYPES.NOT_FOUND} />;
 export const NotFound = () => <ErrorTemplate variant={ERROR_TYPES.NOT_FOUND} />;

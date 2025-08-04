@@ -1,25 +1,28 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+import { NAVBAR_HEIGHT } from '@constant/common.constant';
+
 export const AppContainer = styled(Box)(({ theme }) => {
     const { mixins } = theme;
+
     return {
         ...mixins.flex('center', 'center', 'column'),
     };
 });
 
 export const MainContent = styled(Box)(({ theme }) => {
-    const { mixins, spacing, typography } = theme;
-    const { pxToRem } = typography;
+    const { spacing, typography } = theme;
+
     return {
-        ...mixins.flex('center', 'center', 'column'),
         padding: spacing(3),
-        marginTop: pxToRem(64),
+        marginTop: typography.pxToRem(NAVBAR_HEIGHT),
     };
 });
 
 export const ContentWrapper = styled(Box)(({ theme }) => {
     const { mixins } = theme;
+
     return {
         width: 'auto',
         ...mixins.flex('row'),

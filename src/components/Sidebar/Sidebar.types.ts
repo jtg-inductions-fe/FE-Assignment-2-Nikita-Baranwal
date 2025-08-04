@@ -1,4 +1,7 @@
 export type SidebarProps = {
     open?: boolean;
-    onClose?: () => void;
+    onClose?: (
+        event: React.KeyboardEvent | React.MouseEvent,
+        reason: 'backdropClick' | 'escapeKeyDown',
+    ) => void;
 };

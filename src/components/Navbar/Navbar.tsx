@@ -34,7 +34,7 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
     const [user] = useState(UserData[0]);
 
     const goToNotFound = () => {
-        void navigate('*');
+        void navigate('/404');
     };
 
     return (
