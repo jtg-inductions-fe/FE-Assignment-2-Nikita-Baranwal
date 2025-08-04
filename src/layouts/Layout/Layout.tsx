@@ -18,12 +18,7 @@ export const Layout = () => {
 
     return (
         <AppContainer>
-            <Box
-                sx={(theme) => ({
-                    height: theme.typography.pxToRem(NAVBAR_HEIGHT),
-                    width: '100%',
-                })}
-            >
+            <Box height={NAVBAR_HEIGHT} width="100%">
                 <Navbar />
             </Box>
             <ContentWrapper>
