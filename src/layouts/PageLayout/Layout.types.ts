@@ -1,5 +1,8 @@
-export type LayoutProps = {
-    children?: React.ReactNode;
+import { ReactNode } from 'react';
+
+export type MainLayoutProps = {
+    useSidebar?: boolean;
+    children?: ReactNode;
 };
 
 export type RouteHandle = {

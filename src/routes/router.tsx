@@ -1,6 +1,5 @@
 import { RouteObject } from 'react-router-dom';
 
-import { ErrorLayout } from '@layouts/PageLayout/ErrorLayout';
 import { MainLayout } from '@layouts/PageLayout/MainLayout';
 import { Dashboard } from '@pages/Dashboard';
 import { ErrorFallback } from '@pages/ErrorFallback';
@@ -19,13 +18,13 @@ export const routes: RouteObject[] = [
         ],
     },
     {
-        path: '/server-error',
-        element: <ErrorFallback />,
-    },
-    {
         path: '*',
-        element: <ErrorLayout />,
+        element: <MainLayout useSidebar={false} />,
         children: [
+            {
+                path: 'server-error',
+                element: <ErrorFallback />,
+            },
             {
                 path: '*',
                 element: <NotFound />,
