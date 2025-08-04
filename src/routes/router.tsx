@@ -4,7 +4,7 @@ import { ErrorLayout } from '@layouts/PageLayout/ErrorLayout';
 import { MainLayout } from '@layouts/PageLayout/MainLayout';
 import { Dashboard } from '@pages/Dashboard';
 import { ErrorFallback } from '@pages/ErrorFallback';
-import { NotFoundError } from '@pages/NotFound';
+import { NotFound } from '@pages/Errors';
 
 export const routes: RouteObject[] = [
     {
@@ -28,7 +28,7 @@ export const routes: RouteObject[] = [
         children: [
             {
                 path: '*',
-                element: <NotFoundError />,
+                element: <NotFound />,
             },
         ],
     },

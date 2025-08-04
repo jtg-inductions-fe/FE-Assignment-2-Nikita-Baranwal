@@ -1,3 +1,3 @@
 export type NavbarProps = {
-    toggleDrawer: () => void;
+    toggleDrawer?: () => void;
 };

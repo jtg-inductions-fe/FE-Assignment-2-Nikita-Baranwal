@@ -1,6 +1,6 @@
 import { Box, IconButton, Menu, Typography } from '@mui/material';
 
-import { useUserAvatarMenu } from '@container';
+import { useUserAvatarMenu } from '@container/UserAvatarMenu.container';
 
 import { StyledAvatar } from './UserAvatarMenu.styles';
 import { Props } from './UserAvatarMenu.types';

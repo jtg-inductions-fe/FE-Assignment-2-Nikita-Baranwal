@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { Navbar } from '@components';
-import { useNavbar } from '@container';
+import { Navbar } from '@components/Navbar';
+import { useNavbar } from '@container/Navbar.container';
 
 export const ErrorLayout = () => {
     const { toggleDrawer } = useNavbar();

@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { Navbar, Sidebar } from '@components';
-import { useNavbar } from '@container';
+import { Navbar, Sidebar } from '@components/index';
+import { useNavbar } from '@container/Navbar.container';
 
 import { AppContainer, ContentWrapper, MainContent } from './Layout.styles';
 

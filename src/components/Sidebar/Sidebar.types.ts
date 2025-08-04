@@ -1,4 +1,4 @@
 export type SidebarProps = {
-    open: boolean;
-    onClose: () => void;
+    open?: boolean;
+    onClose?: () => void;
 };

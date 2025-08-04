@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import { UserAvatarMenu } from 'components/UserAvatarMenu/UserAvatarMenu';
-import { TopProductsData } from 'data/TopProducts/TopProducts';
+import { topProductsData } from 'data/TopProducts/TopProducts';
 import { UserData } from 'data/UserData/UserData';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +12,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 import avatar from '@assets/images/Avatar.png';
 import logo from '@assets/images/Logo.png';
+import { UserAvatarMenu } from '@components/UserAvatarMenu';
 
 import {
     LeftBox,
@@ -55,7 +55,7 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                     {!isMobile && (
                         <Autocomplete
                             freeSolo
-                            options={TopProductsData}
+                            options={topProductsData}
                             getOptionLabel={(option) =>
                                 typeof option === 'string'
                                     ? option
