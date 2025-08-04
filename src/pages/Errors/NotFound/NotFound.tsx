@@ -1,8 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { ErrorTemplate } from '@components/Error';
+import { ERROR_TYPES } from '@components/Error/Error.constants';
 
-export const NotFound = () => (
-    <Box>
-        <Typography variant="h1">Not Found</Typography>
-        <Typography variant="body1">Welcome to the 404 page!</Typography>
-    </Box>
-);
+export const NotFound = () => <ErrorTemplate variant={ERROR_TYPES.NOT_FOUND} />;

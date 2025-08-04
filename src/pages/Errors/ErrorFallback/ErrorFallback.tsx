@@ -1,10 +1,10 @@
-import { Box, Typography } from '@mui/material';
+import { ErrorTemplate } from '@components/Error';
+import { ERROR_TYPES } from '@components/Error/Error.constants';
+import { Navbar } from '@components/Navbar';
 
 export const ErrorFallback = () => (
-    <Box>
-        <Typography variant="h2">Something went wrong.</Typography>
-        <Typography variant="body1">
-            Please refresh or try again later.
-        </Typography>
-    </Box>
+    <>
+        <Navbar />
+        <ErrorTemplate variant={ERROR_TYPES.SERVER_ERROR} />
+    </>
 );
