@@ -86,19 +86,22 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                                     placeholder="Search…"
                                     variant="outlined"
                                     size="small"
-                                    InputProps={{
-                                        ...params.InputProps,
-                                        startAdornment: (
-                                            <>
-                                                <SearchIcon
-                                                    style={{ color: 'gray' }}
-                                                />
-                                                {
-                                                    params.InputProps
-                                                        .startAdornment
-                                                }
-                                            </>
-                                        ),
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: (
+                                                <>
+                                                    <SearchIcon
+                                                        style={{
+                                                            color: 'gray',
+                                                        }}
+                                                    />
+                                                    {
+                                                        params.InputProps
+                                                            ?.startAdornment
+                                                    }
+                                                </>
+                                            ),
+                                        },
                                     }}
                                 />
                             )}
