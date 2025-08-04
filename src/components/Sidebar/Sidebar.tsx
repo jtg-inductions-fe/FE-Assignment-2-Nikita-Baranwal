@@ -1,49 +1,12 @@
-import MailIcon from '@mui/icons-material/Mail';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import {
-    Box,
-    Divider,
-    Drawer,
-    List,
-    useMediaQuery,
-    useTheme,
-} from '@mui/material';
+import { Box, Drawer, useMediaQuery, useTheme } from '@mui/material';
 
 import { drawerStyles, sidebarContentStyles } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
-import { SidebarTile } from './SidebarItem/SidebarItem';
+import { SidebarItems } from './SidebarItem/SidebarItem';
 
 export const Sidebar = ({ open, onClose }: SidebarProps) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-    const drawerList = (
-        <Box sx={sidebarContentStyles}>
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-                    (text, index) => (
-                        <SidebarTile
-                            key={text}
-                            icon={
-                                index % 2 === 0 ? <InboxIcon /> : <MailIcon />
-                            }
-                            label={text}
-                        />
-                    ),
-                )}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <SidebarTile
-                        key={text}
-                        icon={index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        label={text}
-                    />
-                ))}
-            </List>
-        </Box>
-    );
 
     return (
         <StyledDrawer

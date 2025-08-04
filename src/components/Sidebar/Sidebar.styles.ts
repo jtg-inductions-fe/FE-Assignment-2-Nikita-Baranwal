@@ -18,7 +18,9 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
             width: pxToRem(260),
             boxSizing: 'border-box',
             position: 'static',
-            height: '100vh',
+            height: '100%',
+            overflowY: 'auto',
+            // marginTop: pxToRem(64),
         },
     };
 });
