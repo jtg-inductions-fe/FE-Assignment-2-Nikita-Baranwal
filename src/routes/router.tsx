@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router-dom';
 
-import { MainLayout } from '@layouts/MainLayout/MainLayout';
+import { MainLayout } from '@layouts/MainLayout';
 import { Dashboard } from '@pages/Dashboard';
 import { ErrorFallback, NotFound } from '@pages/Errors';
 
