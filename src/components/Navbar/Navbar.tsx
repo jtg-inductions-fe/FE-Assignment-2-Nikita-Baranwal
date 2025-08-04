@@ -86,30 +86,28 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                                     placeholder="Search…"
                                     variant="outlined"
                                     size="small"
-                                    slotProps={{
-                                        input: {
-                                            startAdornment: (
-                                                <>
-                                                    <SearchIcon
-                                                        style={{
-                                                            color: 'gray',
-                                                        }}
-                                                    />
-                                                    {
-                                                        params.InputProps
-                                                            ?.startAdornment
-                                                    }
-                                                </>
-                                            ),
-                                        },
+                                    InputProps={{
+                                        ...params.InputProps,
+                                        startAdornment: (
+                                            <>
+                                                <SearchIcon
+                                                    style={{ color: 'gray' }}
+                                                />
+                                                {
+                                                    params.InputProps
+                                                        .startAdornment
+                                                }
+                                            </>
+                                        ),
                                     }}
                                 />
                             )}
-                            renderOption={(
-                                props: React.HTMLAttributes<HTMLLIElement>,
-                                option,
-                            ) => (
-                                <Box component="li" {...props}>
+                            renderOption={({ key, ...props }, option) => (
+                                <Box
+                                    component="li"
+                                    {...props}
+                                    key={key as string}
+                                >
                                     {typeof option === 'string'
                                         ? option
                                         : option.name}
