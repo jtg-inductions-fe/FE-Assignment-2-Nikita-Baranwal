@@ -25,7 +25,7 @@ export const topProductsData: TopProduct[] = [
         sales: 43,
     },
     {
-        name: 'Glassmorphism UI',
+        name: 'Glassmorphisms UI',
         techStack: 'Vue Js, Tailwind',
         sales: 38,
     },
@@ -35,7 +35,7 @@ export const topProductsData: TopProduct[] = [
         sales: 22,
     },
     {
-        name: 'Dashboard',
+        name: 'Dashboards',
         techStack: 'Tailwind, React',
         sales: 43,
     },
@@ -45,7 +45,7 @@ export const topProductsData: TopProduct[] = [
         sales: 38,
     },
     {
-        name: 'Multipurpose Template',
+        name: 'Multipurpose Templates',
         techStack: 'React & Bootstrap Framework',
         sales: 22,
     },

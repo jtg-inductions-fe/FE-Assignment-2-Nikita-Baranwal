@@ -102,7 +102,10 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                                     }}
                                 />
                             )}
-                            renderOption={(props, option) => (
+                            renderOption={(
+                                props: React.HTMLAttributes<HTMLLIElement>,
+                                option,
+                            ) => (
                                 <Box component="li" {...props}>
                                     {typeof option === 'string'
                                         ? option
