@@ -17,7 +17,7 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => {
     } = theme;
     return {
         backgroundColor: palette.common.white,
-        zIndex: { Z_INDEX },
+        zIndex: Z_INDEX,
         height: pxToRem(NAVBAR_HEIGHT),
     };
 });

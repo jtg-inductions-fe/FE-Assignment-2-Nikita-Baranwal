@@ -16,4 +16,4 @@ export const NOT_FOUND = '/not-found';
 /**
  * Z-index
  */
-export const Z_INDEX = 1000;
+export const Z_INDEX = 1201;
