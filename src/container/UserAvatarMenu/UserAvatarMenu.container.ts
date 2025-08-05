@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-export const useUserAvatarMenu = () => {
+export const UserAvatarMenuHandler = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
     const handleAvatarClick = (
         event: React.MouseEvent<HTMLElement>,
-        withPopover: boolean,
+        showPopover: boolean,
     ) => {
-        if (withPopover) {
+        if (showPopover) {
             setAnchorEl(event.currentTarget);
         }
     };

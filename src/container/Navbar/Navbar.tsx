@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
 
 import { topProductsData } from 'data/TopProducts/TopProducts';
-import { UserData } from 'data/UserData/UserData';
+import { USER_DATA } from 'data/UserData/UserData';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { generateProductRoute } from 'utils/routerHelpers';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
-import { Box, useMediaQuery, useTheme } from '@mui/material';
-import Autocomplete from '@mui/material/Autocomplete';
+import { Autocomplete, Box, useMediaQuery, useTheme } from '@mui/material';
 
-import avatar from '@assets/images/Avatar.png';
 import logo from '@assets/images/Logo.png';
 import { UserAvatarMenu } from '@components/UserAvatarMenu';
+import { NOT_FOUND } from '@constant/common.constant';
 
 import {
-    LeftBox,
+    NavigationPanel,
     RightBox,
     StyledAppBar,
     StyledLogo,
@@ -32,7 +31,6 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const navigate = useNavigate();
 
-    const [user] = useState(UserData[0]);
     const location = useLocation();
     const [inputValue, setInputValue] = useState('');
 
@@ -41,13 +39,13 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
     }, [location]);
 
     const goToNotFound = () => {
-        void navigate('/404');
+        void navigate(NOT_FOUND);
     };
 
     return (
         <StyledAppBar position="fixed">
             <StyledToolbar>
-                <LeftBox>
+                <NavigationPanel>
                     {isMobile ? (
                         <StyledMenuIconButton
                             edge="start"
@@ -73,13 +71,14 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                                     : option.name
                             }
                             onChange={(_, value) => {
+                                // console.log(value);
                                 if (value && typeof value !== 'string') {
                                     const route = generateProductRoute(
                                         value.name,
                                     );
                                     void navigate(route);
                                 } else {
-                                    void navigate('/404');
+                                    void navigate(NOT_FOUND);
                                 }
                             }}
                             sx={{ width: 400 }}
@@ -118,7 +117,7 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                             )}
                         />
                     )}
-                </LeftBox>
+                </NavigationPanel>
 
                 <RightBox>
                     <StyledNotificationButton
@@ -127,13 +126,8 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                     >
                         <NotificationsIcon />
                     </StyledNotificationButton>
-                    <UserAvatarMenu
-                        user={{
-                            name: user?.name,
-                            email: user?.email,
-                            avatarSrc: avatar,
-                        }}
-                    />
+
+                    <UserAvatarMenu user={USER_DATA} />
                 </RightBox>
             </StyledToolbar>
         </StyledAppBar>

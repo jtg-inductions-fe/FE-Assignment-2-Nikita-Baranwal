@@ -1,2 +1,2 @@
-export * from './Navbar.container';
-export * from './UserAvatarMenu.container';
+export * from './Navbar';
+export { UserAvatarMenuHandler } from './UserAvatarMenu';

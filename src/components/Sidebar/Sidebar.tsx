@@ -1,6 +1,6 @@
-import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 
-import { SidebarContent, StyledDrawer } from './Sidebar.styles';
+import { StyledDrawer } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
 
 export const Sidebar = ({ open, onClose }: SidebarProps) => {
@@ -10,14 +10,14 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
     return (
         <StyledDrawer
             variant={isMobile ? 'temporary' : 'permanent'}
-            open={isMobile ? open : true}
+            open={open}
             onClose={onClose}
             anchor="left"
-            ModalProps={{ keepMounted: false }}
+            ModalProps={{ keepMounted: true }}
         >
-            <SidebarContent>
+            <Box sx={{ padding: '2' }}>
                 <Typography variant="h6">Sidebar</Typography>
-            </SidebarContent>
+            </Box>
         </StyledDrawer>
     );
 };

@@ -1,28 +1,29 @@
 import { Box, IconButton, Menu, Typography } from '@mui/material';
 
-import { useUserAvatarMenu } from '@container/UserAvatarMenu.container';
+import { UserAvatarMenuHandler } from '@container/UserAvatarMenu';
 
 import { StyledAvatar } from './UserAvatarMenu.styles';
-import { Props } from './UserAvatarMenu.types';
+import { UserAvatarMenuProps } from './UserAvatarMenu.types';
 
-export const UserAvatarMenu = ({ user, withPopover = true }: Props) => {
+export const UserAvatarMenu = ({
+    user,
+    showPopover = true,
+}: UserAvatarMenuProps) => {
     const { anchorEl, handleAvatarClick, handleMenuClose, isOpen } =
-        useUserAvatarMenu();
+        UserAvatarMenuHandler();
 
     return (
-        <>
+        <Box>
             <IconButton
-                onClick={(e) => handleAvatarClick(e, withPopover)}
+                onClick={(e) => handleAvatarClick(e, showPopover)}
                 aria-controls={isOpen ? 'user-menu' : undefined}
                 aria-haspopup="true"
+                aria-expanded={isOpen}
             >
-                <StyledAvatar
-                    src={user?.avatarSrc || ''}
-                    alt={user?.name || 'User Avatar'}
-                />
+                <StyledAvatar src={user.avatar} alt={user.name} />
             </IconButton>
 
-            {withPopover && (
+            {showPopover && (
                 <Menu
                     id="user-menu"
                     anchorEl={anchorEl}
@@ -38,15 +39,13 @@ export const UserAvatarMenu = ({ user, withPopover = true }: Props) => {
                     }}
                 >
                     <Box sx={{ px: 2, py: 1 }}>
-                        <Typography variant="h3">
-                            {user?.name || 'No Name'}
-                        </Typography>
+                        <Typography variant="h3">{user.name}</Typography>
                         <Typography variant="body2" color="text.secondary">
-                            {user?.email || 'No Email'}
+                            {user.email}
                         </Typography>
                     </Box>
                 </Menu>
             )}
-        </>
+        </Box>
     );
 };

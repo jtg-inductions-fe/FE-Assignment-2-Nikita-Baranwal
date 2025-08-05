@@ -1,17 +1,23 @@
-import { AppBar, Box, IconButton, TextField, Toolbar } from '@mui/material';
+import {
+    AppBar,
+    Box,
+    IconButton,
+    outlinedInputClasses,
+    TextField,
+    Toolbar,
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import { NAVBAR_HEIGHT } from '@constant/common.constant';
+import { NAVBAR_HEIGHT, Z_INDEX } from '@constant/common.constant';
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => {
     const {
         typography: { pxToRem },
-        zIndex,
         palette,
     } = theme;
     return {
         backgroundColor: palette.common.white,
-        zIndex: zIndex.drawer + 1,
+        zIndex: { Z_INDEX },
         height: pxToRem(NAVBAR_HEIGHT),
     };
 });
@@ -21,19 +27,24 @@ export const StyledTextField = styled(TextField)(({ theme }) => {
         typography: { pxToRem },
         palette,
     } = theme;
+
     return {
         backgroundColor: palette.background.default,
         borderRadius: pxToRem(16),
         border: `1px solid ${palette.grey[50]}`,
-        '& .MuiOutlinedInput-root': {
+
+        [`& .${outlinedInputClasses.root}`]: {
             borderRadius: pxToRem(16),
-            '& fieldset': {
+
+            [`& .${outlinedInputClasses.notchedOutline}`]: {
                 borderColor: palette.divider,
             },
-            '&:hover fieldset': {
+
+            [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
                 borderColor: palette.grey[500],
             },
-            '&.Mui-focused fieldset': {
+
+            [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
                 borderColor: palette.grey[500],
                 borderWidth: 2,
             },
@@ -52,7 +63,7 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => {
     };
 });
 
-export const LeftBox = styled(Box)(({ theme }) => {
+export const NavigationPanel = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
         mixins,

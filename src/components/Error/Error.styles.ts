@@ -49,16 +49,23 @@ export const ErrorContainerOverviewTitle = styled(Box)(({ theme }) => {
     };
 });
 
-export const ErrorImage = styled('img')(({ theme }) => {
+export const ErrorImage = styled(Box)(({ theme }) => {
     const { typography, breakpoints } = theme;
 
     return {
-        maxWidth: typography.pxToRem(360),
-        height: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         width: '100%',
+        maxWidth: typography.pxToRem(360),
 
         [breakpoints.up('lg')]: {
             maxWidth: typography.pxToRem(500),
+        },
+
+        '& img': {
+            width: '100%',
+            height: 'auto',
         },
     };
 });

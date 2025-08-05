@@ -1,8 +1,11 @@
-export type Props = {
-    user?: {
-        name?: string;
-        email?: string;
-        avatarSrc?: string;
+/**
+ * UserAvatarMenuProps defines the properties for the User Avatar Menu component.
+ */
+export type UserAvatarMenuProps = {
+    user: {
+        name: string;
+        email: string;
+        avatar: string;
     };
-    withPopover?: boolean;
+    showPopover?: boolean;
 };

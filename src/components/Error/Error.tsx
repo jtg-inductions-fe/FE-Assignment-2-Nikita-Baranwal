@@ -21,7 +21,9 @@ export const ErrorTemplate = ({ variant }: ErrorTemplateProps) => {
 
     return (
         <ErrorContainer>
-            <ErrorImage src={config.src} alt="Error Image" />
+            <ErrorImage>
+                <img src={config.src} alt="Server error" />
+            </ErrorImage>
             <ErrorContainerOverview>
                 <ErrorContainerOverviewTitle>
                     <Typography variant="h1">{config.title}</Typography>
