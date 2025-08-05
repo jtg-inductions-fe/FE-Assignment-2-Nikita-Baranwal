@@ -47,14 +47,11 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
             <StyledToolbar>
                 <NavigationPanel>
                     {isMobile ? (
-                        <StyledMenuIconButton
-                            edge="start"
-                            onClick={toggleDrawer}
-                        >
+                        <StyledMenuIconButton onClick={toggleDrawer}>
                             <MenuIcon />
                         </StyledMenuIconButton>
                     ) : (
-                        <StyledLogo src={logo} alt="Logo" />
+                        <StyledLogo component="img" src={logo} alt="Logo" />
                     )}
 
                     {!isMobile && (
@@ -71,7 +68,6 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                                     : option.name
                             }
                             onChange={(_, value) => {
-                                // console.log(value);
                                 if (value && typeof value !== 'string') {
                                     const route = generateProductRoute(
                                         value.name,

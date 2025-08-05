@@ -17,8 +17,8 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
         flexShrink: 0,
 
         [`& .${drawerClasses.paper}`]: {
-            width: pxToRem(280),
-            boxSizing: 'border-box',
+            backgroundColor: palette.background.default,
+            width: pxToRem(SIDEBAR_WIDTH),
             top: pxToRem(NAVBAR_HEIGHT),
         },
     };

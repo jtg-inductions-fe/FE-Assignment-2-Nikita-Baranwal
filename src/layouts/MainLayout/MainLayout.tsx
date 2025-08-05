@@ -8,7 +8,7 @@ import { Sidebar } from '@components/index';
 import { NAVBAR_HEIGHT } from '@constant/common.constant';
 import { Navbar } from '@container/Navbar';
 
-import { AppContainer, ContentWrapper, MainContent } from './MainLayout.styles';
+import { AppContainer, MainContent } from './MainLayout.styles';
 import { MainLayoutProps } from './MainLayout.types';
 
 export const MainLayout = ({ useSidebar = true }: MainLayoutProps) => {
@@ -22,7 +22,7 @@ export const MainLayout = ({ useSidebar = true }: MainLayoutProps) => {
                 <Navbar toggleDrawer={toggleDrawer} />
             </Box>
 
-            <ContentWrapper>
+            <Box>
                 {useSidebar && (
                     <Sidebar
                         open={drawerOpen}
@@ -32,7 +32,7 @@ export const MainLayout = ({ useSidebar = true }: MainLayoutProps) => {
                 <MainContent>
                     <Outlet />
                 </MainContent>
-            </ContentWrapper>
+            </Box>
         </AppContainer>
     );
 };

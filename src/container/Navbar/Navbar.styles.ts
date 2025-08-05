@@ -1,6 +1,7 @@
 import {
     AppBar,
     Box,
+    BoxProps,
     IconButton,
     outlinedInputClasses,
     TextField,
@@ -87,16 +88,18 @@ export const StyledMenuIconButton = styled(IconButton)(({ theme }) => {
     };
 });
 
-export const StyledLogo = styled('img')(({ theme }) => {
-    const {
-        typography: { pxToRem },
-    } = theme;
-    return {
-        height: pxToRem(40),
-        width: 'auto',
-        cursor: 'pointer',
-    };
-});
+export const StyledLogo = styled(Box)<BoxProps & { src: string; alt: string }>(
+    ({ theme }) => {
+        const {
+            typography: { pxToRem },
+        } = theme;
+        return {
+            height: pxToRem(40),
+            width: 'auto',
+            cursor: 'pointer',
+        };
+    },
+);
 
 export const RightBox = styled(Box)(({ theme }) => {
     const {

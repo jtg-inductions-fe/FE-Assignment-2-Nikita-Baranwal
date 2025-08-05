@@ -19,12 +19,3 @@ export const MainContent = styled(Box)(({ theme }) => {
         marginTop: typography.pxToRem(NAVBAR_HEIGHT),
     };
 });
-
-export const ContentWrapper = styled(Box)(({ theme }) => {
-    const { mixins } = theme;
-
-    return {
-        width: 'auto',
-        ...mixins.flex('row'),
-    };
-});

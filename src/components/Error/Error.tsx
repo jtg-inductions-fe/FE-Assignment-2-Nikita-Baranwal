@@ -1,13 +1,13 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { Button } from '@components/Button';
 
 import { ERROR_CONFIG, ERROR_TYPES } from './Error.constants';
 import {
     ErrorContainer,
-    ErrorContainerOverview,
-    ErrorContainerOverviewTitle,
-    ErrorImage,
+    ErrorContent,
+    ImageContainer,
+    SubContainer,
 } from './Error.styles';
 import { ErrorTemplateProps } from './Error.types';
 
@@ -21,18 +21,19 @@ export const ErrorTemplate = ({ variant }: ErrorTemplateProps) => {
 
     return (
         <ErrorContainer>
-            <ErrorImage>
-                <img src={config.src} alt="Server error" />
-            </ErrorImage>
-            <ErrorContainerOverview>
-                <ErrorContainerOverviewTitle>
+            <ImageContainer>
+                <Box component="img" src={config.src} alt="Server error" />
+            </ImageContainer>
+
+            <SubContainer>
+                <ErrorContent>
                     <Typography variant="h1">{config.title}</Typography>
                     <Typography variant="body1">
                         {config.description}
                     </Typography>
-                </ErrorContainerOverviewTitle>
+                </ErrorContent>
                 <Button to="/" text="Go back home" />
-            </ErrorContainerOverview>
+            </SubContainer>
         </ErrorContainer>
     );
 };

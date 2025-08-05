@@ -6,7 +6,6 @@ export const ErrorContainer = styled(Box)(({ theme }) => {
 
     return {
         minHeight: typography.pxToRem(507),
-        margin: 'auto',
         ...mixins.flex('center', 'center', 'column'),
         backgroundColor: palette.background.default,
         textAlign: 'center',
@@ -26,7 +25,7 @@ export const ErrorContainer = styled(Box)(({ theme }) => {
     };
 });
 
-export const ErrorContainerOverview = styled(Box)(({ theme }) => {
+export const SubContainer = styled(Box)(({ theme }) => {
     const { mixins, palette, typography } = theme;
 
     return {
@@ -38,7 +37,7 @@ export const ErrorContainerOverview = styled(Box)(({ theme }) => {
     };
 });
 
-export const ErrorContainerOverviewTitle = styled(Box)(({ theme }) => {
+export const ErrorContent = styled(Box)(({ theme }) => {
     const { mixins, palette, typography } = theme;
 
     return {
@@ -49,21 +48,18 @@ export const ErrorContainerOverviewTitle = styled(Box)(({ theme }) => {
     };
 });
 
-export const ErrorImage = styled(Box)(({ theme }) => {
-    const { typography, breakpoints } = theme;
+export const ImageContainer = styled(Box)(({ theme }) => {
+    const { mixins, typography, breakpoints } = theme;
 
     return {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
+        ...mixins.flex(),
         maxWidth: typography.pxToRem(360),
 
         [breakpoints.up('lg')]: {
             maxWidth: typography.pxToRem(500),
         },
 
-        '& img': {
+        '& > img': {
             width: '100%',
             height: 'auto',
         },

@@ -9,13 +9,13 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
 
     return (
         <StyledDrawer
-            variant={isMobile ? 'temporary' : 'permanent'}
             open={open}
-            onClose={onClose}
             anchor="left"
+            onClose={onClose}
             ModalProps={{ keepMounted: true }}
+            variant={isMobile ? 'temporary' : 'permanent'}
         >
-            <Box sx={{ padding: '2' }}>
+            <Box padding={2}>
                 <Typography variant="h6">Sidebar</Typography>
             </Box>
         </StyledDrawer>

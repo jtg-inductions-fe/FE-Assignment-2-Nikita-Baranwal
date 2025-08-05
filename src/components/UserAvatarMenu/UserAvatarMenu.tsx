@@ -1,6 +1,6 @@
-import { Box, IconButton, Menu, Typography } from '@mui/material';
+import { useState } from 'react';
 
-import { UserAvatarMenuHandler } from '@container/UserAvatarMenu';
+import { Box, IconButton, Menu, Typography } from '@mui/material';
 
 import { StyledAvatar } from './UserAvatarMenu.styles';
 import { UserAvatarMenuProps } from './UserAvatarMenu.types';
@@ -9,16 +9,20 @@ export const UserAvatarMenu = ({
     user,
     showPopover = true,
 }: UserAvatarMenuProps) => {
-    const { anchorEl, handleAvatarClick, handleMenuClose, isOpen } =
-        UserAvatarMenuHandler();
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+    const handleAvatarClick = (event: React.MouseEvent<HTMLElement>) =>
+        setAnchorEl(event.currentTarget);
+
+    const handleMenuClose = () => setAnchorEl(null);
 
     return (
         <Box>
             <IconButton
-                onClick={(e) => handleAvatarClick(e, showPopover)}
-                aria-controls={isOpen ? 'user-menu' : undefined}
                 aria-haspopup="true"
-                aria-expanded={isOpen}
+                aria-expanded={!!anchorEl}
+                onClick={(e) => showPopover && handleAvatarClick(e)}
+                aria-controls={!!anchorEl ? 'user-menu' : undefined}
             >
                 <StyledAvatar src={user.avatar} alt={user.name} />
             </IconButton>
@@ -27,7 +31,7 @@ export const UserAvatarMenu = ({
                 <Menu
                     id="user-menu"
                     anchorEl={anchorEl}
-                    open={isOpen}
+                    open={!!anchorEl}
                     onClose={handleMenuClose}
                     anchorOrigin={{
                         vertical: 'bottom',
@@ -38,7 +42,7 @@ export const UserAvatarMenu = ({
                         horizontal: 'right',
                     }}
                 >
-                    <Box sx={{ px: 2, py: 1 }}>
+                    <Box px={2} py={1}>
                         <Typography variant="h3">{user.name}</Typography>
                         <Typography variant="body2" color="text.secondary">
                             {user.email}
