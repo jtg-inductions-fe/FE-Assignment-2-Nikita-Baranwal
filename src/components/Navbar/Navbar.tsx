@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { topProductsData } from 'data/TopProducts/TopProducts';
 import { UserData } from 'data/UserData/UserData';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { generateProductRoute } from 'utils/routerHelpers';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -73,7 +74,9 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                             }
                             onChange={(_, value) => {
                                 if (value && typeof value !== 'string') {
-                                    const route = `/product/${value.name.toLowerCase().replace(/\s+/g, '-')}`;
+                                    const route = generateProductRoute(
+                                        value.name,
+                                    );
                                     void navigate(route);
                                 } else {
                                     void navigate('/404');

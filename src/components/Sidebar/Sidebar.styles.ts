@@ -1,13 +1,13 @@
-import { SxProps, Theme } from '@mui/material';
+import { Box, Drawer, drawerClasses } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-export const StyledDrawer = styled(Drawer)(
-    ({
-        theme: {
-            breakpoints,
-            typography: { pxToRem },
-        },
-    }) => ({
-        display: 'none',
+import { NAVBAR_HEIGHT, SIDEBAR_WIDTH } from '@constant/common.constant';
+
+export const StyledDrawer = styled(Drawer)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        palette,
+    } = theme;
 
         [breakpoints.up('md')]: {
             display: 'block',
@@ -21,5 +21,13 @@ export const StyledDrawer = styled(Drawer)(
             boxSizing: 'border-box',
             top: pxToRem(NAVBAR_HEIGHT),
         },
-    }),
-);
+    };
+});
+
+export const SidebarContent = styled(Box)(({ theme }) => {
+    const { spacing } = theme;
+
+    return {
+        padding: spacing(2),
+    };
+});

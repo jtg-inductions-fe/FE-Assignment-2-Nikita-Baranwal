@@ -67,10 +67,8 @@ export const StyledMenuIconButton = styled(IconButton)(({ theme }) => {
     const {
         typography: { pxToRem },
         palette,
-        spacing,
     } = theme;
     return {
-        marginRight: spacing(2),
         color: palette.grey[900],
         margin: 0,
         padding: 0,
