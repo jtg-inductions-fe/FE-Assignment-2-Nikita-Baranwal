@@ -9,13 +9,8 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
         palette,
     } = theme;
 
-        [breakpoints.up('md')]: {
-            display: 'block',
-        },
-
-        width: pxToRem(SIDEBAR_WIDTH),
-        flexShrink: 0,
-
+    return {
+        display: 'block',
         [`& .${drawerClasses.paper}`]: {
             backgroundColor: palette.background.default,
             width: pxToRem(SIDEBAR_WIDTH),
