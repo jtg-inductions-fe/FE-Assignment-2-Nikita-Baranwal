@@ -47,9 +47,7 @@ export const SidebarItem = ({
 
             {hasChildren && (
                 <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        {children}
-                    </List>
+                    <List component="div">{children}</List>
                 </Collapse>
             )}
         </>

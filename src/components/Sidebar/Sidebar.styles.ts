@@ -1,4 +1,6 @@
-import { drawerClasses,SxProps, Theme } from '@mui/material';
+import { drawerClasses, SxProps, Theme } from '@mui/material';
+
+import { NAVBAR_HEIGHT, SIDEBAR_WIDTH } from '@constant/common.constant';
 
 export const drawerStyles: SxProps<Theme> = (theme) => {
     const {
@@ -9,11 +11,11 @@ export const drawerStyles: SxProps<Theme> = (theme) => {
     return {
         display: 'block',
         [`& .${drawerClasses.anchorLeft}`]: {
-            width: pxToRem(260),
+            width: pxToRem(SIDEBAR_WIDTH),
         },
         [`& .${drawerClasses.paper}`]: {
             backgroundColor: palette.background.default,
-            width: pxToRem(260),
+            width: pxToRem(SIDEBAR_WIDTH),
             boxSizing: 'border-box',
             display: 'flex',
             flexDirection: 'column',
@@ -21,30 +23,18 @@ export const drawerStyles: SxProps<Theme> = (theme) => {
             overflowY: 'auto',
             position: 'relative',
             [theme.breakpoints.down('md')]: {
-                marginTop: '64px',
+                marginTop: NAVBAR_HEIGHT,
             },
         },
     };
 };
 
 export const sidebarContentStyles: SxProps<Theme> = (theme) => {
-    const { spacing } = theme;
+    const { spacing, mixins } = theme;
 
     return {
         height: 'calc(100vh - 64px)',
         padding: spacing(2),
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-    };
-};
-
-export const dividerStyles: SxProps<Theme> = (theme) => {
-    const {
-        typography: { pxToRem },
-    } = theme;
-
-    return {
-        py: pxToRem(10),
+        ...mixins.flex('space-between', 'center', 'column'),
     };
 };

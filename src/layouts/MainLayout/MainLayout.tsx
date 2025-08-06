@@ -4,16 +4,15 @@ import { Outlet } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { Sidebar } from '@components/index';
+import { Sidebar } from '@components/Sidebar';
 import { NAVBAR_HEIGHT } from '@constant/common.constant';
 import { Navbar } from '@container/Navbar';
 
-import { AppContainer, MainContent } from './MainLayout.styles';
+import { AppContainer, ContentWrapper, MainContent } from './MainLayout.styles';
 import { MainLayoutProps } from './MainLayout.types';
 
 export const MainLayout = ({ useSidebar = true }: MainLayoutProps) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     const toggleDrawer = () => setDrawerOpen((prev) => !prev);
 
     return (
@@ -22,7 +21,7 @@ export const MainLayout = ({ useSidebar = true }: MainLayoutProps) => {
                 <Navbar toggleDrawer={toggleDrawer} />
             </Box>
 
-            <Box>
+            <ContentWrapper>
                 {useSidebar && (
                     <Sidebar
                         open={drawerOpen}
@@ -32,7 +31,7 @@ export const MainLayout = ({ useSidebar = true }: MainLayoutProps) => {
                 <MainContent>
                     <Outlet />
                 </MainContent>
-            </Box>
+            </ContentWrapper>
         </AppContainer>
     );
 };

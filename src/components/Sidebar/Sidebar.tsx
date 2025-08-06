@@ -10,19 +10,13 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <StyledDrawer
-            open={open}
-            anchor="left"
+        <Drawer
+            variant={isMobile ? 'temporary' : 'permanent'}
+            open={isMobile ? open : true}
             onClose={onClose}
+            anchor="left"
             ModalProps={{ keepMounted: true }}
-            sx={{
-                '& .MuiDrawer-paper': {
-                    width: 280,
-                    height: '93vh',
-                    boxSizing: 'border-box',
-                    marginTop: '64px',
-                },
-            }}
+            sx={drawerStyles}
         >
             <Box sx={drawerStyles}>
                 <Box sx={sidebarContentStyles}>
@@ -32,6 +26,6 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
                     <SidebarFooter />
                 </Box>
             </Box>
-        </StyledDrawer>
+        </Drawer>
     );
 };

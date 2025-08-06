@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 
-import { dividerStyles } from './Sidebar.styles';
 import { SidebarItem } from './SidebarItem/SidebarItem';
 
 export const SidebarItems = () => {
@@ -33,7 +32,6 @@ export const SidebarItems = () => {
                                 isActive={isActive}
                             >
                                 {item.children?.map((child, childIndex) => {
-                                    const ChildIcon = child.icon;
                                     const isChildActive =
                                         location.pathname === child.path;
 
@@ -41,7 +39,6 @@ export const SidebarItems = () => {
                                         <SidebarItem
                                             key={`${groupIndex}-${itemIndex}-${childIndex}`}
                                             label={child.title}
-                                            icon={ChildIcon && <ChildIcon />}
                                             isActive={isChildActive}
                                         />
                                     );
@@ -50,7 +47,7 @@ export const SidebarItems = () => {
                         );
                     })}
                     {groupIndex < SidebarMenu.length - 1 && (
-                        <Divider sx={dividerStyles} />
+                        <Divider sx={{ py: 2 }} />
                     )}
                 </Box>
             ))}

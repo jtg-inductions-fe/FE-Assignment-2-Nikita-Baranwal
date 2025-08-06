@@ -7,7 +7,12 @@ export const SidebarFooter = () => {
     const navigate = useNavigate();
 
     return (
-        <Stack direction="row" justifyContent="space-around" py={2}>
+        <Stack
+            direction="row"
+            width={'100%'}
+            justifyContent="space-around"
+            py={2}
+        >
             {SidebarFooterMenu.map((item, index) => {
                 const Icon = item.icon;
                 return (
