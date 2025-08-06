@@ -1,38 +1,46 @@
-import { ListItemButton } from '@mui/material';
-import { listItemButtonClasses } from '@mui/material/ListItemButton';
-import { listItemIconClasses } from '@mui/material/ListItemIcon';
-import { styled } from '@mui/material/styles';
-import { typographyClasses } from '@mui/material/Typography';
+import {
+    ListItemButton,
+    listItemButtonClasses,
+    listItemIconClasses,
+    styled,
+    typographyClasses,
+} from '@mui/material';
 
-export const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
-    color: theme.palette.grey[900],
+export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
+    const {
+        palette: { grey, primary },
+    } = theme;
 
-    [`& .${listItemIconClasses.root}`]: {
-        color: theme.palette.grey[900],
-    },
-
-    [`& .${typographyClasses.root}`]: {
-        color: theme.palette.grey[900],
-    },
-
-    [`&.${listItemButtonClasses.selected}`]: {
-        color: theme.palette.primary.main,
-        backgroundColor: 'transparent',
+    return {
+        color: grey[900],
 
         [`& .${listItemIconClasses.root}`]: {
-            color: theme.palette.primary.main,
+            color: grey[900],
         },
 
         [`& .${typographyClasses.root}`]: {
-            color: theme.palette.primary.main,
+            color: grey[900],
+        },
+
+        [`&.${listItemButtonClasses.selected}`]: {
+            color: primary.main,
+            backgroundColor: 'transparent',
+
+            [`& .${listItemIconClasses.root}`]: {
+                color: primary.main,
+            },
+
+            [`& .${typographyClasses.root}`]: {
+                color: primary.main,
+            },
+
+            '&:hover': {
+                backgroundColor: 'transparent',
+            },
         },
 
         '&:hover': {
-            backgroundColor: 'transparent',
+            backgroundColor: grey[200],
         },
-    },
-
-    '&:hover': {
-        backgroundColor: theme.palette.action.hover,
-    },
-}));
+    };
+});

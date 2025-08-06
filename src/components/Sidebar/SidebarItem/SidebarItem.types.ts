@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 
-export type SidebarTileProps = {
+export type SidebarItemProps = {
     icon?: ReactNode;
     label: string;
     to?: string;
     badgeCount?: number;
+    badgeColor?: string;
     children?: ReactNode;
-    parentPath?: string;
     isActive?: boolean;
 };

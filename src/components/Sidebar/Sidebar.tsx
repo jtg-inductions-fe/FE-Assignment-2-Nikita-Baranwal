@@ -1,8 +1,8 @@
-import { Box, Drawer, useMediaQuery, useTheme } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 
-import { drawerStyles, sidebarContentStyles } from './Sidebar.styles';
+import { SidebarContentStyles, StyledDrawer } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
-import { SidebarFooter } from './SidebarFooter/SidebarFooter';
+import { SidebarFooter } from './SidebarFooter';
 import { SidebarItems } from './SidebarItems';
 
 export const Sidebar = ({ open, onClose }: SidebarProps) => {
@@ -10,22 +10,19 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <Drawer
+        <StyledDrawer
             variant={isMobile ? 'temporary' : 'permanent'}
             open={isMobile ? open : true}
             onClose={onClose}
             anchor="left"
             ModalProps={{ keepMounted: true }}
-            sx={drawerStyles}
         >
-            <Box sx={drawerStyles}>
-                <Box sx={sidebarContentStyles}>
-                    <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
-                        <SidebarItems />
-                    </Box>
-                    <SidebarFooter />
+            <SidebarContentStyles>
+                <Box flexGrow={1} style={{ overflowY: 'auto' }}>
+                    <SidebarItems />
                 </Box>
-            </Box>
-        </Drawer>
+                <SidebarFooter />
+            </SidebarContentStyles>
+        </StyledDrawer>
     );
 };

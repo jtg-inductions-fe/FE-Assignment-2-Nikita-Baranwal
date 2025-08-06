@@ -1,7 +1,8 @@
-import { SidebarFooterMenu } from 'constant/SidebarMenu/SidebarMenu';
 import { useNavigate } from 'react-router-dom';
 
 import { IconButton, Stack } from '@mui/material';
+
+import { SidebarFooterMenu } from '@constant/SidebarMenu/SidebarMenu';
 
 export const SidebarFooter = () => {
     const navigate = useNavigate();
@@ -9,16 +10,17 @@ export const SidebarFooter = () => {
     return (
         <Stack
             direction="row"
-            width={'100%'}
+            width="100%"
             justifyContent="space-around"
             py={2}
         >
-            {SidebarFooterMenu.map((item, index) => {
+            {SidebarFooterMenu.map((item) => {
                 const Icon = item.icon;
                 return (
                     <IconButton
-                        sx={{ color: 'black' }}
-                        key={index}
+                        color="inherit"
+                        key={item.id}
+                        aria-label={`Navigate to ${item.path}`}
                         onClick={() => void navigate(item.path)}
                     >
                         <Icon />

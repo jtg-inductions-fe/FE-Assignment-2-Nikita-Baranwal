@@ -1,8 +1,8 @@
-import { drawerClasses, SxProps, Theme } from '@mui/material';
+import { Box, Drawer, drawerClasses, styled } from '@mui/material';
 
 import { NAVBAR_HEIGHT, SIDEBAR_WIDTH } from '@constant/common.constant';
 
-export const drawerStyles: SxProps<Theme> = (theme) => {
+export const StyledDrawer = styled(Drawer)(({ theme }) => {
     const {
         typography: { pxToRem },
         palette,
@@ -16,7 +16,6 @@ export const drawerStyles: SxProps<Theme> = (theme) => {
         [`& .${drawerClasses.paper}`]: {
             backgroundColor: palette.background.default,
             width: pxToRem(SIDEBAR_WIDTH),
-            boxSizing: 'border-box',
             display: 'flex',
             flexDirection: 'column',
             height: '100vh',
@@ -27,14 +26,14 @@ export const drawerStyles: SxProps<Theme> = (theme) => {
             },
         },
     };
-};
+});
 
-export const sidebarContentStyles: SxProps<Theme> = (theme) => {
+export const SidebarContentStyles = styled(Box)(({ theme }) => {
     const { spacing, mixins } = theme;
 
     return {
-        height: 'calc(100vh - 64px)',
+        height: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
         padding: spacing(2),
         ...mixins.flex('space-between', 'center', 'column'),
     };
-};
+});

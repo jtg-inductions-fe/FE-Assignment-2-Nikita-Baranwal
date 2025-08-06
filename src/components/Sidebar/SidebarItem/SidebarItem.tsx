@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 
 import { StyledListItemButton } from './SidebarItem.styles';
-import { SidebarTileProps } from './SidebarItem.types';
+import { SidebarItemProps } from './SidebarItem.types';
 
 export const SidebarItem = ({
     icon,
@@ -20,27 +20,33 @@ export const SidebarItem = ({
     children,
     badgeCount,
     isActive,
-}: SidebarTileProps) => {
+    to,
+    badgeColor,
+}: SidebarItemProps) => {
     const hasChildren = Boolean(children);
     const [open, setOpen] = useState(false);
-    const navigate = useNavigate();
 
     const handleClick = () => {
         if (hasChildren) {
             setOpen((prev) => !prev);
-        } else {
-            const path = `/${label.toLowerCase().replace(/\s+/g, '-')}`;
-            void navigate(path);
         }
     };
-
     return (
         <>
-            <StyledListItemButton onClick={handleClick} selected={isActive}>
+            <StyledListItemButton
+                onClick={handleClick}
+                selected={isActive}
+                {...(!hasChildren && to
+                    ? {
+                          component: Link,
+                          to: to,
+                      }
+                    : {})}
+            >
                 <ListItemIcon>{icon}</ListItemIcon>
                 <ListItemText primary={label} />
                 {badgeCount !== undefined && (
-                    <Badge badgeContent={badgeCount} color="warning" />
+                    <Badge badgeContent={badgeCount} color={badgeColor} />
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
             </StyledListItemButton>
