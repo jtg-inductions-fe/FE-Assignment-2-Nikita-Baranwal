@@ -2,8 +2,10 @@ import { ReactNode } from 'react';
 
 export type SidebarTileProps = {
     icon?: ReactNode;
-    label?: string;
+    label: string;
+    to?:string;
     badgeCount?: number;
     children?: ReactNode;
-    // to?:string;
+    parentPath?: string,
+    isActive?: boolean,
 };

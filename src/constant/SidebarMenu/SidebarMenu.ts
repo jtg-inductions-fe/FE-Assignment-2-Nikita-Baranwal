@@ -1,160 +1,83 @@
-import {
-    Assessment as AssessmentIcon,
-    Build as BuildIcon,
-    Dashboard as DashboardIcon,
-    Description as DescriptionIcon,
-    Help as HelpIcon,
-    Language as LanguageIcon,
-    LockOpen as LockOpenIcon,
-    MoveToInbox as MoveToInboxIcon,
-    NextWeek as NextWeekIcon,
-    Settings as SettingsIcon,
-    Tune as TuneIcon,
-} from '@mui/icons-material';
-
-import { SidebarItem } from './SidebarMenu.types';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import BuildIcon from '@mui/icons-material/Build';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import DescriptionIcon from '@mui/icons-material/Description';
+import HelpIcon from '@mui/icons-material/Help';
+import LanguageIcon from '@mui/icons-material/Language';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import MoveToInboxIcon from '@mui/icons-material/MoveToInbox';
+import NextWeekIcon from '@mui/icons-material/NextWeek';
+import SettingsIcon from '@mui/icons-material/Settings';
+import TuneIcon from '@mui/icons-material/Tune';
 
 export const SidebarMenu = [
     [
         {
             title: 'Overview',
             icon: DashboardIcon,
+            path: '/',
         },
         {
             title: 'Pages',
             icon: AssessmentIcon,
+            path: 'pages',
         },
         {
             title: 'Sales',
             icon: NextWeekIcon,
+            path: 'sales',
             children: [
-                { title: 'Product List' },
-                { title: 'Billing' },
-                { title: 'Invoice' },
+                { title: 'Product List', path: 'sales/product-list' },
+                { title: 'Billing', path: 'sales/billing' },
+                { title: 'Invoice', path: 'sales/invoice' },
             ],
         },
         {
             title: 'Messages',
             icon: MoveToInboxIcon,
+            path: 'messages',
             badgeCount: 1,
         },
         {
             title: 'Authentication',
             icon: LockOpenIcon,
-            children: [{ title: 'Login' }, { title: 'Register' }],
+            path: 'authentication',
+            children: [
+                { title: 'Login', path: 'authentication/login' },
+                { title: 'Register', path: 'authentication/overview' },
+            ],
         },
     ],
     [
         {
             title: 'Docs',
             icon: DescriptionIcon,
+            path: 'description',
         },
         {
             title: 'Components',
             icon: BuildIcon,
+            path: 'components',
         },
         {
             title: 'Help',
             icon: HelpIcon,
-        },
-    ],
-    [
-        {
-            title: 'Docs',
-            icon: DescriptionIcon,
-        },
-        {
-            title: 'Components',
-            icon: BuildIcon,
-        },
-        {
-            title: 'Help',
-            icon: HelpIcon,
-        },
-    ],
-    [
-        {
-            title: 'Docs',
-            icon: DescriptionIcon,
-        },
-        {
-            title: 'Components',
-            icon: BuildIcon,
-        },
-        {
-            title: 'Help',
-            icon: HelpIcon,
-        },
-    ],
-    [
-        {
-            title: 'Docs',
-            icon: DescriptionIcon,
-        },
-        {
-            title: 'Components',
-            icon: BuildIcon,
-        },
-        {
-            title: 'Help',
-            icon: HelpIcon,
-        },
-    ],
-    [
-        {
-            title: 'Docs',
-            icon: DescriptionIcon,
-        },
-        {
-            title: 'Components',
-            icon: BuildIcon,
-        },
-        {
-            title: 'Help',
-            icon: HelpIcon,
-        },
-    ],
-    [
-        {
-            title: 'Docs',
-            icon: DescriptionIcon,
-        },
-        {
-            title: 'Components',
-            icon: BuildIcon,
-        },
-        {
-            title: 'Help',
-            icon: HelpIcon,
-        },
-    ],
-    [
-        {
-            title: 'Docs',
-            icon: DescriptionIcon,
-        },
-        {
-            title: 'Components',
-            icon: BuildIcon,
-        },
-        {
-            title: 'Help',
-            icon: HelpIcon,
+            path: 'help',
         },
     ],
 ];
 
-export const sidebarFooterItems: SidebarItem[] = [
+export const SidebarFooterMenu = [
     {
-        title: 'Settings',
         icon: SettingsIcon,
+        path: 'settings',
     },
     {
-        title: 'Language',
         icon: LanguageIcon,
+        path: 'language',
     },
     {
-        title: 'Preferences',
         icon: TuneIcon,
+        path: 'tune-icon',
     },
 ];
