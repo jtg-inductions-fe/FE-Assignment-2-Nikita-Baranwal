@@ -1,11 +1,5 @@
-import { Box, Typography } from '@mui/material';
+import { itemData } from 'data/ImageGrid/ImageGrid';
 
-import { Button } from '@components/Button';
+import { ImageGrid } from '@components/ImageGrid/ImageGrid';
 
-export const Dashboard = () => (
-    <Box>
-        <Typography variant="h1">Dashboard</Typography>
-        <Typography variant="body1">Welcome to the dashboard!</Typography>
-        <Button to="/" text="Go back home" />
-    </Box>
-);
+export const Dashboard = () => <ImageGrid data={itemData} />;
