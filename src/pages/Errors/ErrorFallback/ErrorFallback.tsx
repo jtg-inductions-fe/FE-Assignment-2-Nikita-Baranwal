@@ -1,10 +1,5 @@
-import { ErrorTemplate } from '@components/Error';
-import { ERROR_TYPES } from '@components/Error/Error.constants';
-import { Navbar } from '@components/Navbar';
+import { ERROR_TYPES, ErrorTemplate } from '@components/Error';
 
 export const ErrorFallback = () => (
-    <>
-        <Navbar />
-        <ErrorTemplate variant={ERROR_TYPES.SERVER_ERROR} />
-    </>
+    <ErrorTemplate variant={ERROR_TYPES.SERVER_ERROR} />
 );

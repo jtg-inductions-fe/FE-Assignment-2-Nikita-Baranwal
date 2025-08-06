@@ -3,26 +3,18 @@ import { styled } from '@mui/material/styles';
 
 import { NAVBAR_HEIGHT, SIDEBAR_WIDTH } from '@constant/common.constant';
 
-export const StyledDrawer = styled(Drawer)(
-    ({
-        theme: {
-            breakpoints,
-            typography: { pxToRem },
-        },
-    }) => ({
-        display: 'none',
+export const StyledDrawer = styled(Drawer)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        palette,
+    } = theme;
 
-        [breakpoints.up('md')]: {
-            display: 'block',
-        },
-
-        width: pxToRem(SIDEBAR_WIDTH),
-        flexShrink: 0,
-
+    return {
+        display: 'block',
         [`& .${drawerClasses.paper}`]: {
-            width: pxToRem(280),
-            boxSizing: 'border-box',
+            backgroundColor: palette.background.default,
+            width: pxToRem(SIDEBAR_WIDTH),
             top: pxToRem(NAVBAR_HEIGHT),
         },
-    }),
-);
+    };
+});
