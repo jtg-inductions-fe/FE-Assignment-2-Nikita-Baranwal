@@ -1,5 +1,5 @@
 import { itemData } from 'data/ImageGrid/ImageGrid';
 
-import { ImageGrid } from '@components/ImageGrid/ImageGrid';
+import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 
-export const Dashboard = () => <ImageGrid data={itemData} />;
+export const Dashboard = () => <ImageGridContainer data={itemData} />;
