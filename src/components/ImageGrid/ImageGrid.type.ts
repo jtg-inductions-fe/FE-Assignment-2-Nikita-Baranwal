@@ -19,17 +19,6 @@ export type LayoutItem = {
 };
 
 /**
- * Maps different screen sizes to their respective grid layout configurations.
- */
-export type LayoutMap = {
-    /** Layout configuration for extra-small (mobile) screens */
-    XS: LayoutItem[];
-
-    /** Layout configuration for small (tablet and above) screens */
-    SM: LayoutItem[];
-};
-
-/**
  * Props for the ImageGrid component which renders a responsive image gallery.
  */
 export type ImageGridListProps = {
@@ -38,7 +27,7 @@ export type ImageGridListProps = {
     /** The layout configuration (based on screen size) for how each image should be positioned */
     layout: LayoutItem[];
 
-    /** The variant of the grid layout – e.g., 'quilted' or 'standard' */
+    /** The variant of the grid layout */
     variant: 'quilted' | 'standard';
 
     /** Number of columns in the grid */
