@@ -1,20 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 
-import { IconButton, Stack } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 
-import { SidebarFooterMenu } from '@constant/SidebarMenu/SidebarMenu';
+import { sidebarFooterMenu } from '@constant/SidebarMenu/SidebarMenu';
 
 export const SidebarFooter = () => {
     const navigate = useNavigate();
 
     return (
-        <Stack
-            direction="row"
-            width="100%"
-            justifyContent="space-around"
-            py={2}
-        >
-            {SidebarFooterMenu.map((item) => {
+        <Box paddingTop={2}>
+            {sidebarFooterMenu.map((item) => {
                 const Icon = item.icon;
                 return (
                     <IconButton
@@ -27,6 +22,6 @@ export const SidebarFooter = () => {
                     </IconButton>
                 );
             })}
-        </Stack>
+        </Box>
     );
 };

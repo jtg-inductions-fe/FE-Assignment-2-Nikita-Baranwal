@@ -1,12 +1,12 @@
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import BuildIcon from '@mui/icons-material/Build';
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import DescriptionIcon from '@mui/icons-material/Description';
 import HelpIcon from '@mui/icons-material/Help';
 import LanguageIcon from '@mui/icons-material/Language';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import MoveToInboxIcon from '@mui/icons-material/MoveToInbox';
 import NextWeekIcon from '@mui/icons-material/NextWeek';
+import PieChartIcon from '@mui/icons-material/PieChart';
 import SettingsIcon from '@mui/icons-material/Settings';
 import TuneIcon from '@mui/icons-material/Tune';
 
@@ -26,7 +26,7 @@ export const sidebarMenu = [
         {
             id: 'overview',
             title: 'Overview',
-            icon: DashboardIcon,
+            icon: PieChartIcon,
             path: '/',
         },
         {
@@ -75,10 +75,10 @@ export const sidebarMenu = [
     ],
     [
         {
-            id: 'docs',
-            title: 'Docs',
-            icon: DescriptionIcon,
-            path: '/description',
+            id: 'help',
+            title: 'Help',
+            icon: HelpIcon,
+            path: '/help',
         },
         {
             id: 'components',
@@ -87,10 +87,10 @@ export const sidebarMenu = [
             path: '/components',
         },
         {
-            id: 'help',
-            title: 'Help',
-            icon: HelpIcon,
-            path: '/help',
+            id: 'docs',
+            title: 'Docs',
+            icon: DescriptionIcon,
+            path: '/description',
         },
     ],
 ];
@@ -102,7 +102,7 @@ export const sidebarMenu = [
  * - `icon`: Material UI icon component
  * - `path`: Navigation path
  */
-export const SidebarFooterMenu = [
+export const sidebarFooterMenu = [
     {
         id: 'settings',
         icon: SettingsIcon,

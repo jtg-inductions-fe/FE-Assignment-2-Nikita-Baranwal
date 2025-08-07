@@ -18,7 +18,12 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
             ModalProps={{ keepMounted: true }}
         >
             <SidebarContentStyles>
-                <Box flexGrow={1} style={{ overflowY: 'auto' }}>
+                <Box
+                    flexGrow={1}
+                    style={{ overflowY: 'auto' }}
+                    width="100%"
+                    p={2}
+                >
                     <SidebarItems />
                 </Box>
                 <SidebarFooter />

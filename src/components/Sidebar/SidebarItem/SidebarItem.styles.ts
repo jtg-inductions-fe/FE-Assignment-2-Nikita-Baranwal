@@ -8,17 +8,16 @@ import {
 
 export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
     const {
+        typography: { pxToRem },
         palette: { grey, primary },
     } = theme;
 
     return {
         color: grey[900],
+        marginTop: pxToRem(10),
+        marginBottom: pxToRem(10),
 
         [`& .${listItemIconClasses.root}`]: {
-            color: grey[900],
-        },
-
-        [`& .${typographyClasses.root}`]: {
             color: grey[900],
         },
 
@@ -33,14 +32,11 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
             [`& .${typographyClasses.root}`]: {
                 color: primary.main,
             },
-
-            '&:hover': {
-                backgroundColor: 'transparent',
-            },
         },
 
         '&:hover': {
             backgroundColor: grey[200],
+            borderRadius: pxToRem(12),
         },
     };
 });

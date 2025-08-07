@@ -9,6 +9,7 @@ import {
     List,
     ListItemIcon,
     ListItemText,
+    Typography,
 } from '@mui/material';
 
 import { StyledListItemButton } from './SidebarItem.styles';
@@ -44,9 +45,20 @@ export const SidebarItem = ({
                     : {})}
             >
                 <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={label} />
+                <ListItemText
+                    primary={<Typography variant="h4">{label}</Typography>}
+                />
                 {badgeCount !== undefined && (
-                    <Badge badgeContent={badgeCount} color={badgeColor} />
+                    <Badge
+                        sx={{
+                            marginRight: '10px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                        badgeContent={badgeCount}
+                        color={badgeColor}
+                    />
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
             </StyledListItemButton>

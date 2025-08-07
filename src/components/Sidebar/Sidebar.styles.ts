@@ -21,19 +21,22 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
             height: '100vh',
             overflowY: 'auto',
             position: 'relative',
+            padding: '2',
+
             [theme.breakpoints.down('md')]: {
                 marginTop: NAVBAR_HEIGHT,
             },
+
+            scrollbarColor: `${palette.grey[400]} ${palette.grey[100]}`,
         },
     };
 });
 
 export const SidebarContentStyles = styled(Box)(({ theme }) => {
-    const { spacing, mixins } = theme;
+    const { mixins } = theme;
 
     return {
         height: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
-        padding: spacing(2),
         ...mixins.flex('space-between', 'center', 'column'),
     };
 });
