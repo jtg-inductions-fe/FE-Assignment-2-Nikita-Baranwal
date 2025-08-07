@@ -12,22 +12,22 @@ export const itemData: ImageItem[] = [
     {
         id: 'gallery-one',
         src: galleryOne,
-        title: 'gallery-img-one',
+        alt: 'Tech related image for gallery grid.',
     },
     {
         id: 'gallery-two',
         src: galleryTwo,
-        title: 'gallery-img-two',
+        alt: 'Tech related image for gallery grid.',
     },
     {
         id: 'gallery-three',
         src: galleryThree,
-        title: 'gallery-img-three',
+        alt: 'Tech related image for gallery grid.',
     },
     {
         id: 'gallery-four',
         src: galleryFour,
-        title: 'gallery-img-four',
+        alt: 'Tech related image for gallery grid.',
     },
 ];
 

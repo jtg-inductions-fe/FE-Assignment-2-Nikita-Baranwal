@@ -4,7 +4,7 @@
 export type ImageItem = {
     id: string;
     src: string;
-    title: string;
+    alt: string;
 };
 
 /**
@@ -28,7 +28,7 @@ export type ImageGridListProps = {
     layout: LayoutItem[];
 
     /** The variant of the grid layout */
-    variant: 'quilted' | 'standard';
+    variant?: 'quilted';
 
     /** Number of columns in the grid */
     cols: number;

@@ -13,8 +13,8 @@ export const ImageGrid = ({
         {data.map((item, index) => (
             <ImageListItem
                 key={item.id}
-                cols={layout[index]?.cols ?? 1}
-                rows={layout[index]?.rows ?? 1}
+                cols={layout[index]?.cols}
+                rows={layout[index]?.rows}
                 sx={{
                     width: '100%',
                     margin: 0,
@@ -24,7 +24,7 @@ export const ImageGrid = ({
                 <Box
                     component="img"
                     src={item.src}
-                    alt={item.title}
+                    alt={item.alt}
                     loading="lazy"
                     width="100%"
                     height="100%"
