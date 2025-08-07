@@ -23,8 +23,3 @@ export const Z_INDEX = 1201;
  */
 export const GALLERY_IMAGE_XS = 140;
 export const GALLERY_IMAGE_SM = 200;
-
-/**
- * Image variant
- */
-export const VARIANT = 'quilted';

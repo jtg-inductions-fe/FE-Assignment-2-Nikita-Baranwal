@@ -10,24 +10,24 @@ import { ImageItem } from './ImageGrid.type';
  */
 export const itemData: ImageItem[] = [
     {
-        id: 'gallery-one',
+        id: 1,
         src: galleryOne,
-        alt: 'Tech related image for gallery grid.',
+        alt: 'Gallery image 1',
     },
     {
-        id: 'gallery-two',
+        id: 2,
         src: galleryTwo,
-        alt: 'Tech related image for gallery grid.',
+        alt: 'Gallery image 2',
     },
     {
-        id: 'gallery-three',
+        id: 3,
         src: galleryThree,
-        alt: 'Tech related image for gallery grid.',
+        alt: 'Gallery image 3',
     },
     {
-        id: 'gallery-four',
+        id: 4,
         src: galleryFour,
-        alt: 'Tech related image for gallery grid.',
+        alt: 'Gallery image 4',
     },
 ];
 

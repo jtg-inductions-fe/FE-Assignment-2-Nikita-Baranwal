@@ -5,7 +5,7 @@ import { ImageGridListProps } from './ImageGrid.type';
 export const ImageGrid = ({
     data,
     layout,
-    variant,
+    variant = 'quilted',
     cols,
     rowHeight,
 }: ImageGridListProps) => (
@@ -13,8 +13,8 @@ export const ImageGrid = ({
         {data.map((item, index) => (
             <ImageListItem
                 key={item.id}
-                cols={layout[index]?.cols}
-                rows={layout[index]?.rows}
+                cols={layout[index].cols}
+                rows={layout[index].rows}
                 sx={{
                     width: '100%',
                     margin: 0,

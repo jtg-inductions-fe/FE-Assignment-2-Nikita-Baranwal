@@ -1,11 +1,6 @@
-/**
- * Represents a single image item in the image grid.
- */
-export type ImageItem = {
-    id: string;
-    src: string;
-    alt: string;
-};
+import { ImageItem } from 'data/ImageGrid/ImageGrid.type';
+
+import { ImageListProps } from '@mui/material';
 
 /**
  * Defines the layout configuration for a single image in the grid.
@@ -27,8 +22,11 @@ export type ImageGridListProps = {
     /** The layout configuration (based on screen size) for how each image should be positioned */
     layout: LayoutItem[];
 
-    /** The variant of the grid layout */
-    variant?: 'quilted';
+    /**
+     * The variant of the grid layout
+     * @default 'quilted'
+     */
+    variant?: ImageListProps['variant'];
 
     /** Number of columns in the grid */
     cols: number;
