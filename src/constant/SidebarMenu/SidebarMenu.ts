@@ -47,7 +47,7 @@ export const sidebarMenu = [
                     path: '/sales/product-list',
                 },
                 { id: 'billing', title: 'Billing', path: '/sales/billing' },
-                { id: 'tittle', title: 'Invoice', path: '/sales/invoice' },
+                { id: 'invoice', title: 'Invoice', path: '/sales/invoice' },
             ],
         },
         {
@@ -114,8 +114,8 @@ export const SidebarFooterMenu = [
         path: '/language',
     },
     {
-        id: 'tune-icon',
+        id: 'tune',
         icon: TuneIcon,
-        path: '/tune-icon',
+        path: '/tune',
     },
 ];
