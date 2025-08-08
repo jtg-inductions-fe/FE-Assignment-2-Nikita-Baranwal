@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
     Badge,
-    Collapse,
     List,
     ListItemIcon,
     ListItemText,
     Typography,
 } from '@mui/material';
 
-import { StyledListItemButton } from './SidebarItem.styles';
+import { StyledCollapse, StyledListItemButton } from './SidebarItem.styles';
 import { SidebarItemProps } from './SidebarItem.types';
 
 export const SidebarItem = ({
@@ -65,7 +64,7 @@ export const SidebarItem = ({
             </StyledListItemButton>
 
             {hasChildren && (
-                <Collapse in={open} timeout="auto" unmountOnExit>
+                <StyledCollapse in={open} timeout="auto" unmountOnExit>
                     <List
                         component="div"
                         disablePadding
@@ -73,7 +72,7 @@ export const SidebarItem = ({
                     >
                         {children}
                     </List>
-                </Collapse>
+                </StyledCollapse>
             )}
         </>
     );

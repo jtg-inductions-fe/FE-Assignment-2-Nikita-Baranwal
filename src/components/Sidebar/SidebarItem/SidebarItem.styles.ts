@@ -1,4 +1,6 @@
 import {
+    Collapse,
+    collapseClasses,
     ListItemButton,
     listItemButtonClasses,
     listItemIconClasses,
@@ -37,6 +39,17 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
 
         '&:hover': {
             backgroundColor: grey[200],
+        },
+    };
+});
+
+export const StyledCollapse = styled(Collapse)(({ theme }) => {
+    const { mixins } = theme;
+
+    return {
+        [`& .${collapseClasses.wrapperInner}`]: {
+            ...mixins.flex('center', 'center', 'column'),
+            width: '100%',
         },
     };
 });
