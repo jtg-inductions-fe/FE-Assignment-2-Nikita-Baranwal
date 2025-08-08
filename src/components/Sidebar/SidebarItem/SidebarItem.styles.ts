@@ -1,4 +1,5 @@
 import {
+    Badge,
     ListItemButton,
     listItemButtonClasses,
     listItemIconClasses,
@@ -38,5 +39,16 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
             backgroundColor: grey[200],
             borderRadius: pxToRem(12),
         },
+    };
+});
+
+export const StyledBadge = styled(Badge)(({ theme }) => {
+    const {
+        typography: { pxToRem },
+        mixins,
+    } = theme;
+    return {
+        ...mixins.flex(),
+        marginRight: pxToRem(10),
     };
 });

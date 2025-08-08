@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
-    Badge,
     Collapse,
     List,
     ListItemIcon,
@@ -12,7 +11,7 @@ import {
     Typography,
 } from '@mui/material';
 
-import { StyledListItemButton } from './SidebarItem.styles';
+import { StyledBadge, StyledListItemButton } from './SidebarItem.styles';
 import { SidebarItemProps } from './SidebarItem.types';
 
 export const SidebarItem = ({
@@ -49,16 +48,7 @@ export const SidebarItem = ({
                     primary={<Typography variant="h4">{label}</Typography>}
                 />
                 {badgeCount !== undefined && (
-                    <Badge
-                        sx={{
-                            marginRight: '10px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
-                        badgeContent={badgeCount}
-                        color={badgeColor}
-                    />
+                    <StyledBadge badgeContent={badgeCount} color={badgeColor} />
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
             </StyledListItemButton>
