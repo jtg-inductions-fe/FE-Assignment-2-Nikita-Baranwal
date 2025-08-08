@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 import { JSX } from '@emotion/react/jsx-runtime';
 
 export type SidebarItemProps = {
@@ -8,6 +6,6 @@ export type SidebarItemProps = {
     to?: string;
     badgeCount?: number;
     badgeColor?: string;
-    children?: ReactNode;
+    children?: JSX.Element;
     isActive?: boolean;
 };
