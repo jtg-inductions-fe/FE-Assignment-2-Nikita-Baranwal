@@ -57,8 +57,10 @@ export const sidebarMenu: SidebarMenu = [
             title: 'Messages',
             icon: MoveToInboxIcon,
             path: '/messages',
-            badgeCount: 1,
-            badgeColor: 'warning',
+            badge: {
+                count: 1,
+                color: 'warning',
+            },
         },
         {
             id: 'authentication',
@@ -106,9 +108,9 @@ export const sidebarMenu: SidebarMenu = [
  */
 export const sidebarFooterMenu = [
     {
-        id: 'settings',
-        icon: SettingsIcon,
-        path: '/settings',
+        id: 'tune',
+        icon: TuneIcon,
+        path: '/tune',
     },
     {
         id: 'language',
@@ -116,8 +118,8 @@ export const sidebarFooterMenu = [
         path: '/language',
     },
     {
-        id: 'tune',
-        icon: TuneIcon,
-        path: '/tune',
+        id: 'settings',
+        icon: SettingsIcon,
+        path: '/settings',
     },
 ];

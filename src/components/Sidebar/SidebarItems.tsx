@@ -28,10 +28,10 @@ const RenderSidebarItems = ({
                         isActive={isActive}
                         to={item.path}
                         badge={
-                            item.badgeCount !== undefined
+                            item.badge?.count !== undefined
                                 ? {
-                                      count: item.badgeCount,
-                                      color: item.badgeColor,
+                                      count: item.badge.count,
+                                      color: item.badge.color,
                                   }
                                 : undefined
                         }

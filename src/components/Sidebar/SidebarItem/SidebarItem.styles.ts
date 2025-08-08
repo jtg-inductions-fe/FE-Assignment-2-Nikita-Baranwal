@@ -1,6 +1,7 @@
 import {
     Collapse,
     collapseClasses,
+    listClasses,
     ListItemButton,
     listItemButtonClasses,
     listItemIconClasses,
@@ -44,12 +45,27 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
 });
 
 export const StyledCollapse = styled(Collapse)(({ theme }) => {
-    const { mixins } = theme;
+    const {
+        mixins,
+        palette: { grey },
+    } = theme;
 
     return {
-        [`& .${collapseClasses.wrapperInner}`]: {
-            ...mixins.flex('center', 'center', 'column'),
+        [`& .${collapseClasses.wrapper}`]: {
+            ...mixins.flex('center', 'flex-end', 'column'),
             width: '100%',
+        },
+        [`& .${collapseClasses.wrapperInner}`]: {
+            ...mixins.flex('center', 'flex-start', 'column'),
+            width: '78%',
+        },
+        [`& .${listClasses.root}`]: {
+            width: '100%',
+        },
+        [`& .${listItemButtonClasses.root}`]: {
+            '&:hover': {
+                backgroundColor: grey[200],
+            },
         },
     };
 });

@@ -1,14 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Box, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 
 import { sidebarFooterMenu } from '@constant/SidebarMenu/SidebarMenu';
+
+import { StyledFooterItems } from './SidebarFooter.styles';
 
 export const SidebarFooter = () => {
     const navigate = useNavigate();
 
     return (
-        <Box paddingTop={2}>
+        <StyledFooterItems>
             {sidebarFooterMenu.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -22,6 +24,6 @@ export const SidebarFooter = () => {
                     </IconButton>
                 );
             })}
-        </Box>
+        </StyledFooterItems>
     );
 };

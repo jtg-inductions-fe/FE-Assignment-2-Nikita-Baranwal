@@ -20,15 +20,15 @@ export type SidebarMenuItem = {
     path: string;
 
     /**
-     * Optional number to display as a badge (e.g., notification count).
+     * Optional badge configuration to display a count with a specific color.
+     *
+     * @property {number} [count] - The numeric value to display inside the badge (e.g., a notification or message count).
+     * @property {BadgeProps['color']} [color] - The color of the badge. Accepts predefined MUI badge colors like 'primary', 'secondary', etc.
      */
-    badgeCount?: number;
-
-    /**
-     * Optional color of the badge.
-     * Must be one of the predefined Material UI color types.
-     */
-    badgeColor?: BadgeProps['color'];
+    badge?: {
+        count?: number;
+        color?: BadgeProps['color'];
+    };
 
     /**
      * Optional array of child menu items (for nested menus).
