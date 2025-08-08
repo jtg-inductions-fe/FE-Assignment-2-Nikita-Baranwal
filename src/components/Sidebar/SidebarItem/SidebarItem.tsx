@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import {
+    Badge,
     Collapse,
     List,
     ListItemIcon,
@@ -11,17 +12,16 @@ import {
     Typography,
 } from '@mui/material';
 
-import { StyledBadge, StyledListItemButton } from './SidebarItem.styles';
+import { StyledListItemButton } from './SidebarItem.styles';
 import { SidebarItemProps } from './SidebarItem.types';
 
 export const SidebarItem = ({
     icon,
     label,
     children,
-    badgeCount,
+    badge,
     isActive,
     to,
-    badgeColor,
 }: SidebarItemProps) => {
     const hasChildren = Boolean(children);
     const [open, setOpen] = useState(false);
@@ -36,6 +36,9 @@ export const SidebarItem = ({
             <StyledListItemButton
                 onClick={handleClick}
                 selected={isActive}
+                aria-haspopup={hasChildren ? 'true' : undefined}
+                aria-expanded={hasChildren ? open : undefined}
+                aria-controls={hasChildren ? `${label}-children` : undefined}
                 {...(!hasChildren && to
                     ? {
                           component: Link,
@@ -43,19 +46,33 @@ export const SidebarItem = ({
                       }
                     : {})}
             >
-                <ListItemIcon>{icon}</ListItemIcon>
+                {icon && <ListItemIcon>{icon}</ListItemIcon>}
                 <ListItemText
-                    primary={<Typography variant="h4">{label}</Typography>}
+                    primary={
+                        <Typography variant="h4" color="inherit" noWrap>
+                            {label}
+                        </Typography>
+                    }
                 />
-                {badgeCount !== undefined && (
-                    <StyledBadge badgeContent={badgeCount} color={badgeColor} />
+                {badge?.count !== undefined && (
+                    <Badge
+                        sx={{ marginRight: '10px' }}
+                        badgeContent={badge?.count}
+                        color={badge?.color}
+                    />
                 )}
                 {hasChildren && (open ? <ExpandLess /> : <ExpandMore />)}
             </StyledListItemButton>
 
             {hasChildren && (
                 <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div">{children}</List>
+                    <List
+                        component="div"
+                        disablePadding
+                        id={`${label}-children`}
+                    >
+                        {children}
+                    </List>
                 </Collapse>
             )}
         </>

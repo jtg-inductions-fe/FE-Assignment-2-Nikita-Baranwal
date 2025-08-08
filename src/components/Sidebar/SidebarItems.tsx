@@ -25,10 +25,16 @@ const RenderSidebarItems = ({
                         key={item.id}
                         icon={Icon && <Icon />}
                         label={item.title}
-                        badgeCount={item.badgeCount}
                         isActive={isActive}
                         to={item.path}
-                        badgeColor={item.badgeColor}
+                        badge={
+                            item.badgeCount !== undefined
+                                ? {
+                                      count: item.badgeCount,
+                                      color: item.badgeColor,
+                                  }
+                                : undefined
+                        }
                     >
                         {item.children && (
                             <RenderSidebarItems items={item.children} />

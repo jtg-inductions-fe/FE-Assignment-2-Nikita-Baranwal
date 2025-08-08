@@ -10,7 +10,7 @@ import PieChartIcon from '@mui/icons-material/PieChart';
 import SettingsIcon from '@mui/icons-material/Settings';
 import TuneIcon from '@mui/icons-material/Tune';
 
-import { SidebarMenuItem } from './SidebarMenu.type';
+import { SidebarMenu } from './SidebarMenu.type';
 
 /**
  * Sidebar navigation menu configuration for the app.
@@ -23,7 +23,7 @@ import { SidebarMenuItem } from './SidebarMenu.type';
  * - `badgeCount` (optional): Badge number to display
  * - `children` (optional): Submenu items
  */
-export const sidebarMenu: SidebarMenuItem[][] = [
+export const sidebarMenu: SidebarMenu = [
     [
         {
             id: 'overview',

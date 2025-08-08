@@ -1,3 +1,7 @@
+import { ElementType } from 'react';
+
+import { BadgeProps } from '@mui/material';
+
 /**
  * Represents a single sidebar menu item.
  */
@@ -8,7 +12,7 @@ export type SidebarMenuItem = {
     /**
      * Optional icon component to be displayed alongside the title.
      */
-    icon?: React.ElementType;
+    icon?: ElementType;
 
     /**
      * The navigation path associated with the menu item.
@@ -24,15 +28,7 @@ export type SidebarMenuItem = {
      * Optional color of the badge.
      * Must be one of the predefined Material UI color types.
      */
-    badgeColor?:
-        | 'primary'
-        | 'secondary'
-        | 'error'
-        | 'info'
-        | 'success'
-        | 'warning'
-        | 'default'
-        | undefined;
+    badgeColor?: BadgeProps['color'];
 
     /**
      * Optional array of child menu items (for nested menus).
@@ -44,8 +40,3 @@ export type SidebarMenuItem = {
  * Represents a 2D array of grouped sidebar menu items.
  */
 export type SidebarMenu = SidebarMenuItem[][];
-
-/**
- * Represents the items shown in the footer section of the sidebar.
- */
-export type SidebarFooterMenu = SidebarMenuItem[];
