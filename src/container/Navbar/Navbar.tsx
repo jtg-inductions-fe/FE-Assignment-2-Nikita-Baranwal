@@ -51,7 +51,12 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                             <MenuIcon />
                         </StyledMenuIconButton>
                     ) : (
-                        <StyledLogo component="img" src={logo} alt="Logo" />
+                        <StyledLogo
+                            component="img"
+                            src={logo}
+                            alt="Logo"
+                            onClick={() => void navigate('/')}
+                        />
                     )}
 
                     {!isMobile && (

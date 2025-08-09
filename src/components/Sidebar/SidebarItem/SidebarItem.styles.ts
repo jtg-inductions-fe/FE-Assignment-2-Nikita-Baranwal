@@ -1,4 +1,5 @@
 import {
+    badgeClasses,
     Collapse,
     collapseClasses,
     listClasses,
@@ -23,6 +24,11 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => {
 
         [`& .${listItemIconClasses.root}`]: {
             color: grey[900],
+        },
+
+        [`& .${badgeClasses.badge}`]: {
+            color: grey[700],
+            fontWeight: '100',
         },
 
         [`&.${listItemButtonClasses.selected}`]: {
