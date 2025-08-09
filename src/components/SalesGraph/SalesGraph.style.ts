@@ -72,6 +72,7 @@ export const SalesInfo = styled(Box)(({ theme }) => {
         padding: `${pxToRem(10)} 0`,
         margin: `${pxToRem(20)} 0`,
         gap: pxToRem(8),
+        fontWeight: 700,
         fontSize: pxToRem(20),
         color: grey[900],
 
