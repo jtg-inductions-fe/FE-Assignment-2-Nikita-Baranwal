@@ -17,10 +17,11 @@ import { SidebarMenu } from './SidebarMenu.type';
  *
  * Each group in the array represents a section of the sidebar.
  * Each item can have:
+ * - `id` : Unique identifier
  * - `title`: Display name of the menu item
  * - `icon`: Material UI icon component
  * - `path`: URL path to navigate to
- * - `badgeCount` (optional): Badge number to display
+ * - `badge` (optional): Notification badge with `count` and `color`
  * - `children` (optional): Submenu items
  */
 export const sidebarMenu: SidebarMenu = [

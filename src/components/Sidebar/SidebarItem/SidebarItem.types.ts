@@ -14,4 +14,5 @@ export type SidebarItemProps = {
     };
     children?: JSX.Element;
     isActive?: boolean;
+    id: string;
 };

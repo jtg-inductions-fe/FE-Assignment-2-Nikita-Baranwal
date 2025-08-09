@@ -21,6 +21,7 @@ export const SidebarItem = ({
     badge,
     isActive,
     to,
+    id,
 }: SidebarItemProps) => {
     const hasChildren = Boolean(children);
     const [open, setOpen] = useState(false);
@@ -37,11 +38,12 @@ export const SidebarItem = ({
                 selected={isActive}
                 aria-haspopup={hasChildren ? 'true' : undefined}
                 aria-expanded={hasChildren ? open : undefined}
-                aria-controls={hasChildren ? `${label}-children` : undefined}
+                aria-controls={hasChildren ? id : undefined}
                 {...(!hasChildren && to
                     ? {
                           component: Link,
                           to: to,
+                          'aria-current': isActive ? 'page' : undefined,
                       }
                     : {})}
             >
@@ -65,11 +67,7 @@ export const SidebarItem = ({
 
             {hasChildren && (
                 <StyledCollapse in={open} timeout="auto" unmountOnExit>
-                    <List
-                        component="div"
-                        disablePadding
-                        id={`${label}-children`}
-                    >
+                    <List component="div" disablePadding id={id}>
                         {children}
                     </List>
                 </StyledCollapse>
