@@ -18,6 +18,7 @@ export const MainContent = styled(Box)(({ theme }) => {
         padding: spacing(3),
         height: '100%',
         overflowY: 'auto',
+        scrollbarWidth: 'none',
         width: '100%',
     };
 });

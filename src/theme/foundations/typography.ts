@@ -6,6 +6,8 @@ import type {
 
 import { HTML_FONT_SIZE } from '@constant/index';
 
+import { theme } from '..';
+
 /* Custom px to rem function */
 const typographyUtil: TypographyUtils = {
     pxToRem: (px: number) => `${px / HTML_FONT_SIZE}rem`,
@@ -84,6 +86,11 @@ const typographyStyle = ({
         fontWeight: 600,
         lineHeight: 1.5,
         color: palette.grey[500],
+
+        [theme.breakpoints.down('sm')]: {
+            fontSize: pxToRem(12),
+            fontWeight: 400,
+        },
     },
 
     caption: {
