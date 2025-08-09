@@ -5,6 +5,7 @@ import { Box, useMediaQuery } from '@mui/material';
 
 import { LatestCustomers } from '@components/LatestCustomers/LatestCustomers';
 import { SalesGraph } from '@components/SalesGraph';
+import { TopProducts } from '@components/TopProducts/TopProducts';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 import { theme } from '@theme/index';
 
@@ -27,6 +28,12 @@ export const Dashboard = () => {
                     width={isSmallScreen ? '100%' : '30%'}
                 >
                     <LatestCustomers />
+                </Box>
+                <Box
+                    flex={isSmallScreen ? '1 1 100%' : '0 0 70%'}
+                    width={isSmallScreen ? '100%' : '70%'}
+                >
+                    <TopProducts />
                 </Box>
             </Box>
         </Box>

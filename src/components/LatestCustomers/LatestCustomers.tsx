@@ -2,7 +2,7 @@ import { latestCustomersData } from 'data/LatestCustomers/LatestCustomers';
 
 import { Avatar, Box, Typography } from '@mui/material';
 
-import { InfoCardList } from '@components/ListCard/InfoCardList';
+import { InfoCardList } from '@components/ListCard';
 
 export const LatestCustomers = () => (
     <InfoCardList
