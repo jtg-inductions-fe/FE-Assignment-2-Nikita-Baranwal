@@ -1,14 +1,34 @@
 import { itemData } from 'data/ImageGrid/ImageGrid';
 import { salesGraphData } from 'data/SalesGraph/SalesGraph';
 
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 
+import { LatestCustomers } from '@components/LatestCustomers/LatestCustomers';
 import { SalesGraph } from '@components/SalesGraph';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
+import { theme } from '@theme/index';
 
-export const Dashboard = () => (
-    <Box display="flex" flexDirection="column" gap={3}>
-        <ImageGridContainer data={itemData} />
-        <SalesGraph data={salesGraphData} />
-    </Box>
-);
+export const Dashboard = () => {
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+    return (
+        <Box display="flex" flexDirection="column" gap={6}>
+            <ImageGridContainer data={itemData} />
+            <SalesGraph data={salesGraphData} />
+
+            <Box
+                display="flex"
+                flexDirection={isSmallScreen ? 'column' : 'row'}
+                gap={4}
+                width="100%"
+            >
+                <Box
+                    flex={isSmallScreen ? '1 1 100%' : '0 0 30%'}
+                    width={isSmallScreen ? '100%' : '30%'}
+                >
+                    <LatestCustomers />
+                </Box>
+            </Box>
+        </Box>
+    );
+};
