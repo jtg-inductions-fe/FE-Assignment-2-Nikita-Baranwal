@@ -6,6 +6,8 @@ import { ReactNode } from 'react';
  * @template T - The type of each item in the data array.
  */
 export type InfoCardListProps<T> = {
+    id: number;
+
     /**
      * The title displayed at the top of the card list.
      */

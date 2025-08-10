@@ -7,15 +7,16 @@ export const InfoCardList = <T,>({
     title,
     data,
     renderItem,
+    id,
 }: InfoCardListProps<T>) => (
     <InfoCardListContainer>
         <Typography variant="h2" fontWeight={600} mb={2}>
             {title}
         </Typography>
 
-        <InfoCardItems>
+        <InfoCardItems role="list">
             {data.map((item, index) => (
-                <Box key={index} width="100%">
+                <Box key={id} width="100%" role="listitem">
                     {renderItem(item, index)}
                     {index < data.length - 1 && <Divider sx={{ py: 2 }} />}
                 </Box>

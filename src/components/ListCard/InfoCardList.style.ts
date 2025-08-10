@@ -28,7 +28,7 @@ export const InfoCardItems = styled(Box)(({ theme }) => {
         ...mixins.flex('center', 'center', 'column'),
         gap: pxToRem(8),
         width: '100%',
-        maxHeight: INFOCARDLIST_HEIGHT,
+        maxHeight: pxToRem(INFOCARDLIST_HEIGHT),
         overflowY: 'auto',
         paddingTop: pxToRem(200),
         '&::-webkit-scrollbar': {

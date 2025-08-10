@@ -23,16 +23,10 @@ export const Dashboard = () => {
                 gap={4}
                 width="100%"
             >
-                <Box
-                    flex={isSmallScreen ? '1 1 100%' : '0 0 30%'}
-                    width={isSmallScreen ? '100%' : '30%'}
-                >
+                <Box flex={isSmallScreen ? '1 1 100%' : '0 0 30%'}>
                     <LatestCustomers />
                 </Box>
-                <Box
-                    flex={isSmallScreen ? '1 1 100%' : '0 0 70%'}
-                    width={isSmallScreen ? '100%' : '70%'}
-                >
+                <Box flex={isSmallScreen ? '1 1 100%' : '0 0 70%'}>
                     <TopProducts />
                 </Box>
             </Box>
