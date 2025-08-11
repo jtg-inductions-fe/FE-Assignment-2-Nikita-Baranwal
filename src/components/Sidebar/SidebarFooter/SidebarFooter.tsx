@@ -4,13 +4,12 @@ import { IconButton } from '@mui/material';
 
 import { SidebarFooterProps } from './SidebarFooter.type';
 
-export const SidebarFooter = ({ icon: Icon, to, id }: SidebarFooterProps) => {
+export const SidebarFooter = ({ icon: Icon, to }: SidebarFooterProps) => {
     const navigate = useNavigate();
 
     return (
         <IconButton
             color="inherit"
-            key={id}
             aria-label={`Navigate to ${to}`}
             onClick={() => void navigate(to)}
         >

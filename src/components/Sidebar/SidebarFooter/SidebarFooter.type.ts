@@ -2,8 +2,6 @@
  * Props for the SidebarFooter component.
  */
 export type SidebarFooterProps = {
-    id: string;
-
     /**
      * Icon component to display in the footer.
      */

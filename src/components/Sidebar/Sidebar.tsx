@@ -20,19 +20,13 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
             ModalProps={{ keepMounted: true }}
         >
             <SidebarContentStyles>
-                <Box
-                    flexGrow={1}
-                    style={{ overflowY: 'auto' }}
-                    width="100%"
-                    p={2}
-                >
+                <Box flexGrow={1} width="100%" p={2} sx={{ overflowY: 'auto' }}>
                     <SidebarItems />
                 </Box>
                 <Box display="flex" gap={4}>
                     {sidebarFooterMenu.map((item) => (
                         <SidebarFooter
                             key={item.id}
-                            id={item.id}
                             icon={item.icon}
                             to={item.path}
                         />
