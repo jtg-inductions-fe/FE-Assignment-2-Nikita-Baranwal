@@ -1,9 +1,12 @@
 import { itemData } from 'data/ImageGrid/ImageGrid';
 import { salesGraphData } from 'data/SalesGraph/SalesGraph';
+import { transactionsData } from 'data/Transactions/Transactions';
 
 import { Box, useMediaQuery } from '@mui/material';
 
 import { SalesGraph } from '@components/SalesGraph';
+import { Transactions } from '@components/Transactions/Transactions';
+import { transactionColumns } from '@components/Transactions/TransactionsColumns';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 import { LatestCustomers } from '@container/LatestCustomers';
 import { TopProducts } from '@container/TopProducts';
@@ -30,6 +33,12 @@ export const Dashboard = () => {
                     <TopProducts />
                 </Box>
             </Box>
+            <Transactions
+                title="Transactions"
+                subtitle="This is a list of latest transactions."
+                columns={transactionColumns}
+                rows={transactionsData}
+            />
         </Box>
     );
 };

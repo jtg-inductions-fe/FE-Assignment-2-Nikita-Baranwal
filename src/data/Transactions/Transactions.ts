@@ -1,8 +1,8 @@
 import { Transaction } from './Transactions.types';
 
 /**
- * List of recent financial transactions, including payments, refunds, and failed attempts.
- * Each transaction includes user details, type, date, amount, and status.
+ * Mock data representing a list of financial transactions.
+ * Each transaction includes metadata such as type, status, and amount.
  */
 export const transactionsData: Transaction[] = [
     {

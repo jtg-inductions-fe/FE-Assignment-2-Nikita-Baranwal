@@ -32,4 +32,14 @@ export const SALESGRAPH_HEIGHT = 420;
 /**
  * InfoCardList Height
  */
-export const INFOCARDLIST_HEIGHT = 400;
+export const INFOCARDLIST_HEIGHT = 420;
+
+/**
+ * Transactions Height
+ */
+export const TRANSACTIONS_HEIGHT = 490;
+
+/**
+ * Transactions Overview Height
+ */
+export const OVERVIEW_HEIGHT = 80;
