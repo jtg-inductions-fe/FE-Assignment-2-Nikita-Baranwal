@@ -23,6 +23,7 @@ const RenderSidebarItems = ({
                 return (
                     <SidebarItem
                         key={item.id}
+                        id={item.id}
                         icon={Icon && <Icon />}
                         label={item.title}
                         isActive={isActive}

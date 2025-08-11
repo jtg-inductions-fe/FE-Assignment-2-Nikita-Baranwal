@@ -2,28 +2,19 @@ import { useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@mui/material';
 
-import { sidebarFooterMenu } from '@constant/SidebarMenu/SidebarMenu';
+import { SidebarFooterProps } from './SidebarFooter.type';
 
-import { StyledFooterItems } from './SidebarFooter.styles';
-
-export const SidebarFooter = () => {
+export const SidebarFooter = ({ icon: Icon, to, id }: SidebarFooterProps) => {
     const navigate = useNavigate();
 
     return (
-        <StyledFooterItems>
-            {sidebarFooterMenu.map((item) => {
-                const Icon = item.icon;
-                return (
-                    <IconButton
-                        color="inherit"
-                        key={item.id}
-                        aria-label={`Navigate to ${item.path}`}
-                        onClick={() => void navigate(item.path)}
-                    >
-                        <Icon />
-                    </IconButton>
-                );
-            })}
-        </StyledFooterItems>
+        <IconButton
+            color="inherit"
+            key={id}
+            aria-label={`Navigate to ${to}`}
+            onClick={() => void navigate(to)}
+        >
+            <Icon />
+        </IconButton>
     );
 };

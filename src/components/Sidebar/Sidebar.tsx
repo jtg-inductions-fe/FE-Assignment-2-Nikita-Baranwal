@@ -1,5 +1,7 @@
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 
+import { sidebarFooterMenu } from '@constant/SidebarMenu/SidebarMenu';
+
 import { SidebarContentStyles, StyledDrawer } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
 import { SidebarFooter } from './SidebarFooter';
@@ -26,7 +28,16 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
                 >
                     <SidebarItems />
                 </Box>
-                <SidebarFooter />
+                <Box display="flex" gap={4}>
+                    {sidebarFooterMenu.map((item) => (
+                        <SidebarFooter
+                            key={item.id}
+                            id={item.id}
+                            icon={item.icon}
+                            to={item.path}
+                        />
+                    ))}
+                </Box>
             </SidebarContentStyles>
         </StyledDrawer>
     );
