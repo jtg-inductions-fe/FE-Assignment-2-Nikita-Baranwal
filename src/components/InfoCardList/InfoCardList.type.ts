@@ -15,27 +15,27 @@ export type InfoListCardItemData = {
     /**
      * Optional email address (used to determine if item represents a customer).
      */
-    email: string;
+    email?: string;
 
     /**
      * Optional URL for the avatar image.
      */
-    avatarUrl: string;
+    avatarUrl?: string;
 
     /**
      * Optional monetary value, usually shown with a dollar sign (used for customers).
      */
-    amount: number;
+    amount?: number;
 
     /**
      * Optional numeric value representing sales count (used for products).
      */
-    sales: number;
+    sales?: number;
 
     /**
      * Optional tech stack used for a product.
      */
-    techStack: string;
+    techStack?: string;
 };
 
 /**

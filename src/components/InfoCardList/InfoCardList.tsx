@@ -49,7 +49,7 @@ export const InfoCardList = ({ title, data }: InfoListCardProps) => (
                         <TextField
                             value={
                                 item.email
-                                    ? item.amount.toLocaleString('en-US', {
+                                    ? item.amount?.toLocaleString('en-US', {
                                           style: 'currency',
                                           currency: 'USD',
                                           maximumFractionDigits: 0,
