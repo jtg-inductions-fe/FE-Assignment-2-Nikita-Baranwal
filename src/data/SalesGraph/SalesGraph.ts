@@ -8,11 +8,11 @@ import { SalesGraphData } from './SalesGraph.type';
  * @type {SalesGraphData[]}
  */
 export const salesGraphData: SalesGraphData[] = [
-    { date: '01 Apr', amount: 80 },
-    { date: '02 Apr', amount: 100 },
-    { date: '03 Apr', amount: 90 },
-    { date: '04 Apr', amount: 70 },
-    { date: '05 Apr', amount: 100 },
-    { date: '06 Apr', amount: 90 },
-    { date: '07 Apr', amount: 120 },
+    { date: '01 Aug', amount: 80 },
+    { date: '02 Aug', amount: 100 },
+    { date: '03 Aug', amount: 90 },
+    { date: '04 Aug', amount: 70 },
+    { date: '05 Aug', amount: 100 },
+    { date: '06 Aug', amount: 90 },
+    { date: '07 Aug', amount: 120 },
 ];
