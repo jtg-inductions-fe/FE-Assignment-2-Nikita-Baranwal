@@ -32,4 +32,4 @@ export const SALESGRAPH_HEIGHT = 420;
 /**
  * InfoCardList Height
  */
-export const INFOCARDLIST_HEIGHT = 380;
+export const INFOCARDLIST_HEIGHT = 420;

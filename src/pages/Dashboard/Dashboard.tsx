@@ -3,17 +3,17 @@ import { salesGraphData } from 'data/SalesGraph/SalesGraph';
 
 import { Box, useMediaQuery } from '@mui/material';
 
-import { LatestCustomers } from '@components/LatestCustomers/LatestCustomers';
 import { SalesGraph } from '@components/SalesGraph';
-import { TopProducts } from '@components/TopProducts/TopProducts';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
+import { LatestCustomers } from '@container/LatestCustomers/LatestCustomers';
+import { TopProducts } from '@container/TopProducts/TopProducts';
 import { theme } from '@theme/index';
 
 export const Dashboard = () => {
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
-        <Box display="flex" flexDirection="column" gap={6}>
+        <Box display="flex" flexDirection="column" gap={6} width="100%">
             <ImageGridContainer data={itemData} />
             <SalesGraph data={salesGraphData} />
 
