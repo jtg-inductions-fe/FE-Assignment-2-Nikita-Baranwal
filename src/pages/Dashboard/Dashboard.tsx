@@ -5,7 +5,7 @@ import { transactionsData } from 'data/Transactions/Transactions';
 import { Box, useMediaQuery } from '@mui/material';
 
 import { SalesGraph } from '@components/SalesGraph';
-import { Transactions } from '@components/Transactions/Transactions';
+import { Transactions } from '@components/Transactions';
 import { transactionColumns } from '@components/Transactions/TransactionsColumns';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 import { LatestCustomers } from '@container/LatestCustomers';

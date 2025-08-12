@@ -18,35 +18,41 @@ export const TransactionsTableContainer = styled(TableContainer)(({
         borderRadius: pxToRem(16),
         boxShadow:
             '0px 1px 3px rgba(0, 0, 0, 0.10), 0px 1px 2px rgba(0, 0, 0, 0.06)',
-        maxHeight: TRANSACTIONS_HEIGHT,
+        maxHeight: pxToRem(TRANSACTIONS_HEIGHT),
         position: 'relative',
         overflowY: 'auto',
         paddingTop: 0,
         backgroundColor: palette.common.white,
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
     };
 });
 
 export const TransactionsTableOverview = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
+        mixins,
+        palette,
     } = theme;
 
     return {
+        ...mixins.flex('center', 'flex-start', 'column'),
         position: 'sticky',
         top: 0,
         zIndex: 20,
-        backgroundColor: 'white',
-        height: OVERVIEW_HEIGHT,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        backgroundColor: palette.common.white,
+        height: pxToRem(OVERVIEW_HEIGHT),
         paddingTop: pxToRem(50),
         paddingBottom: pxToRem(36),
     };
 });
 
 export const TransactionsTable = styled(Table)(({ theme }) => {
-    const { palette } = theme;
+    const {
+        palette,
+        typography: { pxToRem },
+    } = theme;
 
     return {
         borderCollapse: 'separate',
@@ -55,7 +61,7 @@ export const TransactionsTable = styled(Table)(({ theme }) => {
         '& thead th': {
             backgroundColor: palette.grey[100],
             position: 'sticky',
-            top: OVERVIEW_HEIGHT,
+            top: pxToRem(OVERVIEW_HEIGHT),
             zIndex: 10,
             boxShadow: '0 2px 2px -1px rgba(0,0,0,0.1)',
         },
