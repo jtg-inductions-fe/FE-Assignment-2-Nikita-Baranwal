@@ -29,7 +29,7 @@ export const Sidebar = ({ open, onClose }: SidebarProps) => {
                     ))}
                 </Box>
 
-                <Box display="flex" gap={4}>
+                <Box display="flex" gap={4} mb={2}>
                     {sidebarFooterMenu.map((item) => (
                         <SidebarFooter
                             key={item.id}
