@@ -21,7 +21,7 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => {
         zIndex: Z_INDEX,
         height: pxToRem(NAVBAR_HEIGHT),
         boxShadow: 'none',
-        borderBottom: `1px solid ${theme.palette.grey[300]}`,
+        borderBottom: `${pxToRem(1)} solid ${theme.palette.grey[300]}`,
     };
 });
 

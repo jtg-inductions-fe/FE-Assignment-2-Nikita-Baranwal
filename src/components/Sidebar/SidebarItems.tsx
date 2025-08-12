@@ -7,7 +7,7 @@ import { sidebarMenu } from '@constant/SidebarMenu/SidebarMenu';
 
 import { SidebarItem } from './SidebarItem/SidebarItem';
 
-const RenderSidebarItems = ({
+const SidebarItemRenderer = ({
     items,
 }: {
     items: (typeof sidebarMenu)[number];
@@ -38,7 +38,7 @@ const RenderSidebarItems = ({
                         }
                     >
                         {item.children && (
-                            <RenderSidebarItems items={item.children} />
+                            <SidebarItemRenderer items={item.children} />
                         )}
                     </SidebarItem>
                 );
@@ -51,7 +51,7 @@ export const SidebarItems = () => (
     <>
         {sidebarMenu.map((menu, index) => (
             <Box key={index}>
-                <RenderSidebarItems items={menu} />
+                <SidebarItemRenderer items={menu} />
                 {index < sidebarMenu.length - 1 && <Divider />}
             </Box>
         ))}
