@@ -28,7 +28,7 @@ export const TooltipLabel = styled(Typography)(({ theme }) => {
     };
 });
 
-export const SalesRow = styled(Box)(({ theme }) => {
+export const SalesDisplay = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
         mixins,
@@ -41,7 +41,7 @@ export const SalesRow = styled(Box)(({ theme }) => {
     };
 });
 
-export const SalesDot = styled(Box)(({ theme }) => {
+export const SalesPoint = styled(Box)(({ theme }) => {
     const {
         palette,
         typography: { pxToRem },

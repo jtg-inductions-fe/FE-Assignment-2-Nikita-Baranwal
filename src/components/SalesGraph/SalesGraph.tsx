@@ -56,6 +56,12 @@ export const SalesGraph = () => {
                         axisLine={false}
                         tickMargin={isSmallScreen ? 30 : 20}
                         angle={isSmallScreen ? -45 : 0}
+                        tickFormatter={(value: string) =>
+                            new Date(value).toLocaleDateString('en-US', {
+                                day: '2-digit',
+                                month: 'short',
+                            })
+                        }
                     />
 
                     <StyledYAxis
