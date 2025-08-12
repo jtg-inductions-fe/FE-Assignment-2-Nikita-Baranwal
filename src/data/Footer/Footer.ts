@@ -8,13 +8,7 @@ import {
 import { SocialIcon } from './Footer.type';
 
 /**
- * List of social media icons with labels and URLs.
- * Each entry contains:
- * - `label`: a string describing the social platform,
- * - `Icon`: the SVG icon component imported from MUI icons,
- * - `url`: the target link for the icon.
- *
- * This array is used to render social media buttons in the footer.
+ * List of social media icons with labels, icons and URLs.
  */
 export const socialIcons: SocialIcon[] = [
     {

@@ -5,9 +5,9 @@ import { Box, IconButton, Typography } from '@mui/material';
 import { FooterContainer } from './Footer.style';
 
 export const Footer = () => (
-    <FooterContainer>
+    <FooterContainer boxShadow={1}>
         <Typography variant="body1">
-            © 2021 Themesberg, LLC. All rights reserved.
+            &copy; 2021 Themesberg, LLC. All rights reserved.
         </Typography>
         <Box display="flex" gap={2}>
             {socialIcons.map(({ Icon, label, url }) => (
