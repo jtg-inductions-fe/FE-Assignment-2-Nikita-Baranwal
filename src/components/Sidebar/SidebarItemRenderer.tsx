@@ -1,13 +1,10 @@
 import { useLocation } from 'react-router-dom';
 
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
+import { sidebarMenu } from '@constant/SidebarMenu';
 
-import { sidebarMenu } from '@constant/SidebarMenu/SidebarMenu';
+import { SidebarItem } from './SidebarItem';
 
-import { SidebarItem } from './SidebarItem/SidebarItem';
-
-const SidebarItemRenderer = ({
+export const SidebarItemRenderer = ({
     items,
 }: {
     items: (typeof sidebarMenu)[number];
@@ -46,14 +43,3 @@ const SidebarItemRenderer = ({
         </>
     );
 };
-
-export const SidebarItems = () => (
-    <>
-        {sidebarMenu.map((menu, index) => (
-            <Box key={index}>
-                <SidebarItemRenderer items={menu} />
-                {index < sidebarMenu.length - 1 && <Divider />}
-            </Box>
-        ))}
-    </>
-);
