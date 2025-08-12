@@ -53,7 +53,8 @@ export type TableColumn<T = unknown> = {
 };
 
 /**
- * Props passed to the `CustomTable` component for rendering transaction data.
+ * Defines the props for the `TransactionsTable` component,
+ * which is responsible for rendering a table of transaction data.
  */
 export type TransactionsTableProps = {
     /** Optional title to be displayed above the table */
