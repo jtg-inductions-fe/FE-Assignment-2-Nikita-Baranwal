@@ -14,7 +14,7 @@ export const Transactions = <T extends { id: string }>({
     columns,
     rows,
 }: CustomTableProps<T>) => (
-    <TransactionsTableContainer>
+    <TransactionsTableContainer sx={{ boxShadow: 1 }}>
         <TransactionsTableOverview>
             {title && <Typography variant="h2">{title}</Typography>}
             {subtitle && (

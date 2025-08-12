@@ -16,8 +16,6 @@ export const TransactionsTableContainer = styled(TableContainer)(({
     return {
         padding: pxToRem(24),
         borderRadius: pxToRem(16),
-        boxShadow:
-            '0px 1px 3px rgba(0, 0, 0, 0.10), 0px 1px 2px rgba(0, 0, 0, 0.06)',
         maxHeight: pxToRem(TRANSACTIONS_HEIGHT),
         position: 'relative',
         overflowY: 'auto',
@@ -63,7 +61,6 @@ export const TransactionsTable = styled(Table)(({ theme }) => {
             position: 'sticky',
             top: pxToRem(OVERVIEW_HEIGHT),
             zIndex: 10,
-            boxShadow: '0 2px 2px -1px rgba(0,0,0,0.1)',
         },
 
         '& tbody tr:nth-of-type(even)': {
