@@ -9,7 +9,13 @@ export const ImageGrid = ({
     cols,
     rowHeight,
 }: ImageGridListProps) => (
-    <ImageList variant={variant} cols={cols} rowHeight={rowHeight} gap={8}>
+    <ImageList
+        variant={variant}
+        cols={cols}
+        rowHeight={rowHeight}
+        gap={8}
+        sx={{ overflowY: 'hidden' }}
+    >
         {data.map((item, index) => (
             <ImageListItem
                 key={item.id}
