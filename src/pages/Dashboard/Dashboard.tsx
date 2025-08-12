@@ -5,8 +5,8 @@ import { Box, useMediaQuery } from '@mui/material';
 
 import { SalesGraph } from '@components/SalesGraph';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
-import { LatestCustomers } from '@container/LatestCustomers/LatestCustomers';
-import { TopProducts } from '@container/TopProducts/TopProducts';
+import { LatestCustomers } from '@container/LatestCustomers';
+import { TopProducts } from '@container/TopProducts';
 import { theme } from '@theme/index';
 
 export const Dashboard = () => {
