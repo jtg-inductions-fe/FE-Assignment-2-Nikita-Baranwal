@@ -43,8 +43,3 @@ export const TRANSACTIONS_HEIGHT = 490;
  * Transactions Overview Height
  */
 export const OVERVIEW_HEIGHT = 80;
-
-/**
- * Footer Height
- */
-export const FOOTER_HEIGHT = 120;
