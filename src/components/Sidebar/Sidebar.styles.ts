@@ -24,7 +24,7 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
             padding: '2',
 
             [theme.breakpoints.down('md')]: {
-                marginTop: NAVBAR_HEIGHT,
+                marginTop: pxToRem(NAVBAR_HEIGHT),
             },
 
             scrollbarColor: `${palette.grey[400]} ${palette.grey[100]}`,
