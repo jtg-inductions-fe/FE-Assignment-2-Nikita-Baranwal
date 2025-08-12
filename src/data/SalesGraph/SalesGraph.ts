@@ -2,10 +2,7 @@ import { SalesGraphData } from './SalesGraph.type';
 
 /**
  * Sample data for the sales graph.
- *
  * Each entry represents sales amount on a given date.
- *
- * @type {SalesGraphData[]}
  */
 export const salesGraphData: SalesGraphData[] = [
     { date: '01 Aug', amount: 80 },

@@ -17,7 +17,7 @@ export const SalesGraphTooltip = ({
     if (!payload || !payload.length) return null;
 
     return (
-        <TooltipContainer>
+        <TooltipContainer sx={{ boxShadow: 1 }}>
             <TooltipLabel variant="caption">{`${label}, 2021`}</TooltipLabel>
             <SalesRow>
                 <SalesDot />

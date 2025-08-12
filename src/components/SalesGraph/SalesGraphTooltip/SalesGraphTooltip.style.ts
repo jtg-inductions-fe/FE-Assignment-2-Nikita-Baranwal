@@ -12,7 +12,6 @@ export const TooltipContainer = styled(Box)(({ theme }) => {
         backgroundColor: palette.common.white,
         padding: `${pxToRem(8)} ${pxToRem(18)}`,
         border: 'none',
-        boxShadow: '0px 1px 3px rgba(0,0,0,0.10), 0px 1px 2px rgba(0,0,0,0.06)',
         transform: 'translateX(-50%)',
     };
 });
