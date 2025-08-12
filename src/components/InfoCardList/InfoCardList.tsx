@@ -16,7 +16,7 @@ import {
 import { InfoListCardProps } from './InfoCardList.type';
 
 export const InfoCardList = ({ title, data }: InfoListCardProps) => (
-    <InfoCardListContainer>
+    <InfoCardListContainer sx={{ boxShadow: 1 }}>
         <Typography variant="h2" mb={2}>
             {title}
         </Typography>

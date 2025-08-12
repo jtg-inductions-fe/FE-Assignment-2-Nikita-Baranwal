@@ -17,8 +17,6 @@ export const InfoCardListContainer = styled(Box)(({ theme }) => {
     return {
         ...mixins.flex('center', 'flex-start', 'column'),
         borderRadius: pxToRem(16),
-        boxShadow:
-            '0px 1px 3px rgba(0, 0, 0, 0.10), 0px 1px 2px rgba(0, 0, 0, 0.06)',
         gap: pxToRem(16),
         padding: pxToRem(24),
     };
