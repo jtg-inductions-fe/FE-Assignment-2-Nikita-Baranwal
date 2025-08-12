@@ -26,7 +26,7 @@ export const SalesGraph = () => {
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
-        <SalesGraphContainer>
+        <SalesGraphContainer sx={{ boxShadow: 1 }}>
             <SalesInfo>
                 Sales
                 <Tooltip title="More info" arrow>

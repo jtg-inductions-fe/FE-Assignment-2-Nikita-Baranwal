@@ -10,8 +10,6 @@ export const SalesGraphContainer = styled(Box)(({ theme }) => {
     } = theme;
 
     return {
-        boxShadow:
-            '0px 1px 3px rgba(0, 0, 0, 0.10), 0px 1px 2px rgba(0, 0, 0, 0.06)',
         padding: spacing(6),
         borderRadius: pxToRem(12),
         outline: 'none',
