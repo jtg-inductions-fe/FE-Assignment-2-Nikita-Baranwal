@@ -23,26 +23,20 @@ export const InfoCardList = ({ title, data }: InfoListCardProps) => (
 
         <InfoCardItems role="list">
             {data.map((item, index) => (
-                <Box key={item.id} role="listitem" style={{ width: '100%' }}>
+                <Box key={item.id} role="listitem" width="100%">
                     <InfoCard>
                         <InfoCardDetails>
                             {item.avatarUrl && <Avatar src={item.avatarUrl} />}
                             <Box display="flex" flexDirection="column">
-                                {item.name && (
-                                    <Typography variant="h3">
-                                        {item.name}
-                                    </Typography>
-                                )}
-                                {item.email && (
-                                    <Typography variant="caption">
-                                        {item.email}
-                                    </Typography>
-                                )}
-                                {item.techStack && (
-                                    <Typography variant="caption">
-                                        {item.techStack}
-                                    </Typography>
-                                )}
+                                <Typography variant="h3">
+                                    {item.name}
+                                </Typography>
+                                <Typography variant="caption">
+                                    {item.email}
+                                </Typography>
+                                <Typography variant="caption">
+                                    {item.techStack}
+                                </Typography>
                             </Box>
                         </InfoCardDetails>
 
