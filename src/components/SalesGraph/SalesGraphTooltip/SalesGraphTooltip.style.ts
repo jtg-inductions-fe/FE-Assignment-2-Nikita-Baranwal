@@ -32,11 +32,11 @@ export const TooltipLabel = styled(Typography)(({ theme }) => {
 export const SalesRow = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
+        mixins,
     } = theme;
 
     return {
-        display: 'flex',
-        alignItems: 'center',
+        ...mixins.flex('center', 'center'),
         gap: pxToRem(4),
         marginBottom: pxToRem(8),
     };
