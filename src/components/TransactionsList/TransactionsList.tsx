@@ -12,7 +12,7 @@ import {
     TransactionsTableContainer,
     TransactionsTableOverview,
 } from './TransactionsList.style';
-import { CustomTableProps } from './TransactionsList.type';
+import type { CustomTableProps } from './TransactionsList.type';
 
 const columnDisplay = (hideOnMobile?: boolean) => ({
     xs: hideOnMobile ? 'none' : 'table-cell',

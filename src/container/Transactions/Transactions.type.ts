@@ -1,4 +1,4 @@
-import { JSX } from '@emotion/react/jsx-runtime';
+import type { JSX } from 'react';
 
 /**
  * Defines the structure of a column used in a data table.

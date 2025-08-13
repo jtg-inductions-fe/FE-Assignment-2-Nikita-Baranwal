@@ -46,6 +46,7 @@ export const TransactionsTableOverview = styled(Box)(({ theme }) => {
         ...mixins.flex('center', 'flex-start', 'column'),
         position: 'sticky',
         top: 0,
+        boxSizing: 'border-box',
         backgroundColor: palette.common.white,
         height: pxToRem(OVERVIEW_HEIGHT),
         paddingTop: pxToRem(50),

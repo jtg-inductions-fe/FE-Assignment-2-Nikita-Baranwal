@@ -1,4 +1,4 @@
-import { Transaction } from './Transactions.types';
+import type { Transaction } from './Transactions.types';
 
 /**
  * Mock data representing a list of financial transactions.
