@@ -51,7 +51,7 @@ export type TableColumn<T> = {
     /**
      * Optional custom rendering function for the cell content.
      */
-    render: (value: T[keyof T], row?: T) => JSX.Element;
+    render: (value: T[keyof T], row: T) => JSX.Element;
 };
 
 /**

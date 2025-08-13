@@ -9,9 +9,9 @@ export const transactionColumns: TableColumn<Transaction>[] = [
         render: (value, row) => {
             void value;
             let text = '';
-            if (row?.type === 'Refund') {
+            if (row.type === 'Refund') {
                 text = 'refund to';
-            } else if (row?.type === 'Failed') {
+            } else if (row.type === 'Failed') {
                 text = 'failed from';
             } else {
                 text = 'from';
@@ -19,7 +19,7 @@ export const transactionColumns: TableColumn<Transaction>[] = [
 
             return (
                 <Box component="span">
-                    Payment {text} <strong>{row?.name}</strong>
+                    Payment {text} <strong>{row.name}</strong>
                 </Box>
             );
         },
