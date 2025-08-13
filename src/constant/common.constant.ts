@@ -23,3 +23,8 @@ export const Z_INDEX = 1201;
  */
 export const GALLERY_IMAGE_XS = 140;
 export const GALLERY_IMAGE_SM = 200;
+
+/**
+ * Salesgraph Height
+ */
+export const SALESGRAPH_HEIGHT = 420;

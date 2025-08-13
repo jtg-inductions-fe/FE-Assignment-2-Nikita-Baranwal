@@ -5,6 +5,7 @@ import type {
 } from '@mui/material/styles/createTypography';
 
 import { HTML_FONT_SIZE } from '@constant/index';
+import { theme } from '@theme/index';
 
 /* Custom px to rem function */
 const typographyUtil: TypographyUtils = {
@@ -84,6 +85,11 @@ const typographyStyle = ({
         fontWeight: 600,
         lineHeight: 1.5,
         color: palette.grey[500],
+
+        [theme.breakpoints.down('sm')]: {
+            fontSize: pxToRem(12),
+            fontWeight: 400,
+        },
     },
 
     caption: {
