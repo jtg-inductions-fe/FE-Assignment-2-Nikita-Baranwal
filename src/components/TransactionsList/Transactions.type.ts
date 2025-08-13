@@ -1,3 +1,5 @@
+import { JSX } from '@emotion/react/jsx-runtime';
+
 /**
  * Represents a single transaction entry.
  */
@@ -26,14 +28,17 @@ export type Transaction = {
  *
  * @template T - The type of data used in the table row.
  */
-export type TableColumn<T = unknown> = {
+export type TableColumn<T> = {
     /** The key from the row data that this column corresponds to */
     key: keyof T;
 
     /** Display label for the column */
     label: string;
 
-    /** Optional alignment of content in the column */
+    /**
+     * Optional alignment of content in the column
+     * @default left
+     */
     align?: 'left' | 'right' | 'center';
 
     /**
@@ -43,7 +48,7 @@ export type TableColumn<T = unknown> = {
      * @param row - The full row data.
      * @returns React node to be rendered in the cell.
      */
-    render?: (value: T[keyof T], row: T) => React.ReactNode;
+    render: (value: T[keyof T], row: T) => JSX.Element;
 };
 
 /**
@@ -52,8 +57,8 @@ export type TableColumn<T = unknown> = {
  * @template T - The type of row data being displayed.
  */
 export type CustomTableProps<T> = {
-    /** Optional table title to display above the table */
-    title?: string;
+    /** Table title to display above the table */
+    title: string;
 
     /** Optional subtitle displayed below the title */
     subtitle?: string;

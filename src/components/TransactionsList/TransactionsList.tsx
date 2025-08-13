@@ -1,4 +1,10 @@
-import { TableBody, TableHead, TableRow, Typography } from '@mui/material';
+import {
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+    Typography,
+} from '@mui/material';
 
 import {
     RoundedTableCell,
@@ -8,7 +14,7 @@ import {
 } from './Transactions.style';
 import { CustomTableProps } from './Transactions.type';
 
-export const Transactions = <T extends { id: string }>({
+export const TransactionsList = <T extends { id: string }>({
     title,
     subtitle,
     columns,
@@ -16,7 +22,7 @@ export const Transactions = <T extends { id: string }>({
 }: CustomTableProps<T>) => (
     <TransactionsTableContainer sx={{ boxShadow: 1 }}>
         <TransactionsTableOverview>
-            {title && <Typography variant="h2">{title}</Typography>}
+            <Typography variant="h2">{title}</Typography>
             {subtitle && (
                 <Typography variant="body2" mb={4}>
                     {subtitle}
@@ -27,7 +33,7 @@ export const Transactions = <T extends { id: string }>({
             <TableHead>
                 <TableRow>
                     {columns.map((col, colIndex) => (
-                        <RoundedTableCell
+                        <TableCell
                             key={String(col.key)}
                             align={col.align ?? 'left'}
                             sx={{
@@ -47,13 +53,10 @@ export const Transactions = <T extends { id: string }>({
                                 },
                             }}
                         >
-                            <Typography
-                                variant="subtitle2"
-                                sx={{ textTransform: 'uppercase' }}
-                            >
+                            <Typography variant="subtitle2">
                                 {col.label}
                             </Typography>
-                        </RoundedTableCell>
+                        </TableCell>
                     ))}
                 </TableRow>
             </TableHead>

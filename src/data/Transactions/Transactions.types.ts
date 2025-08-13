@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 /**
  * A union type representing all possible transaction statuses.
  * - `'Completed'`: The transaction was successful.
@@ -36,7 +38,7 @@ export type Transaction = {
  *
  * @template T - The type of the data rows.
  */
-export type TableColumn<T = unknown> = {
+export type TableColumn<T> = {
     /** The key of the field in the data object to display */
     key: keyof T;
 
@@ -49,7 +51,7 @@ export type TableColumn<T = unknown> = {
     /**
      * Optional custom rendering function for the cell content.
      */
-    render?: (value: T[keyof T], row: T) => React.ReactNode;
+    render: (value: T[keyof T], row?: T) => JSX.Element;
 };
 
 /**

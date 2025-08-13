@@ -78,7 +78,6 @@ const typographyStyle = ({
         fontWeight: 600,
         lineHeight: 1.5,
         color: palette.grey[500],
-        textTransform: 'uppercase',
     },
 
     subtitle2: {
@@ -86,6 +85,7 @@ const typographyStyle = ({
         fontWeight: 600,
         lineHeight: 1.5,
         color: palette.grey[700],
+        textTransform: 'uppercase',
 
         [theme.breakpoints.down('sm')]: {
             fontSize: pxToRem(12),

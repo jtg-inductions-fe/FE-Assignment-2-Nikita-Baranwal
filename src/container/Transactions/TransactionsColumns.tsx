@@ -1,24 +1,25 @@
-import { Box, Chip } from '@mui/material';
+import { TableColumn, Transaction } from 'data/Transactions/Transactions.types';
 
-import { TableColumn, Transaction } from './Transactions.type';
+import { Box, Chip } from '@mui/material';
 
 export const transactionColumns: TableColumn<Transaction>[] = [
     {
         key: 'type',
         label: 'Transaction',
-        render: (_value, row) => {
+        render: (value, row) => {
+            void value;
             let text = '';
-            if (row.type === 'Refund') {
+            if (row?.type === 'Refund') {
                 text = 'refund to';
-            } else if (row.type === 'Failed') {
+            } else if (row?.type === 'Failed') {
                 text = 'failed from';
             } else {
                 text = 'from';
             }
 
             return (
-                <Box>
-                    Payment {text} <strong>{row.name}</strong>
+                <Box component="span">
+                    Payment {text} <strong>{row?.name}</strong>
                 </Box>
             );
         },
@@ -35,7 +36,7 @@ export const transactionColumns: TableColumn<Transaction>[] = [
                     year: 'numeric',
                 },
             );
-            return formattedDate.replace(/(\d{1,2}) (\d{4})/, '$1, $2');
+            return <>{formattedDate}</>;
         },
     },
     {
@@ -43,7 +44,7 @@ export const transactionColumns: TableColumn<Transaction>[] = [
         label: 'Amount',
         align: 'right',
         render: (value) => (
-            <strong>
+            <>
                 {Number(value) < 0 ? '-' : ''}
                 {Math.abs(Number(value)).toLocaleString('en-US', {
                     style: 'currency',
@@ -51,7 +52,7 @@ export const transactionColumns: TableColumn<Transaction>[] = [
                     maximumFractionDigits: 0,
                     useGrouping: false,
                 })}
-            </strong>
+            </>
         ),
     },
     {

@@ -11,6 +11,7 @@ export const TransactionsTableContainer = styled(TableContainer)(({
     const {
         typography: { pxToRem },
         palette,
+        spacing,
     } = theme;
 
     return {
@@ -21,8 +22,15 @@ export const TransactionsTableContainer = styled(TableContainer)(({
         overflowY: 'auto',
         paddingTop: 0,
         backgroundColor: palette.common.white,
-        '&::-webkit-scrollbar': {
-            display: 'none',
+        scrollbarWidth: 'thin',
+        scrollbarColor: `${palette.grey[400]} ${palette.grey[100]}`,
+        '&::-webkit-scrollbar': { width: spacing(1) },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: palette.grey[400],
+            borderRadius: spacing(1),
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: palette.grey[100],
         },
     };
 });
@@ -52,6 +60,7 @@ export const TransactionsTable = styled(Table)(({ theme }) => {
     } = theme;
 
     return {
+        overflowY: 'auto',
         '& thead th': {
             backgroundColor: palette.grey[100],
             position: 'sticky',
