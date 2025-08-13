@@ -1,1 +1,0 @@
-export { InfoCardList } from './InfoCardList';

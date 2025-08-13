@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material';
 
 import { INFOCARDLIST_HEIGHT } from '@constant/common.constant';
 
-export const InfoCardListContainer = styled(Box)(({ theme }) => {
+export const DataCardContainer = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
         mixins,
@@ -12,14 +12,16 @@ export const InfoCardListContainer = styled(Box)(({ theme }) => {
         ...mixins.flex('center', 'flex-start', 'column'),
         borderRadius: pxToRem(16),
         gap: pxToRem(16),
-        padding: pxToRem(24),
+        padding: `${pxToRem(24)} 0`,
     };
 });
 
-export const InfoCardItems = styled(Box)(({ theme }) => {
+export const DataCardItems = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
+        palette,
         mixins,
+        spacing,
     } = theme;
 
     return {
@@ -28,13 +30,21 @@ export const InfoCardItems = styled(Box)(({ theme }) => {
         maxHeight: pxToRem(INFOCARDLIST_HEIGHT),
         overflowY: 'auto',
         paddingTop: pxToRem(120),
-        '&::-webkit-scrollbar': {
-            display: 'none',
+        scrollbarWidth: 'thin',
+        paddingInline: pxToRem(24),
+        scrollbarColor: `${palette.grey[400]} ${palette.grey[100]}`,
+        '&::-webkit-scrollbar': { width: spacing(1) },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: palette.grey[400],
+            borderRadius: spacing(1),
+        },
+        '&::-webkit-scrollbar-track': {
+            backgroundColor: palette.grey[100],
         },
     };
 });
 
-export const InfoCard = styled(Box)(({ theme }) => {
+export const DataCardItem = styled(Box)(({ theme }) => {
     const {
         typography: { pxToRem },
         mixins,
@@ -48,7 +58,7 @@ export const InfoCard = styled(Box)(({ theme }) => {
     };
 });
 
-export const InfoCardDetails = styled(Box)(({ theme }) => {
+export const DataCardDetails = styled(Box)(({ theme }) => {
     const {
         mixins,
         typography: { pxToRem },
@@ -59,7 +69,7 @@ export const InfoCardDetails = styled(Box)(({ theme }) => {
     };
 });
 
-export const InfoCardValue = styled(Box)(({ theme }) => {
+export const DataCardValue = styled(Box)(({ theme }) => {
     const { mixins, palette } = theme;
     return {
         ...mixins.flex(),

@@ -5,7 +5,7 @@ export type LatestCustomer = {
     readonly id: number;
     name: string;
     description: string;
-    amount: number;
+    count: number;
     avatarUrl: string;
     startAdornment: string;
 };

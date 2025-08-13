@@ -3,25 +3,25 @@ import { Avatar, Box, Divider, Typography } from '@mui/material';
 import { theme } from '@theme/index';
 
 import {
-    InfoCard,
-    InfoCardDetails,
-    InfoCardItems,
-    InfoCardListContainer,
-    InfoCardValue,
-} from './InfoCardList.style';
-import { InfoListCardProps } from './InfoCardList.type';
+    DataCardContainer,
+    DataCardDetails,
+    DataCardItem,
+    DataCardItems,
+    DataCardValue,
+} from './DataCard.style';
+import { InfoListCardProps } from './DataCard.type';
 
-export const InfoCardList = ({ title, data }: InfoListCardProps) => (
-    <InfoCardListContainer sx={{ boxShadow: 1 }}>
-        <Typography variant="h2" mb={2}>
+export const DataCard = ({ title, data }: InfoListCardProps) => (
+    <DataCardContainer sx={{ boxShadow: 1 }}>
+        <Typography variant="h2" mb={2} px={6}>
             {title}
         </Typography>
 
-        <InfoCardItems role="list">
+        <DataCardItems role="list">
             {data.map((item, index) => (
                 <Box key={item.id} role="listitem" width="100%">
-                    <InfoCard>
-                        <InfoCardDetails>
+                    <DataCardItem>
+                        <DataCardDetails>
                             {item.avatarUrl && <Avatar src={item.avatarUrl} />}
                             <Box display="flex" flexDirection="column">
                                 <Typography variant="h3">
@@ -31,27 +31,28 @@ export const InfoCardList = ({ title, data }: InfoListCardProps) => (
                                     {item.description}
                                 </Typography>
                             </Box>
-                        </InfoCardDetails>
+                        </DataCardDetails>
 
-                        <InfoCardValue>
+                        <DataCardValue>
                             {item.startAdornment && (
                                 <Box>{item.startAdornment}</Box>
                             )}
-                            {item.amount?.toLocaleString('en-US', {
-                                maximumFractionDigits: 0,
-                                useGrouping: false,
-                            }) ?? item.sales}
+                            {item.count}
                             {item.endAdornment && (
-                                <Box ml={0.5} color={theme.palette.grey[500]}>
+                                <Box
+                                    component="span"
+                                    ml={0.5}
+                                    color={theme.palette.grey[500]}
+                                >
                                     {item.endAdornment}
                                 </Box>
                             )}
-                        </InfoCardValue>
-                    </InfoCard>
+                        </DataCardValue>
+                    </DataCardItem>
 
                     {index < data.length - 1 && <Divider />}
                 </Box>
             ))}
-        </InfoCardItems>
-    </InfoCardListContainer>
+        </DataCardItems>
+    </DataCardContainer>
 );

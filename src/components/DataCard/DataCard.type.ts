@@ -13,24 +13,14 @@ export type InfoListCardItemData = {
     name: string;
 
     /**
-     * Optional email address (used to determine if item represents a customer).
-     */
-    // email?: string;
-
-    /**
      * Optional URL for the avatar image.
      */
     avatarUrl?: string;
 
     /**
-     * Optional monetary value, usually shown with a dollar sign (used for customers).
+     * Count of amount or sales values.
      */
-    amount?: number;
-
-    /**
-     * Optional numeric value representing sales count (used for products).
-     */
-    sales?: number;
+    count: number;
 
     /**
      * Optional tech stack used for a product.
@@ -40,12 +30,12 @@ export type InfoListCardItemData = {
     /**
      * Symbol to show before the main value.
      */
-    startAdornment: string;
+    startAdornment?: string;
 
     /**
      * Text to show after the main value.
      */
-    endAdornment: string;
+    endAdornment?: string;
 };
 
 /**

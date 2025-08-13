@@ -5,6 +5,6 @@ export type TopProduct = {
     readonly id: number;
     name: string;
     description: string;
-    sales: number;
+    count: number;
     endAdornment: string;
 };

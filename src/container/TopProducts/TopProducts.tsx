@@ -1,7 +1,7 @@
 import { topProductsData } from 'data/TopProducts/TopProducts';
 
-import { InfoCardList } from '@components/InfoCardList';
+import { DataCard } from '@components/DataCard';
 
 export const TopProducts = () => (
-    <InfoCardList title="Top Products" data={topProductsData} />
+    <DataCard title="Top Products" data={topProductsData} />
 );
