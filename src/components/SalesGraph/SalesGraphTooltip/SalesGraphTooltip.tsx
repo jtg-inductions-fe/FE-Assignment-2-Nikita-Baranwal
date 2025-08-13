@@ -1,10 +1,10 @@
 import { Typography } from '@mui/material';
 
 import {
+    Indicator,
     LabelPrefix,
     LabelValue,
-    SalesDisplay,
-    SalesPoint,
+    SalesDataInfo,
     TooltipContainer,
     TooltipLabel,
 } from './SalesGraphTooltip.style';
@@ -19,13 +19,13 @@ export const SalesGraphTooltip = ({
     return (
         <TooltipContainer sx={{ boxShadow: 1 }}>
             <TooltipLabel variant="caption">{label}</TooltipLabel>
-            <SalesDisplay>
-                <SalesPoint />
+            <SalesDataInfo>
+                <Indicator />
                 <Typography variant="body2">
                     <LabelPrefix>Sales:</LabelPrefix>{' '}
                     <LabelValue>${payload[0].value}k</LabelValue>
                 </Typography>
-            </SalesDisplay>
+            </SalesDataInfo>
         </TooltipContainer>
     );
 };
