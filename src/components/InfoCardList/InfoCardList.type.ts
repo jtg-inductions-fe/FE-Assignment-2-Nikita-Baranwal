@@ -37,7 +37,14 @@ export type InfoListCardItemData = {
      */
     description: string;
 
+    /**
+     * Symbol to show before the main value.
+     */
     startAdornment: string;
+
+    /**
+     * Text to show after the main value.
+     */
     endAdornment: string;
 };
 
