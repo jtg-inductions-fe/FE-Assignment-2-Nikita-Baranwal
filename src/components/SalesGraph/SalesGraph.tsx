@@ -7,8 +7,7 @@ import {
 } from 'recharts';
 
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { useMediaQuery } from '@mui/material';
-import Tooltip from '@mui/material/Tooltip';
+import { Tooltip, useMediaQuery } from '@mui/material';
 
 import { SALESGRAPH_HEIGHT } from '@constant/common.constant';
 import { theme } from '@theme/index';
