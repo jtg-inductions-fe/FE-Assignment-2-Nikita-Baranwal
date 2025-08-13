@@ -1,22 +1,24 @@
-import { TableColumn, Transaction } from 'data/Transactions/Transactions.types';
+import { Transaction } from 'data/Transactions/Transactions.types';
 
 import { Box, Chip } from '@mui/material';
+
+import { TableColumn } from './Transactions.type';
 
 export const transactionColumns: TableColumn<Transaction>[] = [
     {
         key: 'type',
         label: 'Transaction',
-        render: (value, row) => {
-            void value;
-            let text = '';
-            if (row.type === 'Refund') {
-                text = 'refund to';
-            } else if (row.type === 'Failed') {
-                text = 'failed from';
-            } else {
-                text = 'from';
-            }
-
+        render: (_value, row) => {
+            const text = (() => {
+                switch (row.type) {
+                    case 'Refund':
+                        return 'refund to';
+                    case 'Failed':
+                        return 'failed from';
+                    default:
+                        return 'from';
+                }
+            })();
             return (
                 <Box component="span">
                     Payment {text} <strong>{row.name}</strong>
@@ -24,6 +26,7 @@ export const transactionColumns: TableColumn<Transaction>[] = [
             );
         },
     },
+
     {
         key: 'date',
         label: 'Date & Time',
@@ -43,22 +46,24 @@ export const transactionColumns: TableColumn<Transaction>[] = [
         key: 'amount',
         label: 'Amount',
         align: 'right',
-        render: (value) => (
-            <>
-                {Number(value) < 0 ? '-' : ''}
-                {Math.abs(Number(value)).toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                    maximumFractionDigits: 0,
-                    useGrouping: false,
-                })}
-            </>
-        ),
+        hideOnMobile: true,
+        render: (value) => {
+            const n = Number(value);
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0,
+                signDisplay: 'auto',
+                useGrouping: true,
+            });
+            return <>{formatter.format(n)}</>;
+        },
     },
     {
         key: 'status',
         label: 'Status',
         align: 'right',
+        hideOnMobile: true,
         render: (value) => {
             const status = value as Transaction['status'];
             const colorMap: Record<

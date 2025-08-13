@@ -11,8 +11,13 @@ import {
     TransactionsTable,
     TransactionsTableContainer,
     TransactionsTableOverview,
-} from './Transactions.style';
-import { CustomTableProps } from './Transactions.type';
+} from './TransactionsList.style';
+import { CustomTableProps } from './TransactionsList.type';
+
+const columnDisplay = (hideOnMobile?: boolean) => ({
+    xs: hideOnMobile ? 'none' : 'table-cell',
+    sm: 'table-cell',
+});
 
 export const TransactionsList = <T extends { id: string }>({
     title,
@@ -29,6 +34,7 @@ export const TransactionsList = <T extends { id: string }>({
                 </Typography>
             )}
         </TransactionsTableOverview>
+
         <TransactionsTable>
             <TableHead>
                 <TableRow>
@@ -43,14 +49,7 @@ export const TransactionsList = <T extends { id: string }>({
                                         : colIndex === columns.length - 1
                                           ? '0 16px 0 0'
                                           : '0',
-                                display: {
-                                    xs:
-                                        col.key === 'amount' ||
-                                        col.key === 'status'
-                                            ? 'none'
-                                            : 'table-cell',
-                                    sm: 'table-cell',
-                                },
+                                display: columnDisplay(col.hideOnMobile),
                             }}
                         >
                             <Typography variant="subtitle2">
@@ -76,14 +75,7 @@ export const TransactionsList = <T extends { id: string }>({
                                           : undefined
                                 }
                                 sx={{
-                                    display: {
-                                        xs:
-                                            col.key === 'amount' ||
-                                            col.key === 'status'
-                                                ? 'none'
-                                                : 'table-cell',
-                                        sm: 'table-cell',
-                                    },
+                                    display: columnDisplay(col.hideOnMobile),
                                 }}
                             >
                                 {col.render

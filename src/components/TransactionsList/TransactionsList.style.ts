@@ -60,7 +60,6 @@ export const TransactionsTable = styled(Table)(({ theme }) => {
     } = theme;
 
     return {
-        overflowY: 'auto',
         '& thead th': {
             backgroundColor: palette.grey[100],
             position: 'sticky',
