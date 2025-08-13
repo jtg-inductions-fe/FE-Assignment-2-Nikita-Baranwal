@@ -1,4 +1,4 @@
-import { ImageItem } from 'data/ImageGrid/ImageGrid.type';
+import { ImageItem } from '@data/ImageGrid/ImageGrid.type';
 
 /**
  * Props for components that render a list of image items.

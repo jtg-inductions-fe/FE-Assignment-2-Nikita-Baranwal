@@ -1,5 +1,3 @@
-import { SvgIconComponent } from '@mui/icons-material';
-
 /**
  * Represents a social media platform with a label, icon, and URL.
  *
@@ -9,6 +7,6 @@ import { SvgIconComponent } from '@mui/icons-material';
  */
 export type SocialIcon = {
     label: string;
-    Icon: SvgIconComponent;
+    Icon: React.ElementType;
     url: string;
 };

@@ -11,7 +11,8 @@
             "@layouts/*": ["layouts/*"],
             "@navbar/*": ["Navbar/*"],
             "@errors/*": ["Errors/*"],
-            "@pages/*": ["pages/*"]
+            "@pages/*": ["pages/*"],
+            "@data/*": ["data/*"]
         }
     }
 }

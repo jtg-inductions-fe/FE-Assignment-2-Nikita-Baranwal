@@ -1,0 +1,1 @@
+export { transactionsData } from './Transactions';

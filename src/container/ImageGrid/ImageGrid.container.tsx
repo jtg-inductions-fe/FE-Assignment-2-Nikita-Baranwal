@@ -1,10 +1,9 @@
-import { imageLayout } from 'data/ImageGrid/ImageGrid';
-
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { ImageGrid } from '@components/ImageGrid';
 import { GALLERY_IMAGE_SM, GALLERY_IMAGE_XS } from '@constant/common.constant';
+import { imageLayout } from '@data/ImageGrid';
 
 import { ImageItemProps } from './ImageGrid.type';
 

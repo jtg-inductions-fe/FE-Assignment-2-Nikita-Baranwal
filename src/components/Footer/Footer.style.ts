@@ -1,4 +1,5 @@
 import { Box, styled } from '@mui/material';
+import shadows from '@mui/material/styles/shadows';
 
 export const FooterContainer = styled(Box)(({ theme }) => {
     const {
@@ -15,5 +16,6 @@ export const FooterContainer = styled(Box)(({ theme }) => {
         borderRadius: pxToRem(16),
         marginBottom: spacing(4),
         backgroundColor: palette.common.white,
+        boxShadow: shadows[1],
     };
 });
