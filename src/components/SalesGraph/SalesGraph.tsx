@@ -1,4 +1,4 @@
-import { salesGraphData } from 'data/SalesGraph/SalesGraph';
+import { SalesGraphData } from 'data/SalesGraph/SalesGraph.type';
 import {
     Line,
     LineChart,
@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { SALESGRAPH_HEIGHT } from '@constant/common.constant';
 import { theme } from '@theme/index';
 
+import { DOMAIN, Y_TICKS } from './SalesGraph.constants';
 import {
     SalesGraphContainer,
     SalesInfo,
@@ -22,7 +23,7 @@ import {
 } from './SalesGraph.style';
 import { SalesGraphTooltip } from './SalesGraphTooltip';
 
-export const SalesGraph = () => {
+export const SalesGraph = ({ data }: { data: SalesGraphData[] }) => {
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
@@ -41,7 +42,7 @@ export const SalesGraph = () => {
 
             <ResponsiveContainer width="100%" height={SALESGRAPH_HEIGHT}>
                 <LineChart
-                    data={salesGraphData}
+                    data={data}
                     margin={{
                         top: 20,
                         left: isSmallScreen ? -20 : 40,
@@ -65,9 +66,9 @@ export const SalesGraph = () => {
                     />
 
                     <StyledYAxis
-                        ticks={[0, 40, 80, 120, 160, 200, 240]}
+                        ticks={Y_TICKS}
                         tickFormatter={(value) => `${value}K`}
-                        domain={[0, 240]}
+                        domain={DOMAIN}
                         tickLine={false}
                         axisLine={false}
                         tickMargin={isSmallScreen ? 0 : 50}
@@ -76,17 +77,17 @@ export const SalesGraph = () => {
 
                     <SalesLineToolTip
                         cursor={{
-                            stroke: '#E5E7EB',
+                            stroke: theme.palette.grey[200],
                             strokeWidth: 2,
                             strokeDasharray: '6 2',
                         }}
-                        content={<SalesGraphTooltip />}
+                        content={<SalesGraphTooltip label="string" />}
                     />
 
                     <Line
                         type="monotone"
                         dataKey="amount"
-                        stroke="#00C49F"
+                        stroke={theme.palette.primary.main}
                         strokeWidth={2}
                         dot={false}
                         activeDot={{ r: 4 }}
