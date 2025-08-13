@@ -3,5 +3,5 @@
  */
 export type SalesGraphTooltipProps = {
     payload?: { value: number }[];
-    label?: string | number;
+    label: string;
 };

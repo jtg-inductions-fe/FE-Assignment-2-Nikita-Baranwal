@@ -16,9 +16,15 @@ export const SalesGraphTooltip = ({
 }: SalesGraphTooltipProps) => {
     if (!payload || !payload.length) return null;
 
+    const formattedLabel = new Date(label).toLocaleDateString('en-US', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+    });
+
     return (
-        <TooltipContainer sx={{ boxShadow: 1 }}>
-            <TooltipLabel variant="caption">{label}</TooltipLabel>
+        <TooltipContainer role="tooltip">
+            <TooltipLabel variant="caption">{formattedLabel}</TooltipLabel>
             <SalesDataInfo>
                 <Indicator />
                 <Typography variant="body2">

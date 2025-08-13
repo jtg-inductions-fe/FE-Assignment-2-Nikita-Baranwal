@@ -5,14 +5,16 @@ export const TooltipContainer = styled(Box)(({ theme }) => {
     const {
         palette,
         typography: { pxToRem },
+        shadows,
     } = theme;
 
     return {
-        borderRadius: 8,
+        borderRadius: pxToRem(8),
         backgroundColor: palette.common.white,
         padding: `${pxToRem(8)} ${pxToRem(18)}`,
         border: 'none',
         transform: 'translateX(-50%)',
+        boxShadow: shadows[1],
     };
 });
 

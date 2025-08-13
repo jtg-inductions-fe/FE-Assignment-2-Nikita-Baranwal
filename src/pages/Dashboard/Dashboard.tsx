@@ -6,7 +6,7 @@ import { SalesGraph } from '@components/SalesGraph';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 
 export const Dashboard = () => (
-    <Box display="flex" flexDirection="column" gap="12">
+    <Box display="flex" flexDirection="column" gap={3}>
         <ImageGridContainer data={itemData} />
         <SalesGraph />
     </Box>
