@@ -2,8 +2,9 @@
  *  TopProducts defines the properties for a products object that represents the top products.
  */
 export type TopProduct = {
-    id: number;
+    readonly id: number;
     name: string;
-    techStack: string;
+    description: string;
     sales: number;
+    endAdornment: string;
 };

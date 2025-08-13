@@ -1,10 +1,4 @@
-import {
-    Box,
-    inputAdornmentClasses,
-    inputBaseClasses,
-    outlinedInputClasses,
-    styled,
-} from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 import { INFOCARDLIST_HEIGHT } from '@constant/common.constant';
 
@@ -33,7 +27,7 @@ export const InfoCardItems = styled(Box)(({ theme }) => {
         width: '100%',
         maxHeight: pxToRem(INFOCARDLIST_HEIGHT),
         overflowY: 'auto',
-        paddingTop: pxToRem(210),
+        paddingTop: pxToRem(120),
         '&::-webkit-scrollbar': {
             display: 'none',
         },
@@ -51,22 +45,6 @@ export const InfoCard = styled(Box)(({ theme }) => {
         width: '100%',
         alignItems: 'center',
         padding: `${pxToRem(8)} 0`,
-
-        [`& .${inputBaseClasses.input}`]: {
-            paddingRight: 0,
-        },
-        [`& .${inputAdornmentClasses.positionEnd}`]: {
-            marginLeft: '4px',
-        },
-        [`& .${outlinedInputClasses.notchedOutline}`]: {
-            border: 'none',
-            paddingRight: 0,
-        },
-        [`& .${outlinedInputClasses.input}`]: {
-            display: 'flex',
-            justifyItems: 'flex-end',
-            border: 'none',
-        },
     };
 });
 
@@ -78,5 +56,13 @@ export const InfoCardDetails = styled(Box)(({ theme }) => {
     return {
         ...mixins.flex(),
         gap: pxToRem(12),
+    };
+});
+
+export const InfoCardValue = styled(Box)(({ theme }) => {
+    const { mixins, palette } = theme;
+    return {
+        ...mixins.flex(),
+        color: palette.grey[900],
     };
 });

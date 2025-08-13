@@ -2,9 +2,10 @@
  *  LatestCustomer defines the properties for a customer object that represents the latest customer.
  */
 export type LatestCustomer = {
-    id: number;
+    readonly id: number;
     name: string;
-    email: string;
+    description: string;
     amount: number;
     avatarUrl: string;
+    startAdornment: string;
 };

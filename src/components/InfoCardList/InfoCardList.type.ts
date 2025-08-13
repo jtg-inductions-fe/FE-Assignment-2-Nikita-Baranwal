@@ -15,7 +15,7 @@ export type InfoListCardItemData = {
     /**
      * Optional email address (used to determine if item represents a customer).
      */
-    email?: string;
+    // email?: string;
 
     /**
      * Optional URL for the avatar image.
@@ -35,7 +35,10 @@ export type InfoListCardItemData = {
     /**
      * Optional tech stack used for a product.
      */
-    techStack?: string;
+    description: string;
+
+    startAdornment: string;
+    endAdornment: string;
 };
 
 /**

@@ -1,17 +1,13 @@
-import {
-    Avatar,
-    Box,
-    Divider,
-    InputAdornment,
-    TextField,
-    Typography,
-} from '@mui/material';
+import { Avatar, Box, Divider, Typography } from '@mui/material';
+
+import { theme } from '@theme/index';
 
 import {
     InfoCard,
     InfoCardDetails,
     InfoCardItems,
     InfoCardListContainer,
+    InfoCardValue,
 } from './InfoCardList.style';
 import { InfoListCardProps } from './InfoCardList.type';
 
@@ -32,35 +28,25 @@ export const InfoCardList = ({ title, data }: InfoListCardProps) => (
                                     {item.name}
                                 </Typography>
                                 <Typography variant="caption">
-                                    {item.email}
-                                </Typography>
-                                <Typography variant="caption">
-                                    {item.techStack}
+                                    {item.description}
                                 </Typography>
                             </Box>
                         </InfoCardDetails>
 
-                        <TextField
-                            value={
-                                item.email
-                                    ? item.amount?.toLocaleString('en-US', {
-                                          style: 'currency',
-                                          currency: 'USD',
-                                          maximumFractionDigits: 0,
-                                          useGrouping: false,
-                                      })
-                                    : item.sales
-                            }
-                            slotProps={{
-                                input: {
-                                    endAdornment: !item.email && (
-                                        <InputAdornment position="end">
-                                            sales
-                                        </InputAdornment>
-                                    ),
-                                },
-                            }}
-                        />
+                        <InfoCardValue>
+                            {item.startAdornment && (
+                                <Box>{item.startAdornment}</Box>
+                            )}
+                            {item.amount?.toLocaleString('en-US', {
+                                maximumFractionDigits: 0,
+                                useGrouping: false,
+                            }) ?? item.sales}
+                            {item.endAdornment && (
+                                <Box ml={0.5} color={theme.palette.grey[500]}>
+                                    {item.endAdornment}
+                                </Box>
+                            )}
+                        </InfoCardValue>
                     </InfoCard>
 
                     {index < data.length - 1 && <Divider />}
