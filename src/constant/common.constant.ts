@@ -28,3 +28,8 @@ export const GALLERY_IMAGE_SM = 200;
  * Salesgraph Height
  */
 export const SALESGRAPH_HEIGHT = 420;
+
+/**
+ * InfoCardList Height
+ */
+export const INFOCARDLIST_HEIGHT = 400;

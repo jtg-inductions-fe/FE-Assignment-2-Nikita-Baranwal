@@ -39,5 +39,6 @@ export const ContentWrapper = styled(Box)(({ theme }) => {
         ...mixins.flex('flex-start', 'flex-start', 'row'),
         flexGrow: '1',
         overflow: 'hidden',
+        height: 'calc(100vh - 64px)',
     };
 });

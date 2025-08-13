@@ -20,7 +20,6 @@ export const StyledDrawer = styled(Drawer)(({ theme }) => {
             height: '100vh',
             overflowY: 'auto',
             position: 'relative',
-            padding: spacing(2),
 
             [theme.breakpoints.down('md')]: {
                 marginTop: pxToRem(NAVBAR_HEIGHT),
