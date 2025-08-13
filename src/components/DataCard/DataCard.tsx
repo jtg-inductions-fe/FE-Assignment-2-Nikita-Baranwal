@@ -35,9 +35,11 @@ export const DataCard = ({ title, data }: InfoListCardProps) => (
 
                         <DataCardValue>
                             {item.startAdornment && (
-                                <Box>{item.startAdornment}</Box>
+                                <Box component="span">
+                                    {item.startAdornment}
+                                </Box>
                             )}
-                            {item.count}
+                            <Box component="span">{item.count}</Box>
                             {item.endAdornment && (
                                 <Box
                                     component="span"
