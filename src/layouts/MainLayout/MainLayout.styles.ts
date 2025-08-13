@@ -1,6 +1,8 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+import { NAVBAR_HEIGHT } from '@constant/common.constant';
+
 export const AppContainer = styled(Box)(({ theme }) => {
     const { mixins } = theme;
 
@@ -39,6 +41,6 @@ export const ContentWrapper = styled(Box)(({ theme }) => {
         ...mixins.flex('flex-start', 'flex-start', 'row'),
         flexGrow: '1',
         overflow: 'hidden',
-        height: 'calc(100vh - 64px)',
+        height: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
     };
 });
