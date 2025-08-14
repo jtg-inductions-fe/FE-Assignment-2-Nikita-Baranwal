@@ -1,7 +1,7 @@
 /**
  * Represents a single item in the info card list.
  */
-export type InfoListCardItemData = {
+export type DataCardItemData = {
     /**
      * Unique identifier for the item.
      */
@@ -50,5 +50,5 @@ export type InfoListCardProps = {
     /**
      * Array of data items to be displayed in the list.
      */
-    data: InfoListCardItemData[];
+    data: DataCardItemData[];
 };

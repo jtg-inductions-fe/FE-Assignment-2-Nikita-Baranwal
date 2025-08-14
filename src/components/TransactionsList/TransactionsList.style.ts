@@ -46,11 +46,13 @@ export const TransactionsTableOverview = styled(Box)(({ theme }) => {
         ...mixins.flex('center', 'flex-start', 'column'),
         position: 'sticky',
         top: 0,
+        left: 0,
         boxSizing: 'border-box',
         backgroundColor: palette.common.white,
         height: pxToRem(OVERVIEW_HEIGHT),
         paddingTop: pxToRem(50),
         paddingBottom: pxToRem(36),
+        zIndex: 2,
     };
 });
 
@@ -61,6 +63,8 @@ export const TransactionsTable = styled(Table)(({ theme }) => {
     } = theme;
 
     return {
+        overflowX: 'auto',
+        minWidth: '600px',
         '& thead th': {
             backgroundColor: palette.grey[100],
             position: 'sticky',

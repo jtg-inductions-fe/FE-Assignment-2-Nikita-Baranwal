@@ -15,9 +15,6 @@ export type TableColumn<T> = {
     /** Text alignment for the cell.*/
     align?: 'left' | 'right' | 'center';
 
-    /**Mobile view hide */
-    hideOnMobile?: boolean;
-
     /**
      * Custom rendering function for the cell content.
      */

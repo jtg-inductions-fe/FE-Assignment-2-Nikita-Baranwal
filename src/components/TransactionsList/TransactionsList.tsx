@@ -14,11 +14,6 @@ import {
 } from './TransactionsList.style';
 import type { CustomTableProps } from './TransactionsList.type';
 
-const columnDisplay = (hideOnMobile?: boolean) => ({
-    xs: hideOnMobile ? 'none' : 'table-cell',
-    sm: 'table-cell',
-});
-
 export const TransactionsList = <T extends { id: string }>({
     title,
     subtitle,
@@ -49,7 +44,6 @@ export const TransactionsList = <T extends { id: string }>({
                                         : colIndex === columns.length - 1
                                           ? '0 16px 0 0'
                                           : '0',
-                                display: columnDisplay(col.hideOnMobile),
                             }}
                         >
                             <Typography variant="subtitle2">
@@ -74,9 +68,6 @@ export const TransactionsList = <T extends { id: string }>({
                                           ? 'right'
                                           : undefined
                                 }
-                                sx={{
-                                    display: columnDisplay(col.hideOnMobile),
-                                }}
                             >
                                 {col.render
                                     ? col.render(row[col.key], row)

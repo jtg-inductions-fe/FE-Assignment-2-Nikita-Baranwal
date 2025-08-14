@@ -14,6 +14,7 @@ export const FooterContainer = styled(Box)(({ theme }) => {
         flexWrap: 'wrap',
         padding: spacing(8),
         borderRadius: pxToRem(16),
+        gap: pxToRem(20),
         marginBottom: spacing(4),
         backgroundColor: palette.common.white,
         boxShadow: shadows[1],

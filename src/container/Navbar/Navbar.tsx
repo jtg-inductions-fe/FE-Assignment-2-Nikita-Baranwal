@@ -110,6 +110,9 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
                                     component="li"
                                     {...props}
                                     key={key as string}
+                                    sx={{
+                                        color: theme.palette.grey[700],
+                                    }}
                                 >
                                     {typeof option === 'string'
                                         ? option

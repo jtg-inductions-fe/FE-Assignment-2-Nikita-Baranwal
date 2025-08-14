@@ -62,6 +62,7 @@ export const SalesGraph = ({ data }: { data: SalesGraphData[] }) => {
                                 month: 'short',
                             })
                         }
+                        padding={{ left: 0, right: 30 }}
                     />
 
                     <StyledYAxis

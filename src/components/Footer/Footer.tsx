@@ -12,7 +12,7 @@ export const Footer = () => {
             <Typography variant="body1">
                 &copy; {currYear} Themesberg, LLC. All rights reserved.
             </Typography>
-            <Box display="flex" gap={2}>
+            <Box display="flex" gap={4}>
                 {socialIcons.map(({ Icon, label, url }) => (
                     <IconButton
                         key={label}

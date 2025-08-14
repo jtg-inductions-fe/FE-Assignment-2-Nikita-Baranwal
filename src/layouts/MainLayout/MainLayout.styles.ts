@@ -20,6 +20,7 @@ export const MainContent = styled(Box)(({ theme }) => {
         padding: spacing(3),
         height: '100%',
         overflowY: 'auto',
+        overflowX: 'hidden',
         width: '100%',
         scrollbarWidth: 'thin',
         scrollbarColor: `${palette.grey[400]} ${palette.grey[100]}`,

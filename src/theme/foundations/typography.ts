@@ -71,6 +71,10 @@ const typographyStyle = ({
         fontWeight: 400,
         lineHeight: 1.5,
         color: palette.grey[500],
+
+        [theme.breakpoints.down('sm')]: {
+            fontSize: pxToRem(12),
+        },
     },
 
     subtitle1: {
