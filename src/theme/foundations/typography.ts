@@ -84,7 +84,8 @@ const typographyStyle = ({
         fontSize: pxToRem(14),
         fontWeight: 600,
         lineHeight: 1.5,
-        color: palette.grey[500],
+        color: palette.grey[700],
+        textTransform: 'uppercase',
 
         [theme.breakpoints.down('sm')]: {
             fontSize: pxToRem(12),

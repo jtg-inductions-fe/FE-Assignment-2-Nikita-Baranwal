@@ -7,6 +7,7 @@ import { SalesGraph } from '@components/SalesGraph';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 import { LatestCustomers } from '@container/LatestCustomers';
 import { TopProducts } from '@container/TopProducts';
+import { Transactions } from '@container/Transactions';
 import { theme } from '@theme/index';
 
 export const Dashboard = () => {
@@ -30,6 +31,7 @@ export const Dashboard = () => {
                     <TopProducts />
                 </Box>
             </Box>
+            <Transactions />
         </Box>
     );
 };
