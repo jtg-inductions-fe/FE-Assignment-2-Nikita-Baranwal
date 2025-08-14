@@ -1,0 +1,1 @@
+export { latestCustomersData } from './LatestCustomers';

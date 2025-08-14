@@ -6,6 +6,15 @@ export const COLORS = {
     PRIMARY: {
         MAIN: '#0E9F6E',
     },
+    SUCCESS: {
+        MAIN: '#DEF7EC',
+    },
+    WARNING: {
+        MAIN: '#FBD5D5',
+    },
+    INFO: {
+        MAIN: '#E1EFFE',
+    },
 };
 
 /**

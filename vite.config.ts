@@ -17,6 +17,9 @@ const commonConfig: UserConfig = {
         assetsInlineLimit: 0,
         rollupOptions: {
             output: {
+                /**
+                 * Controls how output files go and how they're named
+                 */
                 entryFileNames: 'js/[name]-[hash].js',
                 assetFileNames: ({ name }) => {
                     if (/\.(webp|jpe?g|png)$/.test(name ?? '')) {
