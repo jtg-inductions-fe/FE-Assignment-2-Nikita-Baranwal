@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { topProductsData } from 'data/TopProducts/TopProducts';
-import { USER_DATA } from 'data/UserData/UserData';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { generateProductRoute } from 'utils/routerHelpers';
 
@@ -13,6 +11,8 @@ import { Autocomplete, Box, useMediaQuery, useTheme } from '@mui/material';
 import logo from '@assets/images/Logo.png';
 import { UserAvatarMenu } from '@components/UserAvatarMenu';
 import { NOT_FOUND } from '@constant/common.constant';
+import { topProductsData } from '@data/TopProducts';
+import { USER_DATA } from '@data/UserData';
 
 import {
     NavigationPanel,

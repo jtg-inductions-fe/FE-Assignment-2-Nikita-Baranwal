@@ -1,6 +1,6 @@
-import { Transaction } from 'data/Transactions/Transactions.types';
-
 import { Box, Chip } from '@mui/material';
+
+import { Transaction } from '@data/Transactions/Transactions.types';
 
 import { TableColumn } from './Transactions.type';
 

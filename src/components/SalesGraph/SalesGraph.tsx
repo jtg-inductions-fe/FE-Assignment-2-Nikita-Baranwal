@@ -1,4 +1,3 @@
-import { SalesGraphData } from 'data/SalesGraph/SalesGraph.type';
 import {
     Line,
     LineChart,
@@ -10,6 +9,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { Tooltip, useMediaQuery } from '@mui/material';
 
 import { SALESGRAPH_HEIGHT } from '@constant/common.constant';
+import { SalesGraphData } from '@data/SalesGraph/SalesGraph.type';
 import { theme } from '@theme/index';
 
 import { DOMAIN, Y_TICKS } from './SalesGraph.constants';

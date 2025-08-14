@@ -3,6 +3,7 @@ import { salesGraphData } from 'data/SalesGraph/SalesGraph';
 
 import { Box, useMediaQuery } from '@mui/material';
 
+import { Footer } from '@components/Footer';
 import { SalesGraph } from '@components/SalesGraph';
 import { ImageGridContainer } from '@container/ImageGrid/ImageGrid.container';
 import { LatestCustomers } from '@container/LatestCustomers';
@@ -32,6 +33,7 @@ export const Dashboard = () => {
                 </Box>
             </Box>
             <Transactions />
+            <Footer />
         </Box>
     );
 };

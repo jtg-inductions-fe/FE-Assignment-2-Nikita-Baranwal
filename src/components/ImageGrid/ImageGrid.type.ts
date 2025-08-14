@@ -1,6 +1,6 @@
-import { ImageItem } from 'data/ImageGrid/ImageGrid.type';
-
 import { ImageListProps } from '@mui/material';
+
+import { ImageItem } from '@data/ImageGrid/ImageGrid.type';
 
 /**
  * Defines the layout configuration for a single image in the grid.

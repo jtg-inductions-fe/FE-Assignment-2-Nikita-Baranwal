@@ -1,6 +1,5 @@
-import { transactionsData } from 'data/Transactions/Transactions';
-
 import { TransactionsList } from '@components/TransactionsList';
+import { transactionsData } from '@data/Transactions';
 
 import { transactionColumns } from './TransactionsColumns';
 
