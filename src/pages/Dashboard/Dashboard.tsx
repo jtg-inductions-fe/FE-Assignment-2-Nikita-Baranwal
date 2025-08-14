@@ -32,7 +32,7 @@ export const Dashboard = () => {
                     <TopProducts />
                 </Box>
             </Box>
-            <Transactions/>
+            <Transactions />
             <Footer />
         </Box>
     );

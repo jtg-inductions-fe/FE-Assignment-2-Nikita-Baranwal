@@ -19,7 +19,7 @@ export type TableColumn<T> = {
     hideOnMobile?: boolean;
 
     /**
-     * Optional custom rendering function for the cell content.
+     * Custom rendering function for the cell content.
      */
     render: (value: T[keyof T], row: T) => JSX.Element;
 };
